@@ -46,20 +46,213 @@ code-annotations: below
 ## Contenidos
 ::: {.incremental .small-par}
 - R Markdown (?)
+- Quarto: Documentos
 - Quarto: Markdown básico
 - Quarto: Figuras, Tablas y Diagramas
 - Quarto: Bloques de código
 - Quarto: Embeds (?)
-- Quarto: Documentos 
 - Quarto Dashboard
 - flexdashboard (?)
 :::
+
+
+## Quarto: Documentos
+
+::: {.incremental .small-par}
+- Quarto es una herramienta de código abierto que usa una variación específica de markdown ([Pandoc](https://pandoc.org)) para la publicación de documentos, la cual soporta una gran cantidad de formatos de salida.
+- En esta clase examinaremos sólo algunos de los más comunes:
+  - HTML: lenguaje de marcado de hipertexto usado para estructurar y presentar contenido en la web.
+  - PDF: formato para crear documentos paginados listos para imprimir. 
+  - Revealjs: basado en HTML, es el más completo de los formatos soportado por Quarto para crear presentaciones.
+- La lista completa de formatos compatibles con quarto puede consultarse [aquí](https://quarto.org/docs/output-formats/all-formats.html).
+- Cada documento es renderizado de acuerdo al formato especificado en código YAML (entre ```---```) en su encabezado o desde la línea de comando (terminal).
+  - Por ejemplo para un documento en formato HTML:
+:::
+
+. . .
+
+::: {.small-par}
+``` yaml
+---
+title: "My Document"
+format: 
+  html:
+    output-file: "document_html.html"
+---
+```
+:::
+
+[]{.small-par}
+
+::: {.small-par}
+``` {.bash filename="terminal"}
+quarto render document_html.qmd -t html -o document_html.html
+```
+:::
+
+
+
+## Quarto: Documentos
+
+::: {.incremental .small-par}
+- Veamos cómo lucen estos documentos cuando son renderizados en cada formato de Quarto. 
+:::
+
+. . .
+
+::: {.panel-tabset .small-par}
+
+### HTML
+
+::: {.center}
+![](images/example_document_html.png){width="60%"}
+:::
+
+### PDF
+
+::: {.center}
+![](images/example_document_pdf.png){width="90%"}
+:::
+
+### Revealjs
+
+:::
+
+
+
+## Quarto: Documentos
+
+::: {.incremental .small-par}
+- Para lograr el resultado anterior, veamos ahora cómo diseñar en Quarto documentos con los mismos formatos.
+  - Aquí sólo nos concentraremos en el formato general de cada documento y más adelante aprenderemos cómo generar sus distintos componentes: código, plots, etc.
+  - Además, sólo se muestra una parte de cada documento, pero su versión completa se encuentra en el archivo indicado en el código YAML de cada documento, disponible en el repo de la clase.
+:::
+
+. . .
+
+::: {.panel-tabset .small-par}
+
+### HTML
+
+```` r
+
+---
+title: "Documento HTML" # <1>
+subtitle: "Ejemplo de documento generado en Quarto"
+date: today
+author: "Capacitación R Intermedio"  # <1>
+format:  # <2>
+  html:
+    output-file: "document_html.html" # <2>
+    toc: true # <3>
+    toc-depth: 2
+    toc-title: Contenido
+    number-sections: true  # <3>
+    html-math-method: katex # <4>
+    # code-line-numbers: true
+    # css: styles.css # <4>
+---
+
+
+# Capítulo 1
+
+## Sección 1
+
+```{{r}}
+#| echo: true
+#| eval: true
+#| warning: false
+#| code-fold: true
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+ggplot(airquality, aes(temp_celsius, Ozone)) +
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+````
+1. Definiciones generales, comunes en múltiples formatos.
+2. Se especifica el formato de salida y opcionalmente el nombre del documento que será creado.
+3. Algunas opciones comunes para varios formatos: `toc` permite agregar una tabla de contenidos (toc) generada automáticamente, con título `toc-title`. 
+Además `toc-depth` determina el número de niveles de secciones que serán mostrados en la toc.
+4. Algunas opciones específicas del formato: `html-math-method` define el método usado para renderizar ecuaciones LaTeX. `code-line-numbers` permite incluir número de línea en bloques de código. Simples modificaciones en la apariencia del documento pueden agregando en un documento `css`.
+
+
+### PDF
+
+```` r
+
+---
+title: "Documento PDF"
+subtitle: "Ejemplo de documento generado en Quarto"
+date: today
+author: "Capacitación R Intermedio"
+format:
+  pdf: # <1>
+    output-file: "document_pdf.pdf"
+    toc: true
+    toc-depth: 3
+    toc-title: Contenido
+    number-sections: true
+    # lof: true # <2>
+    # lot: true # <2>
+    documentclass: scrartcl # <3>
+    papersize: letter # <4>
+    geometry:
+      - top=30mm
+      - left=20mm # <4>
+---
+
+
+# Capítulo 1
+
+## Sección 1
+
+```{{r}}
+#| echo: true
+#| eval: true
+#| warning: false
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+ggplot(airquality, aes(temp_celsius, Ozone)) +
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+````
+1. Algunas opciones específicas del formato: 
+2. `lof` y `lot` imprimen la lista de figuras y tablas en el documento. 
+3. `documentclass` define la clase del documento: las estándar `article`, `report`, `book` o sus equivalentes KOMA Script `scrartcl`, `scrreprt`, `scrbook`.
+4. `papersize` y `geometry` definen el tamaño del documento impreso y los márgenes del mismo.
+
+
+### Revealjs
+
+
+:::
+
+
 
 ## Quarto: Markdown básico
 
 ::: {.incremental .small-par}
 - Markdown es un formato de texto plano, diseñado para ser fácil de escribir y leer:
-- Quarto es una herramienta de código abierto que usa una variación específica de markdown ([Pandoc](https://pandoc.org)) para la publicación de documentos.
 - Veamos algunos ejemplos de las sintaxis markdown más comunes usadas en Quarto. 
 :::
 
@@ -515,298 +708,6 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 
 {{< embed airquality.qmd#fig >}}
 
-
-
-## Quarto: Documentos
-
-::: {.incremental .small-par}
-- Pandoc, la versión de Markdown usada en Quarto, soporta una gran cantidad de formatos de salida.
-- En esta clase examinaremos sólo algunos de los más comunes: 
-  - HTML: lenguaje de marcado de hipertexto usado para estructurar y presentar contenido en la web.
-  - PDF: formato para crear documentos paginados listos para imprimir. 
-  - MS Word: formato del procesador de palabras incluido en Microsoft Office.
-  - Typst: formato nuevo open-source diseñado para ser tan poderoso como LaTeX pero siendo más fácil de usar y aprender.
-  - Revealjs: basado en HTML, es el más completo de los formatos soportado por Quarto para crear presentaciones.
-- La lista completa de formatos compatibles con quarto puede consultarse [aquí](https://quarto.org/docs/output-formats/all-formats.html).
-- Cada documento es renderizado de acuerdo al formato especificado en código YAML (entre ```---```) en su encabezado o desde la línea de comando (terminal).
-  - Por ejemplo para un documento en formato HTML:
-:::
-
-. . .
-
-::: {.small-par}
-``` yaml
----
-title: "My Document"
-format: 
-  html:
-    output-file: "document_html.html"
----
-```
-:::
-
-::: {.small-par}
-``` {.bash filename="Terminal"}
-quarto render document_html.qmd -t html -o document_html.html
-```
-:::
-
-
-
-## Quarto: Documentos
-
-::: {.incremental .small-par}
-- A modo de ejemplo, veamos cómo podrían diseñarse en Quarto documentos con los principales formatos.
-  - Aquí sólo mostramos parte de cada documento, cuya versión completa se encuentra en el archivo renderizado correspondiente que acompaña esta clase.  
-:::
-
-. . .
-
-::: {.panel-tabset .small-par}
-
-### HTML
-
-```` r
-
----
-title: "Documento HTML" # <1>
-subtitle: "Ejemplo de documento generado en Quarto"
-date: today
-author: "Capacitación R Intermedio"  # <1>
-format:  # <2>
-  html:
-    output-file: "document_html.html" # <2>
-    toc: true # <3>
-    toc-depth: 2
-    toc-title: Contenido
-    number-sections: true  # <3>
-    html-math-method: katex # <4>
-    # code-line-numbers: true
-    # css: styles.css # <4>
----
-
-
-# Capítulo 1
-
-## Sección 1
-
-```{{r}}
-#| echo: true
-#| eval: true
-#| warning: false
-#| code-fold: true
-
-library(tidyverse)
-library(ggplot2)
-
-airquality <- airquality %>% 
-  mutate(
-    wind_kmhr = Wind / 0.6213711922,
-    temp_celsius = (Temp - 32)*5/9
-  )
-
-ggplot(airquality, aes(temp_celsius, Ozone)) +
-  geom_point() + 
-  geom_smooth(method = "loess")
-```
-
-````
-1. Definiciones generales, comunes en múltiples formatos.
-2. Se especifica el formato de salida y opcionalmente el nombre del documento que será creado.
-3. Algunas opciones comunes para varios formatos: `toc` permite agregar una tabla de contenidos (toc) generada automáticamente, con título `toc-title`. 
-Además `toc-depth` determina el número de niveles de secciones que serán mostrados en la toc.
-4. Algunas opciones específicas del formato: `html-math-method` define el método usado para renderizar ecuaciones LaTeX. `code-line-numbers` permite incluir número de línea en bloques de código. Simples modificaciones en la apariencia del documento pueden agregando en un documento `css`.
-
-
-### PDF
-
-```` r
-
----
-title: "Documento PDF"
-subtitle: "Ejemplo de documento generado en Quarto"
-date: today
-author: "Capacitación R Intermedio"
-format:
-  pdf: # <1>
-    output-file: "document_pdf.pdf"
-    toc: true
-    toc-depth: 3
-    toc-title: Contenido
-    number-sections: true
-    # lof: true # <2>
-    # lot: true # <2>
-    documentclass: scrartcl # <3>
-    papersize: letter # <4>
-    geometry:
-      - top=30mm
-      - left=20mm # <4>
----
-
-
-# Capítulo 1
-
-## Sección 1
-
-```{{r}}
-#| echo: true
-#| eval: true
-#| warning: false
-
-library(tidyverse)
-library(ggplot2)
-
-airquality <- airquality %>% 
-  mutate(
-    wind_kmhr = Wind / 0.6213711922,
-    temp_celsius = (Temp - 32)*5/9
-  )
-
-ggplot(airquality, aes(temp_celsius, Ozone)) +
-  geom_point() + 
-  geom_smooth(method = "loess")
-```
-
-````
-1. Algunas opciones específicas del formato: 
-2. `lof` y `lot` imprimen la lista de figuras y tablas en el documento. 
-3. `documentclass` define la clase del documento: las estándar `article`, `report`, `book` o sus equivalentes KOMA Script `scrartcl`, `scrreprt`, `scrbook`.
-4. `papersize` y `geometry` definen el tamaño del documento impreso y los márgenes del mismo.
-
-
-### Typst
-
-```` r
-
----
-title: "Documento Typst"
-subtitle: "Ejemplo de documento generado en Quarto"
-date: today
-author: "Capacitación R Intermedio"
-format:
-  typst: # <1>
-    output-file: "document_typst.pdf"
-    toc: true
-    toc-depth: 3
-    toc-title: Contenido
-    number-sections: true
-    papersize: "us-letter" # <2>
-    section-numbering: 1.1.a # <3>
----
-
-# Capítulo 1
-
-## Sección 1
-
-```{{r}}
-#| echo: true
-#| eval: true
-#| warning: false
-
-library(tidyverse)
-library(ggplot2)
-
-airquality <- airquality %>% 
-  mutate(
-    wind_kmhr = Wind / 0.6213711922,
-    temp_celsius = (Temp - 32)*5/9
-  )
-
-ggplot(airquality, aes(temp_celsius, Ozone)) +
-  geom_point() + 
-  geom_smooth(method = "loess")
-```
-
-````
-1. Algunas opciones específicas del formato: 
-2. `papersize` define el tamaño del documento impreso.
-3. `section-numbering` define el esquema usado para numerar secciones, por ejemplo 1.A.1.
-
-
-### MS Word
-
-```` r
-
----
-title: "Documento MS Word"
-subtitle: "Ejemplo de documento generado en Quarto"
-date: today
-author: "Capacitación R Intermedio"
-format:
-  docx:
-    output-file: "document_word.docx"
-    toc: true
-    toc-depth: 3
-    toc-title: Contenido
-    number-sections: true
-    number-depth: 3
----
-
-
-# Capítulo 1
-
-## Sección 1
-
-```{{r}}
-#| echo: true
-#| eval: true
-#| warning: false
-
-library(tidyverse)
-library(ggplot2)
-
-airquality <- airquality %>% 
-  mutate(
-    wind_kmhr = Wind / 0.6213711922,
-    temp_celsius = (Temp - 32)*5/9
-  )
-
-ggplot(airquality, aes(temp_celsius, Ozone)) +
-  geom_point() + 
-  geom_smooth(method = "loess")
-```
-
-````
-
-:::
-
-
-
-## Quarto: Documentos
-
-::: {.incremental .small-par}
-- Ahora veamos cómo luce el documento después de renderizar cada formato de Quarto. 
-:::
-
-. . .
-
-::: {.panel-tabset .small-par}
-
-### HTML
-
-::: {.center}
-![](images/example_document_html.png){width="60%"}
-:::
-
-### PDF
-
-::: {.center}
-![](images/example_document_pdf.png){width="90%"}
-:::
-
-### Typst
-
-::: {.center}
-![](images/example_document_typst.png){width="90%"}
-:::
-
-### MS Word
-
-::: {.center}
-![](images/example_document_word.png){width="80%"}
-:::
-
-:::
 
 
 ## Quarto: Dashboards
