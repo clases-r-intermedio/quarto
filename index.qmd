@@ -56,6 +56,66 @@ code-annotations: below
 :::
 
 
+## Quarto en RStudio
+
+::: {.incremental .small-par}
+- Quarto es una herramienta de código abierto que usa una variación específica de markdown ([Pandoc](https://pandoc.org)) para la publicación de documentos, la cual soporta una gran cantidad de formatos de salida.
+- RStudio v2022.07 and later includes support for editing and preview of Quarto documents (the documentation below assumes you are using this build or a later version).
+- If you are using Quarto within RStudio it is strongly recommended that you use the latest release of RStudio.
+:::
+
+. . .
+
+::: {.panel-tabset .small-par}
+
+### Crear documentos
+
+::: {.small-par}
+* Use the **File : New File : Quarto Document…** command to create new Quarto documents:
+:::
+
+::: {.center}
+![](images/rstudio_create_document.png){width="60%"}
+:::
+
+### Renderizar y Vista previa
+
+::: {.incremental .small-par}
+::: {.small-par}
+* Use the Render button in the RStudio IDE to render the file and preview the output with a single click.
+  []{.small-par}
+  ![](images/rstudio_render.png){width="60%"}
+:::
+::: {.small-par}
+* If you prefer to automatically render whenever you save, you can check the Render on Save option on the editor toolbar. The preview will update whenever you re-render the document.
+  []{.small-par}
+  ![](images/rstudio_render_on_save.png){width="60%"}
+:::
+::: {.small-par}
+* Note that documents can also be rendered from the R console via the quarto package.
+  ``` r
+  install.packages("quarto")
+  quarto::quarto_render("hello.qmd")
+  ```
+:::
+:::
+
+### Modos: Visual and Source
+
+::: {.incremental .small-par}
+* In the image below, we can see the same document in the two modes of the RStudio editor: visual (on the left) and source (on the right).
+* Visual editor for Quarto markdown, including support for tables, citations, cross-references, footnotes, divs/spans, definition lists, attributes, raw HTML/TeX, and more
+  []{.small-par}
+  ![](images/rstudio_source_and_visual.png){width="100%"}
+:::
+
+### Probemos!
+
+
+:::
+
+
+
 ## Quarto: Documentos
 
 ::: {.incremental .small-par}
@@ -725,6 +785,18 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 
 ## Quarto: Dashboards
 
+::: {.r-stack fragment-index=0 .center}
+
+![](images/dashboard_example_page_01.png){.fragment .fade-in-then-out width="100%"}
+
+![](images/dashboard_example_page_02.png){.fragment .fade-in-then-out width="100%"}
+
+:::
+
+
+
+## Quarto: Dashboards
+
 ::: {.incremental .small-par}
 - Un dashboard consiste de varios componentes:
 1)  **Navigation Bar**: Icono, título y autor junto con links to sub-páginas (si se define más de una página).
@@ -838,15 +910,4 @@ gapminder %>%
 8.  La segunda fila de la segunda página incluye dos bloques de código, que son automáticamente separados en dos tarjetas adyacentes.
 :::
 
-
-
-## Quarto: Dashboards
-
-::: {.r-stack fragment-index=0 .center}
-
-![](images/dashboard_example_page_01.png){.fragment .fade-in-then-out width="100%"}
-
-![](images/dashboard_example_page_02.png){.fragment .fade-in-then-out width="100%"}
-
-:::
 
