@@ -1,0 +1,90 @@
+---
+title: "Documento HTML"
+subtitle: "Ejemplo de documento generado en Quarto"
+date: today
+author: "Capacitación R Intermedio"
+format:
+  html:
+    output-file: "document_html.html"  
+    toc: true
+    toc-depth: 2
+    toc-title: Contenido
+    number-sections: true
+    html-math-method: katex
+    # code-line-numbers: true
+    # css: styles.css
+---
+
+
+# Capítulo 1
+
+## Sección 1
+
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+#| code-fold: true
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+ggplot(airquality, aes(temp_celsius, Ozone)) +
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+## Sección 2
+
+::: {.panel-tabset}
+## Code
+
+```{.r}
+#| echo: true
+#| eval: true
+#| warning: false
+#| code-fold: true
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+head(airquality)
+```
+
+## Result
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| code-fold: true
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+head(airquality)
+```
+
+:::
+
+## Sección 3
+
+![Un elefante](images/elephant.png){fig-alt="Un elefante."}

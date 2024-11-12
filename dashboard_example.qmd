@@ -1,0 +1,89 @@
+--- 
+title: "Ejemplo de Dashboard"
+author: "Capacitación R Intermedio"
+format:
+  dashboard:
+    logo: images/logo_portada2.png
+    orientation: rows
+--- 
+
+# Page 1 {orientation="rows" scrolling="false"}
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+```
+
+## Row {height=5%}
+
+::: {.card}
+Análisis de Calidad de Aire en la ciudad de Nueva York. Mayo a Septiembre, 1973.
+Referencia: <https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/airquality>.
+:::
+
+## Row {height=35%}
+
+```{r}
+library(DT)
+DT::datatable(airquality)
+```
+
+## Row {height=60% .tabset}
+
+```{r}
+#| title: Ozono versus Temperatura [°C]
+ggplot(airquality, aes(temp_celsius, Ozone)) +
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+```{r}
+#| title: Ozono versus Viento [km/hr]
+ggplot(airquality, aes(wind_kmhr, Ozone)) +
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+```{r}
+#| title: Temperatura [°C] versus Viento [km/hr]
+ggplot(airquality, aes(wind_kmhr, temp_celsius)) +
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+
+# Page 2 {orientation="rows" scrolling="true"}
+
+## Row {height=10%}
+
+::: {.card}
+Gapminder identifies systematic misconceptions about important global trends and proportions and uses reliable data to develop easy to understand teaching materials to rid people of their misconceptions.
+Gapminder is an independent Swedish foundation with no political, religious, or economic affiliations.
+Learn more about the Gampminder dataset at <https://www.gapminder.org/data/>.
+:::
+
+## Row {height=90%}
+
+```{r}
+library(gapminder)
+library(DT)
+DT::datatable(gapminder)
+```
+
+```{r}
+#| fig-width: 10
+#| fig-height: 8
+paises <- c("Peru", "Bolivia", "Chile")
+# etiquetas <- data.frame(nombre_paises = paises, x = c(1975, 1965, 1962), y = c(6, 7, 4))
+gapminder %>% 
+  filter(country %in% paises) %>% 
+  ggplot() +
+  aes(x = year, y = lifeExp, color = country) +
+  geom_line()
+```

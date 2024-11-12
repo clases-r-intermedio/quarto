@@ -1,0 +1,89 @@
+---
+title: "Documento PDF"
+subtitle: "Ejemplo de documento generado en Quarto"
+date: today
+author: "Capacitación R Intermedio"
+format:
+  pdf:
+    output-file: "document_pdf.pdf"
+    toc: true
+    toc-depth: 3
+    toc-title: Contenido
+    number-sections: true
+    # lof: true
+    # lot: true
+    documentclass: scrartcl
+    papersize: letter
+    geometry:
+      - top=30mm
+      - left=20mm
+---
+
+
+# Capítulo 1
+
+## Sección 1
+
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+ggplot(airquality, aes(temp_celsius, Ozone)) +
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+## Sección 2
+
+### Code
+
+```{.r}
+#| echo: true
+#| eval: true
+#| warning: false
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+head(airquality)
+```
+
+### Result
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+head(airquality)
+```
+
+
+## Sección 3
+
+![Un elefante](images/elephant.png){fig-alt="Un elefante."}
