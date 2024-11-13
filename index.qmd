@@ -10,6 +10,8 @@ format:
     preview-links: auto
     logo: images/logo_portada2.png
     css: ine_quarto_styles.css
+    mermaid-format: svg
+    view-distance: 50
     # footer: https://quarto.org
 code-annotations: below
 ---
@@ -47,7 +49,7 @@ code-annotations: below
 ::: {.incremental .small-par}
 - Quarto vs R Markdown
 - Documentos Quarto
-- Quarto en RStudio
+- Documentos Quarto en RStudio
 - Markdown Quarto básico
 - Figuras, Tablas y Diagramas
 - Bloques de código: R
@@ -108,7 +110,7 @@ quarto render document_html.qmd -t html -o document_html.html
 ## Documentos Quarto
 
 ::: {.incremental .small-par}
-- Veamos cómo lucen estos documentos cuando son renderizados en cada formato de Quarto. 
+- Veamos un ejemplo de cómo luce un documento cuando es renderizado en cada uno de estos formato de Quarto. 
 :::
 
 . . .
@@ -136,7 +138,7 @@ quarto render document_html.qmd -t html -o document_html.html
 ## Documentos Quarto
 
 ::: {.incremental .small-par}
-- Para lograr el resultado anterior, veamos ahora cómo diseñar en Quarto documentos con los mismos formatos.
+- Para lograr el resultado anterior, veamos ahora cómo diseñar documentos con los mismos formatos.
   - Aquí sólo nos concentraremos en el formato general de cada documento y más adelante aprenderemos cómo generar sus distintos componentes: código, plots, etc.
   - Además, sólo se muestra una parte de cada documento, pero su versión completa se encuentra en el archivo indicado en el código YAML de cada documento, disponible en el repo de la clase.
 :::
@@ -262,7 +264,7 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 
 
 
-## Quarto en RStudio
+## Documentos Quarto en RStudio
 
 ::: {.incremental .small-par}
 - RStudio desde su versión v2022.07 incluye soporte para crear, editar y visualizar documentos Quarto.
@@ -310,14 +312,14 @@ quarto::quarto_render("hello.qmd")
 ### Modos: visual y source
 
 ::: {.incremental .small-par}
-* En RStudio podemos ser el mismo documento en dos modos: *visual* y *source*.
-  * En el modo visual podemos usar la barra de herramientas para agregar o editar texto en markdown, tablas, figuras, etc.
-  * En el modo source nos permite editar directamente el código fuente que genera cada componente en un documento Quarto.
+* En RStudio podemos ser el mismo documento en dos modos: **visual** y **source**.
+  * En el modo **visual** podemos usar la barra de herramientas para agregar o editar texto en markdown, tablas, figuras, etc.
+  * En el modo **source** nos permite editar directamente el código fuente que genera cada componente en un documento Quarto.
   []{.small-par}
   ![](images/rstudio_source_and_visual.png){width="100%"}
 :::
 
-### Probemos!
+### Ejercicio!
 
 ::: {.incremental .small-par}
 * **TODO:** add list of short exercises to edit and render some of the presented docs.
@@ -414,7 +416,7 @@ quarto::quarto_render("hello.qmd")
 ::: {.small-par}
 
 +-----------------------------------+---------------------------------+
-| Markdown Syntax                   | Output                          |
+| Sintaxis Markdown                 | Output                          |
 +===================================+=================================+
 | ``` markdown                      |                                 |
 | * unordered list                  | * unordered list                |
@@ -493,7 +495,7 @@ Un bloque raw comienza con ` ```{=` seguido por un formato y finaliza con `}`. P
 :::
 
 +-------------------------------+-----------------------------+
-| Markdown Syntax               | Output                      |
+| Sintaxis Markdown             | Output                      |
 +===============================+=============================+
 | ``` markdown                  |                             |
 | método `inline`: $E = mc^{2}$ | método `inline`: $E=mc^{2}$ |
@@ -558,7 +560,7 @@ Un bloque raw comienza con ` ```{=` seguido por un formato y finaliza con `}`. P
 
 ::: {.small-par}
 
-#### Markdown Syntax
+#### Sintaxis Markdown
 
 ``` markdown
 | Right | Left | Default | Center |
@@ -579,23 +581,25 @@ Un bloque raw comienza con ` ```{=` seguido por un formato y finaliza con `}`. P
 :::
 
 
-### Diagrams
+### Diagramas
 
 ::: {.small-par}
-
-Quarto has native support for embedding [Mermaid](https://mermaid-js.github.io/mermaid/#/) and [Graphviz](https://graphviz.org/) diagrams. This enables you to create flowcharts, sequence diagrams, state diagrams, Gantt charts, and more using a plain text syntax inspired by markdown.
-
-For example, here we embed a flowchart created using Mermaid:
+- Quarto tiene soporte nativo para renderizar diagramas [Mermaid](https://mermaid-js.github.io/mermaid/#/) y [Graphviz](https://graphviz.org/).
+Esto nos permite incluir diagramas de flujo, de secuencia, de estado, cartas Gantt, etc. en nuestros documentos.
+Por ejemplo, veamos el código para construir un diagrama Mermaid simple y cómo se ve después de renderizar.
+:::
 
 ```{mermaid}
-%%| echo: fenced
+%%| mermaid-format: js
 flowchart LR
-  A[Hard edge] --> B(Round edge)
-  B --> C{Decision}
-  C --> D[Result one]
-  C --> E[Result two]
+  A[Borde rectangular] --> B(Borde redondeado)
+  B --> C{Decisión}
+  C --> D[Resultado uno]
+  C --> E[Resultado dos]
 ```
 
+::: {.center}
+![](images/diagram_mermaid.png){width="60%"}
 :::
 
 :::
@@ -609,6 +613,7 @@ flowchart LR
 - En particular, para renderizar y ejecutar código R, Quarto usa [Knitr](https://yihui.org/knitr/), al igual que R Markdown.
 - Bloques de código serán ejecutados al renderizar si comienzan con ```` ```{r} ```` y terminan con ```` ``` ````.
 - Comportamiento del bloque de código puede ser configurado usando comentarios especiales al comienzo del bloque (por ejemplo: echo, eval).
+  - **TODO:** Diferencia con R Markdown.
 :::
 
 . . .
@@ -683,7 +688,7 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 ## Bloques de código: R
 
 ::: {.incremental .small-par}
-- Un bloque de código también puede incluir anotaciones interactivas, que permiten agregar explicaciones a líneas de código.
+- Un bloque de código también puede incluir **anotaciones interactivas**, que permiten agregar explicaciones a líneas de código.
 - Para agregar una anotación:
   - Cada línea anotada debe terminar con un comentario seguido de un espacio y luego un número de anotación encerrado entre <> (por ejemplo # <2>). El número de anotación puede repetirse si la anotación se extiende en múltiples líneas.
   - Una lista numerada debe aparecer inmediatamente después del bloque de código que incluye el contenido de cada anotación. Cada número en la lista corresponde a la(s) línea(s) de código que tiene el mismo número de anotación.
@@ -816,11 +821,44 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 
 ## Dashboards
 
-::: {.incremental .small-par}
+::: {.small-par}
+* Un dashboard consiste de varios componentes:
+1)  **Barra de Navegación**: Icono, título y autor junto con links a páginas (si se define más de una página). <br>
+  []{.small-par}
+  ![](images/dashboard_example_components_pres_01.png){width="60%"}
+:::
+
+
+
+## Dashboards
+
+::: {.small-par}
 - Un dashboard consiste de varios componentes:
-1)  **Navigation Bar**: Icono, título y autor junto con links to sub-páginas (si se define más de una página).
-2)  **Pages, Rows, Columns, Tabsets**: Páginas, filas y columnas se definen usando headings de markdown (con atributos opcionales que controlan la altura, el ancho, etc). Tabsets permiten divisiones adicionales dentro de una fila o columna.   
+2)  **Páginas, Filas, Columnas, Tabsets**: Páginas, filas y columnas se definen usando headings de markdown (con atributos opcionales que controlan la altura, el ancho, etc). Tabsets permiten divisiones adicionales dentro de una fila o columna. <br>
+  []{.small-par}
+  ![](images/dashboard_example_components_pres_02.png){width="100%"}
+:::
+
+
+
+## Dashboards
+
+::: {.small-par}
+- Un dashboard consiste de varios componentes:
+2)  **Páginas, Filas, Columnas, Tabsets**: Páginas, filas y columnas se definen usando headings de markdown (con atributos opcionales que controlan la altura, el ancho, etc). Tabsets permiten divisiones adicionales dentro de una fila o columna. <br>
+  []{.small-par}
+  ![](images/dashboard_example_components_pres_03.png){width="100%"}
+:::
+
+
+
+## Dashboards
+
+::: {.small-par}
+- Un dashboard consiste de varios componentes:
 3)  **Cards, Sidebars, and Toolbars**: Cards pueden contener plots, visualizaciones de datos y contenido de forma libre. Sidebars y toolbars se usan para presentar inputs en dashboards interactivos.
+  []{.small-par}
+  ![](images/dashboard_example_components_pres_04.png){width="120%"}
 :::
 
 
@@ -930,3 +968,16 @@ gapminder %>%
 :::
 
 
+
+## Dashboards | Ejercicio
+
+::: {.small-par}
+1)  Trabajaremos en una copia del mismo dashboard que hemos visto en las diapositivas anteriores y usaremos el dataset **gapminder**.
+    - Cree una copia del archivo **dashboard_example.qmd** y llámela **dashboard_example_ejercicio.qmd**.
+2)  Agregue al dashboard una tercera página llamada **Ejercicio**, que tenga dos columnas.
+    - Recuerda especificar la orientación adecuada en la página.
+3)  En la primera columna (izquierda), muestre una tabla que contenga la expectativa de vida (columna **lifeExp**) y el GDP per cápita (columna **gdpPercap**) sólo de Chile, Argentina y Brasil, en todo el rango de tiempo disponible.
+4)  En la segunda columna (derecha), cree dos tabsets.
+    - El primer tabset debería mostrar un gráfico de la expectativa de vida en el tiempo, para los tres países.
+    - El segundo tabset debería mostrar un gráfico de la evolución en el tiempo del GDP per cápita en cada país. 
+:::

@@ -421,7 +421,7 @@
 <ul>
 <li class="fragment">Quarto vs R Markdown</li>
 <li class="fragment">Documentos Quarto</li>
-<li class="fragment">Quarto en RStudio</li>
+<li class="fragment">Documentos Quarto en RStudio</li>
 <li class="fragment">Markdown Quarto básico</li>
 <li class="fragment">Figuras, Tablas y Diagramas</li>
 <li class="fragment">Bloques de código: R</li>
@@ -486,7 +486,7 @@
 <h2>Documentos Quarto</h2>
 <div class="small-par">
 <ul>
-<li class="fragment">Veamos cómo lucen estos documentos cuando son renderizados en cada formato de Quarto.</li>
+<li class="fragment">Veamos un ejemplo de cómo luce un documento cuando es renderizado en cada uno de estos formato de Quarto.</li>
 </ul>
 </div>
 <div class="fragment">
@@ -514,7 +514,7 @@
 <h2>Documentos Quarto</h2>
 <div class="small-par">
 <ul>
-<li class="fragment">Para lograr el resultado anterior, veamos ahora cómo diseñar en Quarto documentos con los mismos formatos.
+<li class="fragment">Para lograr el resultado anterior, veamos ahora cómo diseñar documentos con los mismos formatos.
 <ul>
 <li class="fragment">Aquí sólo nos concentraremos en el formato general de cada documento y más adelante aprenderemos cómo generar sus distintos componentes: código, plots, etc.</li>
 <li class="fragment">Además, sólo se muestra una parte de cada documento, pero su versión completa se encuentra en el archivo indicado en el código YAML de cada documento, disponible en el repo de la clase.</li>
@@ -659,8 +659,8 @@
 </div>
 </div>
 </section>
-<section id="quarto-en-rstudio" class="slide level2">
-<h2>Quarto en RStudio</h2>
+<section id="documentos-quarto-en-rstudio" class="slide level2">
+<h2>Documentos Quarto en RStudio</h2>
 <div class="small-par">
 <ul>
 <li class="fragment">RStudio desde su versión v2022.07 incluye soporte para crear, editar y visualizar documentos Quarto.</li>
@@ -668,7 +668,7 @@
 </div>
 <div class="fragment">
 <div class="panel-tabset small-par">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Crear documentos</a></li><li><a href="#tabset-3-2">Renderizar y previsualizar</a></li><li><a href="#tabset-3-3">Modos: visual y source</a></li><li><a href="#tabset-3-4">Probemos!</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Crear documentos</a></li><li><a href="#tabset-3-2">Renderizar y previsualizar</a></li><li><a href="#tabset-3-3">Modos: visual y source</a></li><li><a href="#tabset-3-4">Ejercicio!</a></li></ul>
 <div class="tab-content small-par">
 <div id="tabset-3-1">
 <div class="small-par">
@@ -705,10 +705,10 @@ quarto::quarto_render("hello.qmd")
 <div id="tabset-3-3">
 <div class="small-par">
 <ul>
-<li class="fragment">En RStudio podemos ser el mismo documento en dos modos: <em>visual</em> y <em>source</em>.
+<li class="fragment">En RStudio podemos ser el mismo documento en dos modos: <strong>visual</strong> y <strong>source</strong>.
 <ul>
-<li class="fragment">En el modo visual podemos usar la barra de herramientas para agregar o editar texto en markdown, tablas, figuras, etc.</li>
-<li class="fragment">En el modo source nos permite editar directamente el código fuente que genera cada componente en un documento Quarto. <span class="small-par"></span> <img data-src="images/rstudio_source_and_visual.png" style="width:100.0%"></li>
+<li class="fragment">En el modo <strong>visual</strong> podemos usar la barra de herramientas para agregar o editar texto en markdown, tablas, figuras, etc.</li>
+<li class="fragment">En el modo <strong>source</strong> nos permite editar directamente el código fuente que genera cada componente en un documento Quarto. <span class="small-par"></span> <img data-src="images/rstudio_source_and_visual.png" style="width:100.0%"></li>
 </ul></li>
 </ul>
 </div>
@@ -830,7 +830,7 @@ quarto::quarto_render("hello.qmd")
 </colgroup>
 <thead>
 <tr>
-<th>Markdown Syntax</th>
+<th>Sintaxis Markdown</th>
 <th>Output</th>
 </tr>
 </thead>
@@ -955,7 +955,7 @@ definition
 </colgroup>
 <thead>
 <tr>
-<th>Markdown Syntax</th>
+<th>Sintaxis Markdown</th>
 <th>Output</th>
 </tr>
 </thead>
@@ -987,7 +987,7 @@ definition
 </div>
 <div class="fragment">
 <div class="panel-tabset small-par">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Links e Imágenes</a></li><li><a href="#tabset-5-2">Tablas</a></li><li><a href="#tabset-5-3">Diagrams</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Links e Imágenes</a></li><li><a href="#tabset-5-2">Tablas</a></li><li><a href="#tabset-5-3">Diagramas</a></li></ul>
 <div class="tab-content small-par">
 <div id="tabset-5-1">
 <div class="small-par">
@@ -1034,7 +1034,7 @@ definition
 </div>
 <div id="tabset-5-2">
 <div class="small-par">
-<h4 id="markdown-syntax">Markdown Syntax</h4>
+<h4 id="sintaxis-markdown">Sintaxis Markdown</h4>
 <div class="sourceCode" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href=""></a>| Right | Left | Default | Center |</span>
 <span id="cb29-2"><a href=""></a>|------:|:-----|---------|:------:|</span>
 <span id="cb29-3"><a href=""></a>|   12  |  12  |    12   |    12  |</span>
@@ -1075,14 +1075,18 @@ definition
 </div>
 <div id="tabset-5-3">
 <div class="small-par">
-<p>Quarto has native support for embedding <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> and <a href="https://graphviz.org/">Graphviz</a> diagrams. This enables you to create flowcharts, sequence diagrams, state diagrams, Gantt charts, and more using a plain text syntax inspired by markdown.</p>
-<p>For example, here we embed a flowchart created using Mermaid:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource {mermaid} number-lines code-with-copy"><code class="sourceCode"><span id="cb30-1"><a href=""></a>%%| echo: fenced</span>
+<ul>
+<li>Quarto tiene soporte nativo para renderizar diagramas <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> y <a href="https://graphviz.org/">Graphviz</a>. Esto nos permite incluir diagramas de flujo, de secuencia, de estado, cartas Gantt, etc. en nuestros documentos. Por ejemplo, veamos el código para construir un diagrama Mermaid simple y cómo se ve después de renderizar.</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource {mermaid} number-lines code-with-copy"><code class="sourceCode"><span id="cb30-1"><a href=""></a>%%| mermaid-format: js</span>
 <span id="cb30-2"><a href=""></a>flowchart LR</span>
-<span id="cb30-3"><a href=""></a>  A[Hard edge] --&gt; B(Round edge)</span>
-<span id="cb30-4"><a href=""></a>  B --&gt; C{Decision}</span>
-<span id="cb30-5"><a href=""></a>  C --&gt; D[Result one]</span>
-<span id="cb30-6"><a href=""></a>  C --&gt; E[Result two]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-3"><a href=""></a>  A[Borde rectangular] --&gt; B(Borde redondeado)</span>
+<span id="cb30-4"><a href=""></a>  B --&gt; C{Decisión}</span>
+<span id="cb30-5"><a href=""></a>  C --&gt; D[Resultado uno]</span>
+<span id="cb30-6"><a href=""></a>  C --&gt; E[Resultado dos]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="center">
+<p><img data-src="images/diagram_mermaid.png" style="width:60.0%"></p>
 </div>
 </div>
 </div>
@@ -1096,7 +1100,10 @@ definition
 <li class="fragment">Quarto permite renderizar bloques de código de varios lenguajes (por ejemplo R, Python, Julia).</li>
 <li class="fragment">En particular, para renderizar y ejecutar código R, Quarto usa <a href="https://yihui.org/knitr/">Knitr</a>, al igual que R Markdown.</li>
 <li class="fragment">Bloques de código serán ejecutados al renderizar si comienzan con <code>```{r}</code> y terminan con <code>```</code>.</li>
-<li class="fragment">Comportamiento del bloque de código puede ser configurado usando comentarios especiales al comienzo del bloque (por ejemplo: echo, eval).</li>
+<li class="fragment">Comportamiento del bloque de código puede ser configurado usando comentarios especiales al comienzo del bloque (por ejemplo: echo, eval).
+<ul>
+<li class="fragment"><strong>TODO:</strong> Diferencia con R Markdown.</li>
+</ul></li>
 </ul>
 </div>
 <div class="fragment">
@@ -1152,7 +1159,7 @@ definition
 <h2>Bloques de código: R</h2>
 <div class="small-par">
 <ul>
-<li class="fragment">Un bloque de código también puede incluir anotaciones interactivas, que permiten agregar explicaciones a líneas de código.</li>
+<li class="fragment">Un bloque de código también puede incluir <strong>anotaciones interactivas</strong>, que permiten agregar explicaciones a líneas de código.</li>
 <li class="fragment">Para agregar una anotación:
 <ul>
 <li class="fragment">Cada línea anotada debe terminar con un comentario seguido de un espacio y luego un número de anotación encerrado entre &lt;&gt; (por ejemplo # &lt;2&gt;). El número de anotación puede repetirse si la anotación se extiende en múltiples líneas.</li>
@@ -1302,17 +1309,47 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 <h2>Dashboards</h2>
 <div class="small-par">
 <ul>
-<li class="fragment">Un dashboard consiste de varios componentes:</li>
+<li>Un dashboard consiste de varios componentes:</li>
 </ul>
 <ol type="1">
-<li class="fragment"><strong>Navigation Bar</strong>: Icono, título y autor junto con links to sub-páginas (si se define más de una página).</li>
-<li class="fragment"><strong>Pages, Rows, Columns, Tabsets</strong>: Páginas, filas y columnas se definen usando headings de markdown (con atributos opcionales que controlan la altura, el ancho, etc). Tabsets permiten divisiones adicionales dentro de una fila o columna.<br>
-</li>
-<li class="fragment"><strong>Cards, Sidebars, and Toolbars</strong>: Cards pueden contener plots, visualizaciones de datos y contenido de forma libre. Sidebars y toolbars se usan para presentar inputs en dashboards interactivos.</li>
+<li><strong>Barra de Navegación</strong>: Icono, título y autor junto con links a páginas (si se define más de una página). <br> <span class="small-par"></span> <img data-src="images/dashboard_example_components_pres_01.png" style="width:60.0%"></li>
 </ol>
 </div>
 </section>
-<section id="dashboards-3" class="slide level2">
+<section id="dashboards-3" class="slide level2 scrollable">
+<h2>Dashboards</h2>
+<div class="small-par">
+<ul>
+<li>Un dashboard consiste de varios componentes:</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Páginas, Filas, Columnas, Tabsets</strong>: Páginas, filas y columnas se definen usando headings de markdown (con atributos opcionales que controlan la altura, el ancho, etc). Tabsets permiten divisiones adicionales dentro de una fila o columna. <br> <span class="small-par"></span> <img data-src="images/dashboard_example_components_pres_02.png" style="width:100.0%"></li>
+</ol>
+</div>
+</section>
+<section id="dashboards-4" class="slide level2 scrollable">
+<h2>Dashboards</h2>
+<div class="small-par">
+<ul>
+<li>Un dashboard consiste de varios componentes:</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Páginas, Filas, Columnas, Tabsets</strong>: Páginas, filas y columnas se definen usando headings de markdown (con atributos opcionales que controlan la altura, el ancho, etc). Tabsets permiten divisiones adicionales dentro de una fila o columna. <br> <span class="small-par"></span> <img data-src="images/dashboard_example_components_pres_03.png" style="width:100.0%"></li>
+</ol>
+</div>
+</section>
+<section id="dashboards-5" class="slide level2 scrollable">
+<h2>Dashboards</h2>
+<div class="small-par">
+<ul>
+<li>Un dashboard consiste de varios componentes:</li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Cards, Sidebars, and Toolbars</strong>: Cards pueden contener plots, visualizaciones de datos y contenido de forma libre. Sidebars y toolbars se usan para presentar inputs en dashboards interactivos. <span class="small-par"></span> <img data-src="images/dashboard_example_components_pres_04.png" style="width:120.0%"></li>
+</ol>
+</div>
+</section>
+<section id="dashboards-6" class="slide level2">
 <h2>Dashboards</h2>
 <div class="small-par">
 <div class="sourceCode" id="annotated-cell-39"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-39-1"><a href="#annotated-cell-39-1"></a><span class="sc">---</span></span>
@@ -1437,6 +1474,27 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 <span data-code-cell="annotated-cell-39" data-code-lines="70" data-code-annotation="8">La segunda fila de la segunda página incluye dos bloques de código, que son automáticamente separados en dos tarjetas adyacentes.</span>
 </dd>
 </dl>
+</div>
+</section>
+<section id="dashboards-ejercicio" class="slide level2 scrollable">
+<h2>Dashboards | Ejercicio</h2>
+<div class="small-par">
+<ol type="1">
+<li>Trabajaremos en una copia del mismo dashboard que hemos visto en las diapositivas anteriores y usaremos el dataset <strong>gapminder</strong>.
+<ul>
+<li>Cree una copia del archivo <strong>dashboard_example.qmd</strong> y llámela <strong>dashboard_example_ejercicio.qmd</strong>.</li>
+</ul></li>
+<li>Agregue al dashboard una tercera página llamada <strong>Ejercicio</strong>, que tenga dos columnas.
+<ul>
+<li>Recuerda especificar la orientación adecuada en la página.</li>
+</ul></li>
+<li>En la primera columna (izquierda), muestre una tabla que contenga la expectativa de vida (columna <strong>lifeExp</strong>) y el GDP per cápita (columna <strong>gdpPercap</strong>) sólo de Chile, Argentina y Brasil, en todo el rango de tiempo disponible.</li>
+<li>En la segunda columna (derecha), cree dos tabsets.
+<ul>
+<li>El primer tabset debería mostrar un gráfico de la expectativa de vida en el tiempo, para los tres países.</li>
+<li>El segundo tabset debería mostrar un gráfico de la evolución en el tiempo del GDP per cápita en cada país.</li>
+</ul></li>
+</ol>
 </div>
 <div class="quarto-auto-generated-content">
 <p><img src="images/logo_portada2.png" class="slide-logo"></p>
@@ -1611,7 +1669,7 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
         backgroundTransition: 'none',
 
         // Number of slides away from the current that are visible
-        viewDistance: 3,
+        viewDistance: 50,
 
         // Number of slides away from the current that are visible on mobile
         // devices. It is advisable to set this to a lower number than
@@ -1993,7 +2051,7 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
+    <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
     (function() {
       let previousOnload = window.onload;
       window.onload = () => {
