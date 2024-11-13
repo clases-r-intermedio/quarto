@@ -3,6 +3,7 @@
 # author: ""
 format:
   revealjs:
+    output-file: "index.html"
     auto-stretch: false
     margin: 0
     slide-number: true
@@ -130,6 +131,16 @@ quarto render document_html.qmd -t html -o document_html.html
 :::
 
 ### Revealjs
+
+::: {.r-stack fragment-index=0 .center}
+
+![](images/example_document_revealjs_01.png){.fragment .fade-in-then-out width="60%"}
+
+![](images/example_document_revealjs_02.png){.fragment .fade-in-then-out width="60%"}
+
+![](images/example_document_revealjs_03.png){.fragment .fade-in-then-out width="60%"}
+
+:::
 
 :::
 
@@ -259,7 +270,58 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 
 ### Revealjs
 
+```` r
 
+---
+title: "Documento Revealjs"
+subtitle: "Ejemplo de documento generado en Quarto"
+date: today
+author: "Capacitación R Intermedio"
+format:
+  revealjs: # <1>
+    output-file: "document_revealjs.html"  
+    margin: 0 # <2>
+    slide-number: false # <3>
+    scrollable: true # <3>
+    logo: images/logo_portada2.png # <4>
+    # footer: "ejemplo de footer" # <4>
+    css: document_revealjs_styles.css # <5>
+---
+
+
+## Capítulo 1 | Sección 1
+
+```{{r}}
+#| echo: true
+#| eval: true
+#| warning: false
+#| code-fold: true
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+ggplot(airquality, aes(temp_celsius, Ozone)) +
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+````
+1. Algunas opciones específicas del formato: 
+2. `margin` fija el factor del tamaño de visualización que debe permanecer vacío alrededor del contenido (por defecto 0.1).
+[Otros parámetros](https://quarto.org/docs/presentations/revealjs/advanced.html) que controlan el tamaño y margen de las láminas son: `width`, `height`, `min-scale`, `max-scale`. 
+3. `slide-number` permite incluir o no los números de las láminas y `scrollable` permite hacer *scrolling* para mostrar contenido que queda fuera de los márgenes normales de una lámina. 
+4. `logo` y `footer` permiten incluir una imagen y un pie de página al pie de cada lámina.
+5. `css` permite incluir un archivo con estilos **CSS** personalizados, que pueden mejorar la visualización.
+Por ejemplo el archivo document_revealjs_styles.css contiene tres clases **CSS** usadas para: <br> 
+  **.reveal .code**: ajustar el tamaño de bloques de código. <br>
+  **.reveal .slide-logo**: ajustar el tamaño del logo. <br>
+  **.reveal h2**: personalizar un header de nivel 2 que incluya un banner institucional.
 :::
 
 
@@ -319,13 +381,14 @@ quarto::quarto_render("hello.qmd")
   ![](images/rstudio_source_and_visual.png){width="100%"}
 :::
 
-### Ejercicio!
-
-::: {.incremental .small-par}
-* **TODO:** add list of short exercises to edit and render some of the presented docs.
 :::
 
 
+
+## Documentos Quarto | Ejercicio
+
+::: {.small-par}
+1) **TODO:** add list of short exercises to edit and render some of the presented docs.
 :::
 
 
@@ -972,7 +1035,7 @@ gapminder %>%
 ## Dashboards | Ejercicio
 
 ::: {.small-par}
-1)  Trabajaremos en una copia del mismo dashboard que hemos visto en las diapositivas anteriores y usaremos el dataset **gapminder**.
+1)  Trabajaremos en una copia del mismo dashboard que hemos visto en las láminas anteriores y usaremos el dataset **gapminder**.
     - Cree una copia del archivo **dashboard_example.qmd** y llámela **dashboard_example_ejercicio.qmd**.
 2)  Agregue al dashboard una tercera página llamada **Ejercicio**, que tenga dos columnas.
     - Recuerda especificar la orientación adecuada en la página.
