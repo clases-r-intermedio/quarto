@@ -2,4 +2,6 @@ hello_files/
 airquality_files/
 mermaid_files/
 dashboard_example_files/
+document_revealjs_files/
 .quarto/
+images/*.svg
