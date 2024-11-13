@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Cabin:600,600i&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap);
+
+:root {
+  /* Fonts */
+  --text-font-family: 'Noto Sans';
+  --text-font-is-google: 1;
+  --text-font-family-fallback: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial;
+  --text-font-base: sans-serif;
+  --header-font-family: Cabin;
+  --header-font-is-google: 1;
+  --code-font-family: 'Source Code Pro';
+  --code-font-is-google: 1;
+  --base-font-size: 10px;
+  --text-font-size: 28px;
+  --code-font-size: 0.8rem;
+  --code-inline-font-size: 1em;
+  --header-h1-font-size: 2.25rem;
+  --header-h2-font-size: 1.4rem;
+  --header-h3-font-size: 1.2rem;
+
+  /* Colors */
+  --text-color: black;
+  --header-color: black;
+  /*--header-color: white;*/
+  /*--background-color: #FFFFFF;*/
+  --background-color: white;
+  --link-color: #1381B0;
+  --text-bold-color: black;
+  --code-highlight-color: rgba(255,255,0,0.5); 
+  --inverse-text-color: #000000;
+  --inverse-background-color: blue;
+  --inverse-header-color: #FFFFFF;
+  --title-slide-background-color: #1381B0;
+  --title-slide-text-color: #000000;
+  --header-background-color: #1381B0;
+  --header-background-text-color: #FFFFFF;
+  --primary: #1381B0;
+  --secondary: #FF961C;
+  --white: #FFFFFF;
+  --black: #000000;
+}
+
+/* Set format for code blocks */
+.reveal code {
+  font-size: 15px; /* Adjust the font size as needed */
+}
+
+/* Set custom size of slide logo */
+.reveal .slide-logo {
+  height: 80px !important;
+  width: 80px !important;
+  max-width: unset !important;
+  max-height: unset !important;
+}
+
+/* Set custom format for header of second level */
+.reveal h2 {
+  background-image: url('images/logo_ine_pres.png'); /* Replace with your image URL */
+  background-repeat: no-repeat;
+  background-position: right center; /* Align the image to the right and vertically centered */
+  background-size: 100% auto; /* Adjust the image size to cover the container */
+  color: white; /* Text color */
+  text-align: left; /* align the text */
+  font-size: 45px;
+  margin-top: 5px;
+  margin-left: 0px;
+  /* padding-left: 10px; */
+  /* padding-top: 10px;   */
+  padding: 5px 0px 5px 10px; /* top right bottom left */
+}
