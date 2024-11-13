@@ -4,13 +4,14 @@ format: html
 ---
 
 ```{r}
-#| label: fig
+#| label: fig-one
+#| warning: false
 #| fig-cap: Temperatura y nivel de ozono.
 
 library(tidyverse)
 library(ggplot2)
 
-print(dim(airquality))
+# print(dim(airquality))
 
 airquality <- airquality %>% 
   mutate(
@@ -18,7 +19,7 @@ airquality <- airquality %>%
     temp_celsius = (Temp - 32)*5/9
   )
 
-print(names(airquality))
+# print(names(airquality))
 
 ggplot(airquality, aes(temp_celsius, Ozone)) +
   geom_point() + 
