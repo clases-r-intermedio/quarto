@@ -408,13 +408,15 @@ Visualice que el nuevo contenido aparezca en el documento de Quarto.
    - Agregue una clase <span style="color:#4758ab;"> .custom-code-1 </span> y use esta clase para cambiar la apariencia del bloque de código que aparece en la **Sección 2**.
    ``` markdown
    .custom-code-1{
-     font-size: 1.8rem
+     font-size: 1.5rem
    }
    ```
    - Agregue una segunda clase <span style="color:#4758ab;"> .custom-text-1 </span> y úsela para cambiar la apariencia de la tabla que aparece en la **Sección 2**.
    ``` markdown
    .custom-text-1{
-     font-size: 1.8rem
+     font-size: 1.5rem;
+     font-style: italic;
+     background-color: rgb(243, 234, 137);
    }
    ```      
    - Para aplicar una clase a un elemento del documento, debemos encerrarlo entre elementos html <span style="color:#4758ab;"> div </span>, por ejemplo para un bloque de código:
@@ -1099,8 +1101,8 @@ gapminder %>%
     - Cree una copia del archivo <span style="color:#4758ab;"> dashboard_example.qmd</span> y llámela <span style="color:#4758ab;"> ejercicio_dashboard.qmd</span>.
 2)  Agregue al dashboard una tercera página llamada **Ejercicio**, que tenga dos columnas.
     - Recuerda especificar la orientación adecuada en la página.
-3)  En la primera columna (izquierda), muestre una tabla que contenga la expectativa de vida (columna **lifeExp**) y el GDP per cápita (columna **gdpPercap**) sólo de Chile, Argentina y Brasil, en todo el rango de tiempo disponible.
+3)  En la primera columna (izquierda), muestre una tabla que contenga la expectativa de vida (columna **lifeExp**), el GDP per cápita (columna **gdpPercap**) y el tiempo (columna **year**) para los países (columna **country**) de Chile, Argentina y Brasil, en todo el rango de tiempo disponible.
 4)  En la segunda columna (derecha), cree dos tabsets.
-    - El primer tabset debería mostrar un gráfico de **expectativa de vida versus tiempo**, para los tres países.
-    - El segundo tabset debería mostrar un gráfico de la **evolución en el tiempo del GDP per cápita** en cada país. 
+    - El primer tabset debería mostrar un gráfico de **expectativa de vida versus tiempo**, para los tres países. El título del tabset debe ser **Expectativa de vida en el tiempo**. 
+    - El segundo tabset debería mostrar un gráfico de la **evolución en el tiempo del GDP per cápita** en cada país. El título del tabset debe ser **GDP per cápita en el tiempo**.  
 :::

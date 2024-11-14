@@ -803,14 +803,16 @@ quarto::quarto_render("hello.qmd")
 <li>Agregue una clase <span style="color:#4758ab;"> .custom-code-1 </span> y use esta clase para cambiar la apariencia del bloque de código que aparece en la <strong>Sección 2</strong>.</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href=""></a>.custom-code-1{</span>
-<span id="cb3-2"><a href=""></a>  font-size: 1.8rem</span>
+<span id="cb3-2"><a href=""></a>  font-size: 1.5rem</span>
 <span id="cb3-3"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Agregue una segunda clase <span style="color:#4758ab;"> .custom-text-1 </span> y úsela para cambiar la apariencia de la tabla que aparece en la <strong>Sección 2</strong>.</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href=""></a>.custom-text-1{</span>
-<span id="cb4-2"><a href=""></a>  font-size: 1.8rem</span>
-<span id="cb4-3"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href=""></a>  font-size: 1.5rem;</span>
+<span id="cb4-3"><a href=""></a>  font-style: italic;</span>
+<span id="cb4-4"><a href=""></a>  background-color: rgb(243, 234, 137);</span>
+<span id="cb4-5"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Para aplicar una clase a un elemento del documento, debemos encerrarlo entre elementos html <span style="color:#4758ab;"> div </span>, por ejemplo para un bloque de código:</li>
 </ul>
@@ -1613,11 +1615,12 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 <ul>
 <li>Recuerda especificar la orientación adecuada en la página.</li>
 </ul></li>
-<li>En la primera columna (izquierda), muestre una tabla que contenga la expectativa de vida (columna <strong>lifeExp</strong>) y el GDP per cápita (columna <strong>gdpPercap</strong>) sólo de Chile, Argentina y Brasil, en todo el rango de tiempo disponible.</li>
+<li>En la primera columna (izquierda), muestre una tabla que contenga la expectativa de vida (columna <strong>lifeExp</strong>), el GDP per cápita (columna <strong>gdpPercap</strong>) y el tiempo (columna <strong>year</strong>) para los países (columna <strong>country</strong>) de Chile, Argentina y Brasil, en todo el rango de tiempo disponible.</li>
 <li>En la segunda columna (derecha), cree dos tabsets.
 <ul>
-<li>El primer tabset debería mostrar un gráfico de <strong>expectativa de vida versus tiempo</strong>, para los tres países.</li>
-<li>El segundo tabset debería mostrar un gráfico de la <strong>evolución en el tiempo del GDP per cápita</strong> en cada país.</li>
+<li>El primer tabset debería mostrar un gráfico de <strong>expectativa de vida versus tiempo</strong>, para los tres países. El título del tabset debe ser <strong>Expectativa de vida en el tiempo</strong>.</li>
+<li>El segundo tabset debería mostrar un gráfico de la <strong>evolución en el tiempo del GDP per cápita</strong> en cada país. El título del tabset debe ser <strong>GDP per cápita en el tiempo</strong>.<br>
+</li>
 </ul></li>
 </ol>
 </div>
@@ -2176,7 +2179,7 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+    <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false});
     (function() {
       let previousOnload = window.onload;
       window.onload = () => {
