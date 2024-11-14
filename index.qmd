@@ -138,11 +138,11 @@ quarto render document_html.qmd -t html -o document_html.html
 
 ::: {.r-stack fragment-index=0 .center}
 
-![](images/example_document_revealjs_01.png){.fragment .fade-in-then-out width="60%"}
+![](images/example_document_revealjs_01.png){.fragment .fade-in-then-out width="90%"}
 
-![](images/example_document_revealjs_02.png){.fragment .fade-in-then-out width="60%"}
+![](images/example_document_revealjs_02.png){.fragment .fade-in-then-out width="90%"}
 
-![](images/example_document_revealjs_03.png){.fragment .fade-in-then-out width="60%"}
+![](images/example_document_revealjs_03.png){.fragment .fade-in-then-out width="90%"}
 
 :::
 
@@ -214,7 +214,8 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 2. Se especifica el formato de salida y opcionalmente el nombre del documento que será creado.
 3. Algunas opciones comunes para varios formatos: <span style="color:#4758ab;">toc</span> permite agregar una tabla de contenidos (toc) generada automáticamente, con título <span style="color:#4758ab;">toc-title</span>. 
 Además <span style="color:#4758ab;">toc-depth</span> determina el número de niveles de secciones que serán mostrados en la toc.
-4. Algunas opciones específicas del formato: <span style="color:#4758ab;">html-math-method</span> define el método usado para renderizar ecuaciones LaTeX. <span style="color:#4758ab;">code-line-numbers</span> permite incluir número de línea en bloques de código. Simples modificaciones en la apariencia del documento pueden agregando en un documento <span style="color:#4758ab;">css</span>.
+4. Algunas opciones específicas del formato: <span style="color:#4758ab;">html-math-method</span> define el método usado para renderizar ecuaciones LaTeX. <span style="color:#4758ab;">code-line-numbers</span> permite incluir número de línea en bloques de código. 
+Modificaciones en la apariencia del documento pueden agregarse con estilos **CSS** personalizados en un documento <span style="color:#4758ab;">css</span>.
 </div>
 
 
@@ -367,7 +368,7 @@ Por ejemplo el archivo document_revealjs_styles.css contiene tres clases **CSS**
 :::
 ::: {.small-par}
 * También es posible renderizar el documento y actualizar la previsualización cada vez que guardemos el documento. <br>
-Esto se consigue activando la casilla "Render on Save".
+Esto se consigue activando la casilla **Render on Save**.
   []{.small-par}
   ![](images/rstudio_render_on_save.png){width="60%"}
 :::
@@ -396,10 +397,34 @@ quarto::quarto_render("hello.qmd")
 
 
 
-## Documentos Quarto | Ejercicio
+## Ejercicio 1
 
 ::: {.small-par}
-1) **TODO:** add list of short exercises to edit and render some of the presented docs.
+1) Usando RStudio, cree un nuevo documento Quarto llamado <span style="color:#4758ab;"> ejercicio_documento_html.qmd</span>, que tenga formato HTML.
+2) Active la casilla **Render on Save** en RStudio, para que cuda vez que guarde el documento éste sea renderizado y se actualice su previsualización.
+3) Copie el contenido del archivo <span style="color:#4758ab;"> document_html.qmd</span>, excepto por la **Sección 3**, en el nuevo archivo creado.
+Visualice que el nuevo contenido aparezca en el documento de Quarto.
+4) Cree un archivo llamado <span style="color:#4758ab;"> ejercicio_documento_html.css</span>, en el cual agregaremos algunos estilos CSS para modificar la apariencia de algunos elementos del documento:
+   - Agregue una clase <span style="color:#4758ab;"> .custom-code-1 </span> y use esta clase para cambiar la apariencia del bloque de código que aparece en la **Sección 2**.
+   ``` markdown
+   .custom-code-1{
+     font-size: 1.8rem
+   }
+   ```
+   - Agregue una segunda clase <span style="color:#4758ab;"> .custom-text-1 </span> y úsela para cambiar la apariencia de la tabla que aparece en la **Sección 2**.
+   ``` markdown
+   .custom-text-1{
+     font-size: 1.8rem
+   }
+   ```      
+   - Para aplicar una clase a un elemento del documento, debemos encerrarlo entre elementos html <span style="color:#4758ab;"> div </span>, por ejemplo para un bloque de código:
+   ```` markdown
+   <div class=custom-code-1>
+   ```{{r}}
+   library(ggplot2)
+   ```
+   </div>
+   ````
 :::
 
 
@@ -489,57 +514,57 @@ quarto::quarto_render("hello.qmd")
 
 ::: {.small-par}
 
-+-----------------------------------+---------------------------------+
-| Sintaxis Markdown                 | Output                          |
-+===================================+=================================+
-| ``` markdown                      |                                 |
-| * unordered list                  | * unordered list                |
-|     + sub-item 1                  |     + sub-item 1                |
-|     + sub-item 2                  |     + sub-item 2                |
-|         - sub-sub-item 1          |         - sub-sub-item 1        |
-| ```                               |                                 |
-+-----------------------------------+---------------------------------+
-| ``` markdown                      |                                 |
-| *   item 2                        | -   item 2                      |
-|                                   |                                 |
-|     Continued (indent 4 spaces)   |     Continued (indent 4 spaces) |
-| ```                               |                                 |
-+-----------------------------------+---------------------------------+
-| ``` markdown                      |                                 |
-| 1. ordered list                   |  1. ordered list                |
-| 2. item 2                         |  2. item 2                      |
-|     i) sub-item 1                 |      i) sub-item 1              |
-|          A.  sub-sub-item 1       |           A.  sub-sub-item 1    |
-| ```                               |                                 |
-+-----------------------------------+---------------------------------+
-| ``` markdown                      |                                 |
-| - [ ] Task 1                      | - [ ] Task 1                    |
-| - [x] Task 2                      | - [x] Task 2                    |
-| ```                               |                                 |
-+-----------------------------------+---------------------------------+
-| ``` markdown                      |                                 |
-| (@)  A list whose numbering       |  (1) A list whose numbering     |
-|                                   |                                 |
-| continues after                   |  continues after                |
-|                                   |                                 |
-| (@)  an interruption              |  (2) an interruption            |
-| ```                               |                                 |
-+-----------------------------------+---------------------------------+
-| ``` markdown                      |                                 |
-| ::: {}                            | ::: {}                          |
-| 1. A list                         | 1. A list                       |
-| :::                               | :::                             |
-|                                   |                                 |
-| ::: {}                            | ::: {}                          |
-| 1. Followed by another list       | 1. Followed by another list     |
-| :::                               | :::                             |
-| ```                               |                                 |
-+-----------------------------------+---------------------------------+
-| ``` markdown                      |                                 |
-| term                              | term                            |
-| : definition                      | : definition                    |
-| ```                               |                                 |
-+-----------------------------------+---------------------------------+
++------------------------------------------------+------------------------------------------------------------------------------------+
+| Sintaxis Markdown                              | Output                                                                             |
++================================================+====================================================================================+
+| ``` markdown                                   | ::: {.small-par}                                                                   |
+| * lista no numerada                            | * lista no numerada                                                                |
+|     + sub-item 1                               |   + sub-item 1                                                                     |
+|     + sub-item 2                               |   + sub-item 2                                                                     |
+|         - sub-sub-item 1                       |     - sub-sub-item 1                                                               |
+| ```                                            | :::                                                                                |
++------------------------------------------------+------------------------------------------------------------------------------------+
+| ``` markdown                                   |                                                                                    |
+| *   item 2                                     | -   <span style="font-size:16.0pt">item 2</span>                                   |
+|                                                |                                                                                    |
+|     Continuación (indentación de 4 espacios)   |     <span style="font-size:16.0pt">Continuación (indentación de 4 espacios)</span> |
+| ```                                            |                                                                                    |
++------------------------------------------------+------------------------------------------------------------------------------------+
+| ``` markdown                                   |                                                                                    |
+| 1. lista numerada                              |  1. lista numerada                                                                 |
+| 2. item 2                                      |  2. item 2                                                                         |
+|     i) sub-item 1                              |      i) sub-item 1                                                                 |
+|          A.  sub-sub-item 1                    |           A.  sub-sub-item 1                                                       |
+| ```                                            |                                                                                    |
++------------------------------------------------+------------------------------------------------------------------------------------+
+| ``` markdown                                   |                                                                                    |
+| - [ ] Tarea 1                                  | - [ ] Tarea 1                                                                      |
+| - [x] Tarea 2                                  | - [x] Tarea 2                                                                      |
+| ```                                            |                                                                                    |
++------------------------------------------------+------------------------------------------------------------------------------------+
+| ``` markdown                                   |                                                                                    |
+| (@)  Lista cuya numeración                     |  (1) Lista cuya numeración                                                         |
+|                                                |                                                                                    |
+| continúa después                               |  <span style="font-size:16.0pt">continúa después</span>                            |
+|                                                |                                                                                    |
+| (@)  de una interrupción                       |  (2) de una interrupción                                                           |
+| ```                                            |                                                                                    |
++------------------------------------------------+------------------------------------------------------------------------------------+
+| ``` markdown                                   |                                                                                    |
+| ::: {}                                         | ::: {}                                                                             |
+| 1. Lista                                       | 1. Lista                                                                           |
+| :::                                            | :::                                                                                |
+|                                                |                                                                                    |
+| ::: {}                                         | ::: {}                                                                             |
+| 1. Seguida de otra lista                       | 1. Seguida de otra lista                                                           |
+| :::                                            | :::                                                                                |
+| ```                                            |                                                                                    |
++------------------------------------------------+------------------------------------------------------------------------------------+
+| ``` markdown                                   |                                                                                    |
+| término                                        | término                                                                            |
+| : definición                                   | : definición                                                                       |
+| ```                                            |                                                                                    |
++------------------------------------------------+------------------------------------------------------------------------------------+
 
 :::
 
@@ -548,7 +573,8 @@ quarto::quarto_render("hello.qmd")
 
 ::: {.small-par}
 - Contenido raw puede ser incluido directamente sin parseo de Quarto usando el [atributo raw de Pandoc](https://pandoc.org/MANUAL.html#extension-raw_attribute).
-Un bloque raw comienza con ` ```{=` seguido por un formato y finaliza con `}`. Por ejemplo, aquí vemos un bloque raw HTML: 
+Un bloque raw comienza con <span style="color:#4758ab;">```` ```{=formato} ```` </span>. 
+Por ejemplo, aquí vemos un bloque raw HTML: 
 :::
 
 ```` markdown
@@ -565,22 +591,22 @@ Un bloque raw comienza con ` ```{=` seguido por un formato y finaliza con `}`. P
 ### Ecuaciones
 
 ::: {.small-par}
-- Ecuaciones matemáticas pueden incluirse en modo `inline` usando el delimitador `$` o en modo `display` con el delimitador `$$`. Por ejemplo
+- Ecuaciones matemáticas pueden incluirse en modo <span style="color:#4758ab;">inline</span> usando el delimitador <span style="color:#4758ab;"> $ </span> o en modo <span style="color:#4758ab;"> display </span> con el delimitador <span style="color:#4758ab;"> $$ </span>. Por ejemplo
 :::
 
-+-------------------------------+-----------------------------+
-| Sintaxis Markdown             | Output                      |
-+===============================+=============================+
-| ``` markdown                  |                             |
-| método `inline`: $E = mc^{2}$ | método `inline`: $E=mc^{2}$ |
-| ```                           |                             |
-+-------------------------------+-----------------------------+
-| ``` markdown                  |                             |
-| método `display`:             | método `display`:           |
-|                               |                             |
-| $$E = mc^{2}$$                | $$E = mc^{2}$$              |
-| ```                           |                             |
-+-------------------------------+-----------------------------+
++-------------------------------+---------------------------------------------------------------+
+| Sintaxis Markdown             | Output                                                        |
++===============================+===============================================================+
+| ``` markdown                  |                                                               |
+| método `inline`: $E = mc^{2}$ | método <span style="color:#4758ab;">inline</span>: $E=mc^{2}$ |
+| ```                           |                                                               |
++-------------------------------+---------------------------------------------------------------+
+| ``` markdown                  |                                                               |
+| método `display`:             | método  <span style="color:#4758ab;">display</span>:          |
+|                               |   $$E = mc^{2}$$                                              |
+| $$E = mc^{2}$$                |                                                               |
+| ```                           |                                                               |
++-------------------------------+---------------------------------------------------------------+
 
 
 :::
@@ -600,33 +626,29 @@ Un bloque raw comienza con ` ```{=` seguido por un formato y finaliza con `}`. P
 
 ::: {.small-par}
 
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| Sintaxis Markdown                                            | Output                                                                                                 |
-+==============================================================+========================================================================================================+
-| ``` markdown                                                 | <https://quarto.org>                                                                                   |
-| <https://quarto.org>                                         |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | [Quarto](https://quarto.org)                                                                           |
-| [Quarto](https://quarto.org)                                 |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | ![Elefante](images/elephant.png){.lightbox}                                                            |
-| ![Elefante](elephant.png){.lightbox}                         |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | [![Elefante](images/elephant.png)](https://quarto.org)                                                 |
-| [![Elefante](elephant.png)](https://quarto.org)              |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | [![Elefante](images/elephant.png "Un elefante"){fig-alt="Un elefante."}](https://quarto.org)           |
-| [![Elefante](elephant.png "Un elefante")](https://quarto.org)|                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | [![](images/elephant.png){fig-alt="Un elefante."}](https://quarto.org)                                 |
-| [![](elephant.png){fig-alt="Alt text"}](https://quarto.org)  |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| Sintaxis Markdown                                                            | Output                                                                                        |
++==============================================================================+===============================================================================================+
+| ``` markdown                                                                 | <https://quarto.org>                                                                          |
+| <https://quarto.org>                                                         |                                                                                               |
+| ```                                                                          |                                                                                               |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| ``` markdown                                                                 | [Quarto](https://quarto.org)                                                                  |
+| [Quarto](https://quarto.org)                                                 |                                                                                               |
+| ```                                                                          |                                                                                               |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| ``` markdown                                                                 | ![Elefante](images/elephant.png){.lightbox}                                                   |
+| ![Elefante](elephant.png){.lightbox}                                         |                                                                                               |
+| ```                                                                          |                                                                                               |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| ``` markdown                                                                 | [![Elefante](images/elephant.png "Un elefante"){fig-alt="Un elefante."}](https://quarto.org)  |
+| [![Elefante](elephant.png "Un elefante")](https://quarto.org)                |                                                                                               |
+| ```                                                                          |                                                                                               |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| ``` markdown                                                                 | [![](images/elephant.png){fig-alt="Un elefante."}](https://quarto.org)                        |
+| [![](elephant.png){fig-alt="Texto si imagen no carga"}](https://quarto.org)  |                                                                                               |
+| ```                                                                          |                                                                                               |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 :::
 
@@ -686,8 +708,12 @@ flowchart LR
 - Quarto permite renderizar bloques de código de varios lenguajes (por ejemplo R, Python, Julia).
 - En particular, para renderizar y ejecutar código R, Quarto usa [Knitr](https://yihui.org/knitr/), al igual que R Markdown.
 - Bloques de código serán ejecutados al renderizar si comienzan con <span style="color:#4758ab;">```` ```{r} ```` </span> y terminan con <span style="color:#4758ab;">```` ``` ```` </span>.
-- Comportamiento del bloque de código puede ser configurado usando comentarios especiales al comienzo del bloque (por ejemplo: echo, eval).
-  - **TODO:** Diferencia con R Markdown.
+- El comportamiento del bloque de código puede ser configurado usando comentarios especiales al comienzo del bloque, identificados por <span style="color:#4758ab;">```` #| ```` </span>. Por ejemplo:
+  - <span style="color:#4758ab;"> echo: TRUE </span> permite mostrar el código en renderizar, mientras que no se muestra con <span style="color:#4758ab;"> echo: FALSE </span>.
+  - <span style="color:#4758ab;"> eval: TRUE </span> hace que el código se evalúe al renderizar, mientras que no se evalúa con <span style="color:#4758ab;"> eval: FALSE </span>.
+  - <span style="color:#4758ab;"> warning: false </span> omite warnings encontrados al evaluar el bloque de código.
+- Ésta es una diferencia importante con R Markdown, donde el comportamiento del código es definido en la primera línea, por ejemplo usando <span style="color:#4758ab;"> ```{r, echo = false}. </span>
+  - Quarto en cambio usa la sintaxis basada en <span style="color:#4758ab;">```` #| ```` </span> para acomodar mejor opciones más largas como <span style="color:#4758ab;"> fig-cap </span>, <span style="color:#4758ab;"> fig-subcap </span> o <span style="color:#4758ab;"> fig-alt </span> y crear documentos de forma más portables y consistente. 
 :::
 
 . . .
@@ -696,10 +722,10 @@ flowchart LR
 <div class=custom-code-1>
 ```` markdown
 ```{{r}}
-#| warning: false
 #| fig-cap: "Temperatura y nivel de ozono."
-#| echo: TRUE
-#| eval: TRUE
+#| echo: true
+#| eval: true
+#| warning: false
 
 library(tidyverse)
 library(ggplot2)
@@ -730,10 +756,10 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 <!-- @fig-airquality further explores the impact of temperature on ozone level. -->
 
 ```{r}
-#| warning: false
 #| fig-cap: "Temperatura y nivel de ozono."
-#| echo: FALSE
-#| eval: TRUE
+#| echo: false
+#| eval: true
+#| warning: false
 
 library(tidyverse)
 library(ggplot2)
@@ -776,10 +802,10 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 <div class=custom-code-1>
 ```` markdown
 ```{{r}}
-#| warning: false
 #| fig-cap: "Temperatura y nivel de ozono."
-#| echo: TRUE
-#| eval: FALSE
+#| echo: true
+#| eval: false
+#| warning: false
 
 library(tidyverse) # <1>
 library(ggplot2)
@@ -864,13 +890,28 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 
 . . .
 
-::: {.small-par}
+::: {.big-par}
 ```{.markdown shortcodes=false}
 {{< embed example_embed/airquality.qmd#fig-ozono-temp >}}
 ```
 :::
 
 {{< embed example_embed/airquality.qmd#fig-ozono-temp >}}
+
+
+
+## Ejercicio 2
+
+::: {.small-par}
+1) Usando RStudio, cree un nuevo documento Quarto llamado <span style="color:#4758ab;"> ejercicio_code_embed.qmd</span>, que tenga formato HTML.
+2) Active la casilla **Render on Save** en RStudio, para que cuda vez que guarde el documento éste sea renderizado y se actualice su previsualización.
+3) Copie el contenido del archivo <span style="color:#4758ab;"> ejercicio_documento_html.qmd </span> en el nuevo archivo creado.
+Visualice que el nuevo contenido aparezca en el documento de Quarto.
+4) Cree un archivo llamado <span style="color:#4758ab;"> code_embed.qmd</span>, que contenga un bloque de código que haga uso del dataset <span style="color:#4758ab;"> airquality </span> para generar un gráfico de Temperatura [°C] versus Viento [km/hr], teniendo en cuenta lo siguiente:
+   - Al renderizar el documento, el código debe mostrarse y evaluarse, además cualquier posible *warning* debe omitirse.
+   - El gráfico generado debe tener el caption "Gráfico de Temperatura versus Viento".
+5) Agregue un nuevo **Capítulo** al documento <span style="color:#4758ab;"> ejercicio_code_embed.qmd</span>, con una **Sección** que contenga el código y gráfico generados por el archivo <span style="color:#4758ab;"> code_embed.qmd</span>.
+:::
 
 
 
@@ -1051,15 +1092,15 @@ gapminder %>%
 
 
 
-## Dashboards | Ejercicio
+## Ejercicio 3
 
 ::: {.small-par}
-1)  Trabajaremos en una copia del mismo dashboard que hemos visto en las láminas anteriores y usaremos el dataset **gapminder**.
-    - Cree una copia del archivo **dashboard_example.qmd** y llámela **dashboard_example_ejercicio.qmd**.
+1)  Trabajaremos en una copia del mismo dashboard que hemos visto en las láminas anteriores y usaremos el dataset <span style="color:#4758ab;"> gapminder</span>.
+    - Cree una copia del archivo <span style="color:#4758ab;"> dashboard_example.qmd</span> y llámela <span style="color:#4758ab;"> ejercicio_dashboard.qmd</span>.
 2)  Agregue al dashboard una tercera página llamada **Ejercicio**, que tenga dos columnas.
     - Recuerda especificar la orientación adecuada en la página.
 3)  En la primera columna (izquierda), muestre una tabla que contenga la expectativa de vida (columna **lifeExp**) y el GDP per cápita (columna **gdpPercap**) sólo de Chile, Argentina y Brasil, en todo el rango de tiempo disponible.
 4)  En la segunda columna (derecha), cree dos tabsets.
-    - El primer tabset debería mostrar un gráfico de la expectativa de vida en el tiempo, para los tres países.
-    - El segundo tabset debería mostrar un gráfico de la evolución en el tiempo del GDP per cápita en cada país. 
+    - El primer tabset debería mostrar un gráfico de **expectativa de vida versus tiempo**, para los tres países.
+    - El segundo tabset debería mostrar un gráfico de la **evolución en el tiempo del GDP per cápita** en cada país. 
 :::
