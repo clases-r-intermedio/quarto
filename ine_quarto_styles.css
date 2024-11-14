@@ -14,8 +14,8 @@
   --code-font-is-google: 1;
   --base-font-size: 10px;
   --text-font-size: 28px;
-  --code-font-size: 0.8rem;
-  --code-inline-font-size: 1em;
+  --code-font-size: 3rem;
+  --code-inline-font-size: 40em;
   --header-h1-font-size: 2.25rem;
   --header-h2-font-size: 1.4rem;
   --header-h3-font-size: 1.2rem;
@@ -42,6 +42,14 @@
   --black: #000000;
 }
 
+.custom-code-1{
+  font-size: 1.8rem
+}
+
+.custom-code-2{
+  font-size: 1.5rem
+}
+
 
 /* 
 ----------------------------------------------------------------------------------------------------
@@ -56,9 +64,10 @@ They have effect on all the elements of a particular kind which are found in the
 }
 
 /* Set format for code blocks */
-.reveal code {
-  font-size: 15px; /* Adjust the font size as needed */
-}
+/* Adjust the font size as needed */
+/* .reveal code {
+  font-size: 18px; 
+} */
 
 /* .reveal section h2 {
   color: red;

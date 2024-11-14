@@ -88,6 +88,7 @@ code-annotations: below
 . . .
 
 ::: {.small-par}
+<div class=custom-code-1>
 ``` yaml
 ---
 title: "My Document"
@@ -96,14 +97,17 @@ format:
     output-file: "document_html.html"
 ---
 ```
+</div>
 :::
 
 []{.small-par}
 
 ::: {.small-par}
+<div class=custom-code-1>
 ``` {.bash filename="terminal"}
 quarto render document_html.qmd -t html -o document_html.html
 ```
+</div>
 :::
 
 
@@ -160,6 +164,7 @@ quarto render document_html.qmd -t html -o document_html.html
 
 ### HTML
 
+<div class=custom-code-2>
 ```` r
 
 ---
@@ -207,13 +212,15 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 ````
 1. Definiciones generales, comunes en múltiples formatos.
 2. Se especifica el formato de salida y opcionalmente el nombre del documento que será creado.
-3. Algunas opciones comunes para varios formatos: `toc` permite agregar una tabla de contenidos (toc) generada automáticamente, con título `toc-title`. 
-Además `toc-depth` determina el número de niveles de secciones que serán mostrados en la toc.
-4. Algunas opciones específicas del formato: `html-math-method` define el método usado para renderizar ecuaciones LaTeX. `code-line-numbers` permite incluir número de línea en bloques de código. Simples modificaciones en la apariencia del documento pueden agregando en un documento `css`.
+3. Algunas opciones comunes para varios formatos: <span style="color:#4758ab;">toc</span> permite agregar una tabla de contenidos (toc) generada automáticamente, con título <span style="color:#4758ab;">toc-title</span>. 
+Además <span style="color:#4758ab;">toc-depth</span> determina el número de niveles de secciones que serán mostrados en la toc.
+4. Algunas opciones específicas del formato: <span style="color:#4758ab;">html-math-method</span> define el método usado para renderizar ecuaciones LaTeX. <span style="color:#4758ab;">code-line-numbers</span> permite incluir número de línea en bloques de código. Simples modificaciones en la apariencia del documento pueden agregando en un documento <span style="color:#4758ab;">css</span>.
+</div>
 
 
 ### PDF
 
+<div class=custom-code-2>
 ```` r
 
 ---
@@ -263,13 +270,15 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 
 ````
 1. Algunas opciones específicas del formato: 
-2. `lof` y `lot` imprimen la lista de figuras y tablas en el documento. 
-3. `documentclass` define la clase del documento: las estándar `article`, `report`, `book` o sus equivalentes KOMA Script `scrartcl`, `scrreprt`, `scrbook`.
-4. `papersize` y `geometry` definen el tamaño del documento impreso y los márgenes del mismo.
+2.  <span style="color:#4758ab;">lof</span> y <span style="color:#4758ab;">lot</span> imprimen la lista de figuras y tablas en el documento. 
+3.  <span style="color:#4758ab;">documentclass</span> define la clase del documento: las estándar <span style="color:#4758ab;">article</span>,  <span style="color:#4758ab;">report</span>, <span style="color:#4758ab;">book</span> o sus equivalentes KOMA Script <span style="color:#4758ab;">scrartcl</span>, <span style="color:#4758ab;">scrreprt</span>, <span style="color:#4758ab;">scrbook</span>.
+4.  <span style="color:#4758ab;">papersize</span> y  <span style="color:#4758ab;">geometry</span> definen el tamaño del documento impreso y los márgenes del mismo.
+</div>
 
 
 ### Revealjs
 
+<div class=custom-code-2>
 ```` r
 
 ---
@@ -313,15 +322,17 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 
 ````
 1. Algunas opciones específicas del formato: 
-2. `margin` fija el factor del tamaño de visualización que debe permanecer vacío alrededor del contenido (por defecto 0.1).
-[Otros parámetros](https://quarto.org/docs/presentations/revealjs/advanced.html) que controlan el tamaño y margen de las láminas son: `width`, `height`, `min-scale`, `max-scale`. 
-3. `slide-number` permite incluir o no los números de las láminas y `scrollable` permite hacer *scrolling* para mostrar contenido que queda fuera de los márgenes normales de una lámina. 
-4. `logo` y `footer` permiten incluir una imagen y un pie de página al pie de cada lámina.
-5. `css` permite incluir un archivo con estilos **CSS** personalizados, que pueden mejorar la visualización.
+2. <span style="color:#4758ab;">margin</span> fija el factor del tamaño de visualización que debe permanecer vacío alrededor del contenido (por defecto 0.1).
+[Otros parámetros](https://quarto.org/docs/presentations/revealjs/advanced.html) que controlan el tamaño y margen de las láminas son: <span style="color:#4758ab;">width</span>, <span style="color:#4758ab;">height</span>, <span style="color:#4758ab;">min-scale</span>, <span style="color:#4758ab;">max-scale</span>. 
+3. <span style="color:#4758ab;">slide-number</span> permite incluir o no los números de las láminas y <span style="color:#4758ab;">scrollable</span> permite hacer *scrolling* para mostrar contenido que queda fuera de los márgenes normales de una lámina. 
+4. <span style="color:#4758ab;">logo</span> y <span style="color:#4758ab;">footer</span> permiten incluir una imagen y un pie de página al pie de cada lámina.
+5. <span style="color:#4758ab;">css</span> permite incluir un archivo con estilos **CSS** personalizados, que pueden mejorar la visualización.
 Por ejemplo el archivo document_revealjs_styles.css contiene tres clases **CSS** usadas para: <br> 
   **.reveal .code**: ajustar el tamaño de bloques de código. <br>
   **.reveal .slide-logo**: ajustar el tamaño del logo. <br>
   **.reveal h2**: personalizar un header de nivel 2 que incluya un banner institucional.
+</div>
+
 :::
 
 
@@ -674,7 +685,7 @@ flowchart LR
 ::: {.incremental .small-par}
 - Quarto permite renderizar bloques de código de varios lenguajes (por ejemplo R, Python, Julia).
 - En particular, para renderizar y ejecutar código R, Quarto usa [Knitr](https://yihui.org/knitr/), al igual que R Markdown.
-- Bloques de código serán ejecutados al renderizar si comienzan con ```` ```{r} ```` y terminan con ```` ``` ````.
+- Bloques de código serán ejecutados al renderizar si comienzan con <span style="color:#4758ab;">```` ```{r} ```` </span> y terminan con <span style="color:#4758ab;">```` ``` ```` </span>.
 - Comportamiento del bloque de código puede ser configurado usando comentarios especiales al comienzo del bloque (por ejemplo: echo, eval).
   - **TODO:** Diferencia con R Markdown.
 :::
@@ -682,6 +693,7 @@ flowchart LR
 . . .
 
 ::: {.small-par}
+<div class=custom-code-1>
 ```` markdown
 ```{{r}}
 #| warning: false
@@ -708,6 +720,7 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 
 ```
 ````
+</div>
 :::
 
 . . .
@@ -760,6 +773,7 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 . . .
 
 ::: {.small-par}
+<div class=custom-code-1>
 ```` markdown
 ```{{r}}
 #| warning: false
@@ -790,6 +804,7 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 3. Explorar nombres de columnas en dataset.
 4. Generar plot de Ozono versus Temperatura (celsius).
 ````
+</div>
 :::
 
 
@@ -805,6 +820,7 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 
 <!-- @fig-airquality further explores the impact of temperature on ozone level. -->
 
+<div class=custom-code-1>
 ```{r}
 #| warning: false
 #| fig-cap: "Temperatura y nivel de ozono."
@@ -833,6 +849,7 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 2. Convertir variables a unidades de medidas conocidas.
 3. Explorar nombres de columnas en dataset.
 4. Generar plot de Ozono versus Temperatura (celsius).
+</div>
 :::
 
 
@@ -840,9 +857,9 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 ## Embeds
 
 ::: {.incremental .small-par}
-- Podemos incluir el output de otro documento Quarto (`.qmd` or `.ipynb`) en nuestro documento, usando el comando `embed`.
+- Podemos incluir el output de otro documento Quarto (<span style="color:#4758ab;">.qmd</span> or <span style="color:#4758ab;">.ipynb</span>) en nuestro documento, usando el comando <span style="color:#4758ab;">embed</span>.
 - Para embeber el output de un bloque de código (o una celda de notebook), usamos la ruta al documento y la etiqueta del bloque en el documento.
-- Por ejemplo, el documento `airquality.qmd` tiene un bloque de código con etiqueta `fig-ozono-viento` y podemos embeber el output de ese bloque usando:
+- Por ejemplo, el documento  <span style="color:#4758ab;">airquality.qmd</span> tiene un bloque de código con etiqueta <span style="color:#4758ab;">fig-ozono-viento</span> y podemos embeber el output de ese bloque usando:
 :::
 
 . . .
@@ -864,7 +881,7 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 - Es posible usar una variedad de componentes, incluyendo [Plotly](https://plotly.com/python/), [Leaflet](https://ipyleaflet.readthedocs.io/en/latest/), Jupyter Widgets, [htmlwidgets](https://www.htmlwidgets.org/); gráficos estáticos (Matplotlib, Seaborn, ggplot2, etc.); datos tabulares; anotaciones de texto, etc.
 - Usando Layouts es posible organizar la información en filas y columnas de manera fácil y flexible.
   - Los componentes son redimensionados de forma inteligente para adaptar la visualización al navegador en dispositivos móviles.
-- Los dashboards pueden crearse usando cualquier editor de notebook usando Jupyter notebooks (`.ipynb`) o documentos markdown (`.qmd`).
+- Los dashboards pueden crearse usando cualquier editor de notebook usando Jupyter notebooks (<span style="color:#4758ab;">.ipynb</span>) o documentos markdown (<span style="color:#4758ab;">.qmd</span>).
 - Y pueden ser desplegados como páginas web estáticas (sin requerir un servidor) o integrando un backend [Shiny Server](/docs/dashboards/interactivity/shiny-python/index.qmd) para aumentar la interactividad.
 :::
 
@@ -929,6 +946,7 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 ## Dashboards
 
 ::: {.small-par}
+<div class=custom-code-2>
 ```` r
 ---
 title: "Ejemplo de Dashboard" # <1>
@@ -1020,14 +1038,15 @@ gapminder %>%
 ```
 
 ````
-1.  La barra de navegación se pobla con el título (`title`) y el autor (`author`), tal como en otros formatos de documentos (html, pdf, etc). También puede incluirse un `logo`.
-2.  Por defecto, las páginas de un dashboard se ordenan primero por filas y luego por columns. Pero esto puede invertirse específicando la opción `orientation: columns`.
+1.  La barra de navegación se pobla con el título (<span style="color:#4758ab;">title</span>) y el autor (<span style="color:#4758ab;">author</span>), tal como en otros formatos de documentos (html, pdf, etc). También puede incluirse un <span style="color:#4758ab;">logo</span>.
+2.  Por defecto, las páginas de un dashboard se ordenan primero por filas y luego por columns. Pero esto puede invertirse específicando la opción <span style="color:#4758ab;">orientation: columns</span>.
 3.  Páginas son creadas usando headings de nivel 1 antes de definir Filas y Columnas. El texto del heading se usará para vincular la página a la barra de navegación.
-4.  Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción `height`.
-5.  Las Tarjetas (Cards) pueden tener contenido markdown arbitrario usando la opción `.card`.
-6.  Los Bloques de Código también se presentan como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción `title`.
-7.  La tercera fila de la primera página incluye `tabsets`, que permiten tener múltiples vistas de contenido.
+4.  Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción <span style="color:#4758ab;">height</span>.
+5.  Las Tarjetas (Cards) pueden tener contenido markdown arbitrario usando la opción <span style="color:#4758ab;">.card</span>.
+6.  Los Bloques de Código también se presentan como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción <span style="color:#4758ab;">title</span>.
+7.  La tercera fila de la primera página incluye <span style="color:#4758ab;">tabsets</span>, que permiten tener múltiples vistas de contenido.
 8.  La segunda fila de la segunda página incluye dos bloques de código, que son automáticamente separados en dos tarjetas adyacentes.
+</div>
 :::
 
 

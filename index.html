@@ -464,6 +464,7 @@
 </div>
 <div class="fragment">
 <div class="small-par">
+<div class="custom-code-1">
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href=""></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
 <span id="cb1-3"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
@@ -471,13 +472,16 @@
 <span id="cb1-5"><a href=""></a><span class="at">    </span><span class="fu">output-file</span><span class="kw">:</span><span class="at"> </span><span class="st">"document_html.html"</span></span>
 <span id="cb1-6"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p><span class="small-par"></span></p>
 <div class="small-par">
+<div class="custom-code-1">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>terminal</strong></pre>
 </div>
 <div class="sourceCode" id="cb2" data-filename="terminal"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="ex">quarto</span> render document_html.qmd <span class="at">-t</span> html <span class="at">-o</span> document_html.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -530,6 +534,7 @@
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">HTML</a></li><li><a href="#tabset-2-2">PDF</a></li><li><a href="#tabset-2-3">Revealjs</a></li></ul>
 <div class="tab-content small-par">
 <div id="tabset-2-1">
+<div class="custom-code-2">
 <div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a></span>
 <span id="annotated-cell-4-2"><a href="#annotated-cell-4-2"></a><span class="sc">---</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3"></a>title<span class="sc">:</span> <span class="st">"Documento HTML"</span></span>
@@ -583,15 +588,17 @@
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="10,13" data-code-annotation="3">Algunas opciones comunes para varios formatos: <code>toc</code> permite agregar una tabla de contenidos (toc) generada automáticamente, con título <code>toc-title</code>. Además <code>toc-depth</code> determina el número de niveles de secciones que serán mostrados en la toc.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="10,13" data-code-annotation="3">Algunas opciones comunes para varios formatos: <span style="color:#4758ab;">toc</span> permite agregar una tabla de contenidos (toc) generada automáticamente, con título <span style="color:#4758ab;">toc-title</span>. Además <span style="color:#4758ab;">toc-depth</span> determina el número de niveles de secciones que serán mostrados en la toc.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="14,16" data-code-annotation="4">Algunas opciones específicas del formato: <code>html-math-method</code> define el método usado para renderizar ecuaciones LaTeX. <code>code-line-numbers</code> permite incluir número de línea en bloques de código. Simples modificaciones en la apariencia del documento pueden agregando en un documento <code>css</code>.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="14,16" data-code-annotation="4">Algunas opciones específicas del formato: <span style="color:#4758ab;">html-math-method</span> define el método usado para renderizar ecuaciones LaTeX. <span style="color:#4758ab;">code-line-numbers</span> permite incluir número de línea en bloques de código. Simples modificaciones en la apariencia del documento pueden agregando en un documento <span style="color:#4758ab;">css</span>.</span>
 </dd>
 </dl>
 </div>
+</div>
 <div id="tabset-2-2">
+<div class="custom-code-2">
 <div class="sourceCode" id="annotated-cell-5"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1"></a></span>
 <span id="annotated-cell-5-2"><a href="#annotated-cell-5-2"></a><span class="sc">---</span></span>
 <span id="annotated-cell-5-3"><a href="#annotated-cell-5-3"></a>title<span class="sc">:</span> <span class="st">"Documento PDF"</span></span>
@@ -644,19 +651,21 @@
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="14,15" data-code-annotation="2"><code>lof</code> y <code>lot</code> imprimen la lista de figuras y tablas en el documento.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="14,15" data-code-annotation="2"><span style="color:#4758ab;">lof</span> y <span style="color:#4758ab;">lot</span> imprimen la lista de figuras y tablas en el documento.</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="16" data-code-annotation="3"><code>documentclass</code> define la clase del documento: las estándar <code>article</code>, <code>report</code>, <code>book</code> o sus equivalentes KOMA Script <code>scrartcl</code>, <code>scrreprt</code>, <code>scrbook</code>.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="16" data-code-annotation="3"><span style="color:#4758ab;">documentclass</span> define la clase del documento: las estándar <span style="color:#4758ab;">article</span>, <span style="color:#4758ab;">report</span>, <span style="color:#4758ab;">book</span> o sus equivalentes KOMA Script <span style="color:#4758ab;">scrartcl</span>, <span style="color:#4758ab;">scrreprt</span>, <span style="color:#4758ab;">scrbook</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="17,20" data-code-annotation="4"><code>papersize</code> y <code>geometry</code> definen el tamaño del documento impreso y los márgenes del mismo.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="17,20" data-code-annotation="4"><span style="color:#4758ab;">papersize</span> y <span style="color:#4758ab;">geometry</span> definen el tamaño del documento impreso y los márgenes del mismo.</span>
 </dd>
 </dl>
 </div>
+</div>
 <div id="tabset-2-3">
+<div class="custom-code-2">
 <div class="sourceCode" id="annotated-cell-6"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1"></a></span>
 <span id="annotated-cell-6-2"><a href="#annotated-cell-6-2"></a><span class="sc">---</span></span>
 <span id="annotated-cell-6-3"><a href="#annotated-cell-6-3"></a>title<span class="sc">:</span> <span class="st">"Documento Revealjs"</span></span>
@@ -703,21 +712,22 @@
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="10" data-code-annotation="2"><code>margin</code> fija el factor del tamaño de visualización que debe permanecer vacío alrededor del contenido (por defecto 0.1). <a href="https://quarto.org/docs/presentations/revealjs/advanced.html">Otros parámetros</a> que controlan el tamaño y margen de las láminas son: <code>width</code>, <code>height</code>, <code>min-scale</code>, <code>max-scale</code>.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="10" data-code-annotation="2"><span style="color:#4758ab;">margin</span> fija el factor del tamaño de visualización que debe permanecer vacío alrededor del contenido (por defecto 0.1). <a href="https://quarto.org/docs/presentations/revealjs/advanced.html">Otros parámetros</a> que controlan el tamaño y margen de las láminas son: <span style="color:#4758ab;">width</span>, <span style="color:#4758ab;">height</span>, <span style="color:#4758ab;">min-scale</span>, <span style="color:#4758ab;">max-scale</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="11,12" data-code-annotation="3"><code>slide-number</code> permite incluir o no los números de las láminas y <code>scrollable</code> permite hacer <em>scrolling</em> para mostrar contenido que queda fuera de los márgenes normales de una lámina.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="11,12" data-code-annotation="3"><span style="color:#4758ab;">slide-number</span> permite incluir o no los números de las láminas y <span style="color:#4758ab;">scrollable</span> permite hacer <em>scrolling</em> para mostrar contenido que queda fuera de los márgenes normales de una lámina.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="13,14" data-code-annotation="4"><code>logo</code> y <code>footer</code> permiten incluir una imagen y un pie de página al pie de cada lámina.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="13,14" data-code-annotation="4"><span style="color:#4758ab;">logo</span> y <span style="color:#4758ab;">footer</span> permiten incluir una imagen y un pie de página al pie de cada lámina.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="15" data-code-annotation="5"><code>css</code> permite incluir un archivo con estilos <strong>CSS</strong> personalizados, que pueden mejorar la visualización. Por ejemplo el archivo document_revealjs_styles.css contiene tres clases <strong>CSS</strong> usadas para: <br> <strong>.reveal .code</strong>: ajustar el tamaño de bloques de código. <br> <strong>.reveal .slide-logo</strong>: ajustar el tamaño del logo. <br> <strong>.reveal h2</strong>: personalizar un header de nivel 2 que incluya un banner institucional.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="15" data-code-annotation="5"><span style="color:#4758ab;">css</span> permite incluir un archivo con estilos <strong>CSS</strong> personalizados, que pueden mejorar la visualización. Por ejemplo el archivo document_revealjs_styles.css contiene tres clases <strong>CSS</strong> usadas para: <br> <strong>.reveal .code</strong>: ajustar el tamaño de bloques de código. <br> <strong>.reveal .slide-logo</strong>: ajustar el tamaño del logo. <br> <strong>.reveal h2</strong>: personalizar un header de nivel 2 que incluya un banner institucional.</span>
 </dd>
 </dl>
+</div>
 </div>
 </div>
 </div>
@@ -1164,7 +1174,7 @@ definition
 <ul>
 <li class="fragment">Quarto permite renderizar bloques de código de varios lenguajes (por ejemplo R, Python, Julia).</li>
 <li class="fragment">En particular, para renderizar y ejecutar código R, Quarto usa <a href="https://yihui.org/knitr/">Knitr</a>, al igual que R Markdown.</li>
-<li class="fragment">Bloques de código serán ejecutados al renderizar si comienzan con <code>```{r}</code> y terminan con <code>```</code>.</li>
+<li class="fragment">Bloques de código serán ejecutados al renderizar si comienzan con <span style="color:#4758ab;"><code>```{r}</code> </span> y terminan con <span style="color:#4758ab;"><code>```</code> </span>.</li>
 <li class="fragment">Comportamiento del bloque de código puede ser configurado usando comentarios especiales al comienzo del bloque (por ejemplo: echo, eval).
 <ul>
 <li class="fragment"><strong>TODO:</strong> Diferencia con R Markdown.</li>
@@ -1173,6 +1183,7 @@ definition
 </div>
 <div class="fragment">
 <div class="small-par">
+<div class="custom-code-1">
 <div class="sourceCode" id="cb31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href=""></a><span class="in">```{r}</span></span>
 <span id="cb31-2"><a href=""></a><span class="in">#| warning: false</span></span>
 <span id="cb31-3"><a href=""></a><span class="in">#| fig-cap: "Temperatura y nivel de ozono."</span></span>
@@ -1197,6 +1208,7 @@ definition
 <span id="cb31-22"><a href=""></a><span class="in">  geom_smooth(method = "loess")</span></span>
 <span id="cb31-23"><a href=""></a></span>
 <span id="cb31-24"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div class="fragment">
@@ -1234,6 +1246,7 @@ definition
 </div>
 <div class="fragment">
 <div class="small-par">
+<div class="custom-code-1">
 <div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href=""></a><span class="in">```{r}</span></span>
 <span id="cb33-2"><a href=""></a><span class="in">#| warning: false</span></span>
 <span id="cb33-3"><a href=""></a><span class="in">#| fig-cap: "Temperatura y nivel de ozono."</span></span>
@@ -1264,6 +1277,7 @@ definition
 <span id="cb33-28"><a href=""></a><span class="ss">4. </span>Generar plot de Ozono versus Temperatura (celsius).</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section>
 <section id="bloques-de-código-r-2" class="slide level2">
 <h2>Bloques de código: R</h2>
@@ -1277,6 +1291,7 @@ definition
 </div>
 <div class="small-par">
 <!-- @fig-airquality further explores the impact of temperature on ozone level. -->
+<div class="custom-code-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-38"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-38" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-38-1" class="code-annotation-target"><a href="#annotated-cell-38-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="annotated-cell-38-2"><a href="#annotated-cell-38-2"></a><span class="fu">library</span>(ggplot2)</span>
@@ -1316,14 +1331,15 @@ definition
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="embeds" class="slide level2">
 <h2>Embeds</h2>
 <div class="small-par">
 <ul>
-<li class="fragment">Podemos incluir el output de otro documento Quarto (<code>.qmd</code> or <code>.ipynb</code>) en nuestro documento, usando el comando <code>embed</code>.</li>
+<li class="fragment">Podemos incluir el output de otro documento Quarto (<span style="color:#4758ab;">.qmd</span> or <span style="color:#4758ab;">.ipynb</span>) en nuestro documento, usando el comando <span style="color:#4758ab;">embed</span>.</li>
 <li class="fragment">Para embeber el output de un bloque de código (o una celda de notebook), usamos la ruta al documento y la etiqueta del bloque en el documento.</li>
-<li class="fragment">Por ejemplo, el documento <code>airquality.qmd</code> tiene un bloque de código con etiqueta <code>fig-ozono-viento</code> y podemos embeber el output de ese bloque usando:</li>
+<li class="fragment">Por ejemplo, el documento <span style="color:#4758ab;">airquality.qmd</span> tiene un bloque de código con etiqueta <span style="color:#4758ab;">fig-ozono-viento</span> y podemos embeber el output de ese bloque usando:</li>
 </ul>
 </div>
 <div class="fragment">
@@ -1358,7 +1374,7 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 <ul>
 <li class="fragment">Los componentes son redimensionados de forma inteligente para adaptar la visualización al navegador en dispositivos móviles.</li>
 </ul></li>
-<li class="fragment">Los dashboards pueden crearse usando cualquier editor de notebook usando Jupyter notebooks (<code>.ipynb</code>) o documentos markdown (<code>.qmd</code>).</li>
+<li class="fragment">Los dashboards pueden crearse usando cualquier editor de notebook usando Jupyter notebooks (<span style="color:#4758ab;">.ipynb</span>) o documentos markdown (<span style="color:#4758ab;">.qmd</span>).</li>
 <li class="fragment">Y pueden ser desplegados como páginas web estáticas (sin requerir un servidor) o integrando un backend <a href="./docs/dashboards/interactivity/shiny-python/index.qmd">Shiny Server</a> para aumentar la interactividad.</li>
 </ul>
 </div>
@@ -1417,6 +1433,7 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 <section id="dashboards-6" class="slide level2">
 <h2>Dashboards</h2>
 <div class="small-par">
+<div class="custom-code-2">
 <div class="sourceCode" id="annotated-cell-40"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-40-1"><a href="#annotated-cell-40-1"></a><span class="sc">---</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-40" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-40-2" class="code-annotation-target"><a href="#annotated-cell-40-2"></a>title<span class="sc">:</span> <span class="st">"Ejemplo de Dashboard"</span></span>
 <span id="annotated-cell-40-3"><a href="#annotated-cell-40-3"></a>author<span class="sc">:</span> <span class="st">"Capacitación R Intermedio"</span></span>
@@ -1508,11 +1525,11 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-40" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-40" data-code-lines="2,3,4,5,6" data-code-annotation="1">La barra de navegación se pobla con el título (<code>title</code>) y el autor (<code>author</code>), tal como en otros formatos de documentos (html, pdf, etc). También puede incluirse un <code>logo</code>.</span>
+<span data-code-cell="annotated-cell-40" data-code-lines="2,3,4,5,6" data-code-annotation="1">La barra de navegación se pobla con el título (<span style="color:#4758ab;">title</span>) y el autor (<span style="color:#4758ab;">author</span>), tal como en otros formatos de documentos (html, pdf, etc). También puede incluirse un <span style="color:#4758ab;">logo</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-40" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-40" data-code-lines="7" data-code-annotation="2">Por defecto, las páginas de un dashboard se ordenan primero por filas y luego por columns. Pero esto puede invertirse específicando la opción <code>orientation: columns</code>.</span>
+<span data-code-cell="annotated-cell-40" data-code-lines="7" data-code-annotation="2">Por defecto, las páginas de un dashboard se ordenan primero por filas y luego por columns. Pero esto puede invertirse específicando la opción <span style="color:#4758ab;">orientation: columns</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-40" data-target-annotation="3">3</dt>
 <dd>
@@ -1520,25 +1537,26 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 </dd>
 <dt data-target-cell="annotated-cell-40" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-40" data-code-lines="23" data-code-annotation="4">Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción <code>height</code>.</span>
+<span data-code-cell="annotated-cell-40" data-code-lines="23" data-code-annotation="4">Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción <span style="color:#4758ab;">height</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-40" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-40" data-code-lines="25,28" data-code-annotation="5">Las Tarjetas (Cards) pueden tener contenido markdown arbitrario usando la opción <code>.card</code>.</span>
+<span data-code-cell="annotated-cell-40" data-code-lines="25,28" data-code-annotation="5">Las Tarjetas (Cards) pueden tener contenido markdown arbitrario usando la opción <span style="color:#4758ab;">.card</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-40" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-40" data-code-lines="32,35" data-code-annotation="6">Los Bloques de Código también se presentan como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción <code>title</code>.</span>
+<span data-code-cell="annotated-cell-40" data-code-lines="32,35" data-code-annotation="6">Los Bloques de Código también se presentan como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción <span style="color:#4758ab;">title</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-40" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-40" data-code-lines="37" data-code-annotation="7">La tercera fila de la primera página incluye <code>tabsets</code>, que permiten tener múltiples vistas de contenido.</span>
+<span data-code-cell="annotated-cell-40" data-code-lines="37" data-code-annotation="7">La tercera fila de la primera página incluye <span style="color:#4758ab;">tabsets</span>, que permiten tener múltiples vistas de contenido.</span>
 </dd>
 <dt data-target-cell="annotated-cell-40" data-target-annotation="8">8</dt>
 <dd>
 <span data-code-cell="annotated-cell-40" data-code-lines="70" data-code-annotation="8">La segunda fila de la segunda página incluye dos bloques de código, que son automáticamente separados en dos tarjetas adyacentes.</span>
 </dd>
 </dl>
+</div>
 </div>
 </section>
 <section id="dashboards-ejercicio" class="slide level2 scrollable">
@@ -2116,7 +2134,7 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","loop":false});
+    <script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
     (function() {
       let previousOnload = window.onload;
       window.onload = () => {
