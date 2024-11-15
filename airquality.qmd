@@ -4,9 +4,9 @@ format: html
 ---
 
 ```{r}
-#| label: fig-one
+#| label: fig-ozono-temp
 #| warning: false
-#| fig-cap: Temperatura y nivel de ozono.
+#| fig-cap: Nivel de ozono versus Temperatura.
 
 library(tidyverse)
 library(ggplot2)
