@@ -1368,20 +1368,20 @@ definición
 <ul>
 <li class="fragment">Podemos incluir el output de otro documento Quarto (<span style="color:#4758ab;">.qmd</span> or <span style="color:#4758ab;">.ipynb</span>) en nuestro documento, usando el comando <span style="color:#4758ab;">embed</span>.</li>
 <li class="fragment">Para embeber el output de un bloque de código (o una celda de notebook), usamos la ruta al documento y la etiqueta del bloque en el documento.</li>
-<li class="fragment">Por ejemplo, el documento <span style="color:#4758ab;">airquality.qmd</span> tiene un bloque de código con etiqueta <span style="color:#4758ab;">fig-ozono-temp</span> y podemos embeber el output de ese bloque usando:</li>
+<li class="fragment">Por ejemplo, el documento <span style="color:#4758ab;">example_embed/airquality.qmd</span> tiene un bloque de código con etiqueta <span style="color:#4758ab;">fig-ozono-temp</span> y podemos embeber el output de ese bloque usando:</li>
 </ul>
 </div>
 <div class="fragment">
 <div class="big-par">
-<div class="sourceCode" id="cb36" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href=""></a>{{&lt; embed airquality.qmd#fig-ozono-temp &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href=""></a>{{&lt; embed example_embed/airquality.qmd#fig-ozono-temp &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="quarto-embed-nb-cell" data-notebook="/home/hugosoto/Work/git/clases-r-intermedio-quarto/airquality.qmd" data-notebook-title="Airquality (.qmd)" data-notebook-cellid="cell-fig-ozono-temp">
+<div class="quarto-embed-nb-cell" data-notebook="/home/hugosoto/Work/git/clases-r-intermedio-quarto/example_embed/airquality.qmd" data-notebook-title="Airquality (.qmd)" data-notebook-cellid="cell-fig-ozono-temp">
 <div id="cell-fig-ozono-temp" class="cell">
 <div class="cell-output cell-output-display">
 <div id="fig-ozono-temp" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-ozono-temp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="index_files/figure-revealjs/airquality-fig-ozono-temp-output-1.png">
+<img data-src="index_files/figure-revealjs/example_embed-airquality-fig-ozono-temp-output-1.png">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ozono-temp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Nivel de ozono versus Temperatura.
@@ -2184,7 +2184,7 @@ Figure&nbsp;1: Nivel de ozono versus Temperatura.
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
+    <script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
     (function() {
       let previousOnload = window.onload;
       window.onload = () => {

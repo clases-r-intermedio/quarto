@@ -888,18 +888,18 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 ::: {.incremental .small-par}
 - Podemos incluir el output de otro documento Quarto (<span style="color:#4758ab;">.qmd</span> or <span style="color:#4758ab;">.ipynb</span>) en nuestro documento, usando el comando <span style="color:#4758ab;">embed</span>.
 - Para embeber el output de un bloque de código (o una celda de notebook), usamos la ruta al documento y la etiqueta del bloque en el documento.
-- Por ejemplo, el documento  <span style="color:#4758ab;">airquality.qmd</span> tiene un bloque de código con etiqueta <span style="color:#4758ab;">fig-ozono-temp</span> y podemos embeber el output de ese bloque usando:
+- Por ejemplo, el documento  <span style="color:#4758ab;">example_embed/airquality.qmd</span> tiene un bloque de código con etiqueta <span style="color:#4758ab;">fig-ozono-temp</span> y podemos embeber el output de ese bloque usando:
 :::
 
 . . .
 
 ::: {.big-par}
 ```{.markdown shortcodes=false}
-{{< embed airquality.qmd#fig-ozono-temp >}}
+{{< embed example_embed/airquality.qmd#fig-ozono-temp >}}
 ```
 :::
 
-{{< embed airquality.qmd#fig-ozono-temp >}}
+{{< embed example_embed/airquality.qmd#fig-ozono-temp >}}
 
 
 
