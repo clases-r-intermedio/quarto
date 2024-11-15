@@ -401,7 +401,7 @@ quarto::quarto_render("hello.qmd")
 
 ::: {.small-par}
 1) Usando RStudio, cree un nuevo documento Quarto llamado <span style="color:#4758ab;"> ejercicio_documento_html.qmd</span>, que tenga formato HTML.
-2) Active la casilla **Render on Save** en RStudio, para que cuda vez que guarde el documento éste sea renderizado y se actualice su previsualización.
+2) Active la casilla **Render on Save** en RStudio, para que cada vez que guarde el documento éste sea renderizado y se actualice su previsualización.
 3) Copie el contenido del archivo <span style="color:#4758ab;"> document_html.qmd</span>, excepto por la **Sección 3**, en el nuevo archivo creado.
 Visualice que el nuevo contenido aparezca en el documento de Quarto.
 4) Cree un archivo llamado <span style="color:#4758ab;"> ejercicio_documento_html.css</span>, en el cual agregaremos algunos estilos CSS para modificar la apariencia de algunos elementos del documento:
@@ -711,9 +711,10 @@ flowchart LR
 - En particular, para renderizar y ejecutar código R, Quarto usa [Knitr](https://yihui.org/knitr/), al igual que R Markdown.
 - Bloques de código serán ejecutados al renderizar si comienzan con <span style="color:#4758ab;">```` ```{r} ```` </span> y terminan con <span style="color:#4758ab;">```` ``` ```` </span>.
 - El comportamiento del bloque de código puede ser configurado usando comentarios especiales al comienzo del bloque, identificados por <span style="color:#4758ab;">```` #| ```` </span>. Por ejemplo:
-  - <span style="color:#4758ab;"> echo: TRUE </span> permite mostrar el código en renderizar, mientras que no se muestra con <span style="color:#4758ab;"> echo: FALSE </span>.
-  - <span style="color:#4758ab;"> eval: TRUE </span> hace que el código se evalúe al renderizar, mientras que no se evalúa con <span style="color:#4758ab;"> eval: FALSE </span>.
+  - <span style="color:#4758ab;"> echo: true </span> hace que se muestre el código al renderizar, mientras que no se muestra con <span style="color:#4758ab;"> echo: FALSE </span>.
+  - <span style="color:#4758ab;"> eval: true </span> hace que el código se evalúe al renderizar, mientras que no se evalúa con <span style="color:#4758ab;"> eval: FALSE </span>.
   - <span style="color:#4758ab;"> warning: false </span> omite warnings encontrados al evaluar el bloque de código.
+  - <span style="color:#4758ab;"> fig-cap: </span> genera una leyenda para una figura generada por el código. 
 - Ésta es una diferencia importante con R Markdown, donde el comportamiento del código es definido en la primera línea, por ejemplo usando <span style="color:#4758ab;"> ```{r, echo = false}. </span>
   - Quarto en cambio usa la sintaxis basada en <span style="color:#4758ab;">```` #| ```` </span> para acomodar mejor opciones más largas como <span style="color:#4758ab;"> fig-cap </span>, <span style="color:#4758ab;"> fig-subcap </span> o <span style="color:#4758ab;"> fig-alt </span> y crear documentos de forma más portables y consistente. 
 :::
@@ -724,10 +725,10 @@ flowchart LR
 <div class=custom-code-1>
 ```` markdown
 ```{{r}}
-#| fig-cap: "Temperatura y nivel de ozono."
 #| echo: true
 #| eval: true
 #| warning: false
+#| fig-cap: "Nivel de ozono versus Temperatura."
 
 library(tidyverse)
 library(ggplot2)
@@ -758,10 +759,10 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 <!-- @fig-airquality further explores the impact of temperature on ozone level. -->
 
 ```{r}
-#| fig-cap: "Temperatura y nivel de ozono."
 #| echo: false
 #| eval: true
 #| warning: false
+#| fig-cap: "Nivel de ozono versus Temperatura."
 
 library(tidyverse)
 library(ggplot2)
@@ -804,10 +805,10 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 <div class=custom-code-1>
 ```` markdown
 ```{{r}}
-#| fig-cap: "Temperatura y nivel de ozono."
 #| echo: true
 #| eval: false
 #| warning: false
+#| fig-cap: "Nivel de ozono versus Temperatura."
 
 library(tidyverse) # <1>
 library(ggplot2)
@@ -850,10 +851,10 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 
 <div class=custom-code-1>
 ```{r}
-#| warning: false
-#| fig-cap: "Temperatura y nivel de ozono."
 #| echo: TRUE
 #| eval: FALSE
+#| warning: false
+#| fig-cap: "Nivel de ozono versus Temperatura."
 
 library(tidyverse) # <1>
 library(ggplot2)
@@ -887,18 +888,18 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 ::: {.incremental .small-par}
 - Podemos incluir el output de otro documento Quarto (<span style="color:#4758ab;">.qmd</span> or <span style="color:#4758ab;">.ipynb</span>) en nuestro documento, usando el comando <span style="color:#4758ab;">embed</span>.
 - Para embeber el output de un bloque de código (o una celda de notebook), usamos la ruta al documento y la etiqueta del bloque en el documento.
-- Por ejemplo, el documento  <span style="color:#4758ab;">airquality.qmd</span> tiene un bloque de código con etiqueta <span style="color:#4758ab;">fig-ozono-viento</span> y podemos embeber el output de ese bloque usando:
+- Por ejemplo, el documento  <span style="color:#4758ab;">airquality.qmd</span> tiene un bloque de código con etiqueta <span style="color:#4758ab;">fig-ozono-temp</span> y podemos embeber el output de ese bloque usando:
 :::
 
 . . .
 
 ::: {.big-par}
 ```{.markdown shortcodes=false}
-{{< embed example_embed/airquality.qmd#fig-ozono-temp >}}
+{{< embed airquality.qmd#fig-ozono-temp >}}
 ```
 :::
 
-{{< embed example_embed/airquality.qmd#fig-ozono-temp >}}
+{{< embed airquality.qmd#fig-ozono-temp >}}
 
 
 
@@ -911,7 +912,7 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 Visualice que el nuevo contenido aparezca en el documento de Quarto.
 4) Cree un archivo llamado <span style="color:#4758ab;"> code_embed.qmd</span>, que contenga un bloque de código que haga uso del dataset <span style="color:#4758ab;"> airquality </span> para generar un gráfico de Temperatura [°C] versus Viento [km/hr], teniendo en cuenta lo siguiente:
    - Al renderizar el documento, el código debe mostrarse y evaluarse, además cualquier posible *warning* debe omitirse.
-   - El gráfico generado debe tener el caption "Gráfico de Temperatura versus Viento".
+   - El gráfico generado debe tener la leyenda "Gráfico de Temperatura versus Viento".
 5) Agregue un nuevo **Capítulo** al documento <span style="color:#4758ab;"> ejercicio_code_embed.qmd</span>, con una **Sección** que contenga el código y gráfico generados por el archivo <span style="color:#4758ab;"> code_embed.qmd</span>.
 :::
 
@@ -926,6 +927,7 @@ Visualice que el nuevo contenido aparezca en el documento de Quarto.
   - Los componentes son redimensionados de forma inteligente para adaptar la visualización al navegador en dispositivos móviles.
 - Los dashboards pueden crearse usando cualquier editor de notebook usando Jupyter notebooks (<span style="color:#4758ab;">.ipynb</span>) o documentos markdown (<span style="color:#4758ab;">.qmd</span>).
 - Y pueden ser desplegados como páginas web estáticas (sin requerir un servidor) o integrando un backend [Shiny Server](/docs/dashboards/interactivity/shiny-python/index.qmd) para aumentar la interactividad.
+  - En esta clase sólo nos concentraremos en entender cómo generar un dashboard estático, ya que integrar un backend es un tema más avanzado.
 :::
 
 
@@ -1049,7 +1051,7 @@ ggplot(airquality, aes(wind_kmhr, Ozone)) +
 ggplot(airquality, aes(wind_kmhr, temp_celsius)) +
   geom_point() + 
   geom_smooth(method = "loess")
-```
+``` # <7> 
 
 # Page 2 {orientation="rows" scrolling="true"}
 
@@ -1079,16 +1081,16 @@ gapminder %>%
   ggplot() +
   aes(x = year, y = lifeExp, color = country) +
   geom_line()
-```
+``` # <8>
 
 ````
-1.  La barra de navegación se pobla con el título (<span style="color:#4758ab;">title</span>) y el autor (<span style="color:#4758ab;">author</span>), tal como en otros formatos de documentos (html, pdf, etc). También puede incluirse un <span style="color:#4758ab;">logo</span>.
+1.  La barra de navegación se pobla con el título (<span style="color:#4758ab;">title</span>) y el autor (<span style="color:#4758ab;">author</span>), definidos tal como en otros formatos de documentos (html, pdf, etc). También puede incluirse un <span style="color:#4758ab;">logo</span>.
 2.  Por defecto, las páginas de un dashboard se ordenan primero por filas y luego por columns. Pero esto puede invertirse específicando la opción <span style="color:#4758ab;">orientation: columns</span>.
 3.  Páginas son creadas usando headings de nivel 1 antes de definir Filas y Columnas. El texto del heading se usará para vincular la página a la barra de navegación.
-4.  Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción <span style="color:#4758ab;">height</span>.
+4.  Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción <span style="color:#4758ab;">height</span>. En cambio, al definir columnas podemos especificar su tamaño relativo con la opción <span style="color:#4758ab;">width</span>.
 5.  Las Tarjetas (Cards) pueden tener contenido markdown arbitrario usando la opción <span style="color:#4758ab;">.card</span>.
-6.  Los Bloques de Código también se presentan como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción <span style="color:#4758ab;">title</span>.
-7.  La tercera fila de la primera página incluye <span style="color:#4758ab;">tabsets</span>, que permiten tener múltiples vistas de contenido.
+6.  Los Bloques de Código también pueden definirse como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción <span style="color:#4758ab;">title</span>.
+7.  La tercera fila de la primera página incluye tres <span style="color:#4758ab;">tabsets</span>, que permiten tener múltiples vistas de contenido.
 8.  La segunda fila de la segunda página incluye dos bloques de código, que son automáticamente separados en dos tarjetas adyacentes.
 </div>
 :::

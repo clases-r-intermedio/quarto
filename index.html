@@ -796,7 +796,7 @@ quarto::quarto_render("hello.qmd")
 <div class="small-par">
 <ol type="1">
 <li>Usando RStudio, cree un nuevo documento Quarto llamado <span style="color:#4758ab;"> ejercicio_documento_html.qmd</span>, que tenga formato HTML.</li>
-<li>Active la casilla <strong>Render on Save</strong> en RStudio, para que cuda vez que guarde el documento éste sea renderizado y se actualice su previsualización.</li>
+<li>Active la casilla <strong>Render on Save</strong> en RStudio, para que cada vez que guarde el documento éste sea renderizado y se actualice su previsualización.</li>
 <li>Copie el contenido del archivo <span style="color:#4758ab;"> document_html.qmd</span>, excepto por la <strong>Sección 3</strong>, en el nuevo archivo creado. Visualice que el nuevo contenido aparezca en el documento de Quarto.</li>
 <li>Cree un archivo llamado <span style="color:#4758ab;"> ejercicio_documento_html.css</span>, en el cual agregaremos algunos estilos CSS para modificar la apariencia de algunos elementos del documento:
 <ul>
@@ -1199,9 +1199,10 @@ definición
 <li class="fragment">Bloques de código serán ejecutados al renderizar si comienzan con <span style="color:#4758ab;"><code>```{r}</code> </span> y terminan con <span style="color:#4758ab;"><code>```</code> </span>.</li>
 <li class="fragment">El comportamiento del bloque de código puede ser configurado usando comentarios especiales al comienzo del bloque, identificados por <span style="color:#4758ab;"><code>#|</code> </span>. Por ejemplo:
 <ul>
-<li class="fragment"><span style="color:#4758ab;"> echo: TRUE </span> permite mostrar el código en renderizar, mientras que no se muestra con <span style="color:#4758ab;"> echo: FALSE </span>.</li>
-<li class="fragment"><span style="color:#4758ab;"> eval: TRUE </span> hace que el código se evalúe al renderizar, mientras que no se evalúa con <span style="color:#4758ab;"> eval: FALSE </span>.</li>
+<li class="fragment"><span style="color:#4758ab;"> echo: true </span> hace que se muestre el código al renderizar, mientras que no se muestra con <span style="color:#4758ab;"> echo: FALSE </span>.</li>
+<li class="fragment"><span style="color:#4758ab;"> eval: true </span> hace que el código se evalúe al renderizar, mientras que no se evalúa con <span style="color:#4758ab;"> eval: FALSE </span>.</li>
 <li class="fragment"><span style="color:#4758ab;"> warning: false </span> omite warnings encontrados al evaluar el bloque de código.</li>
+<li class="fragment"><span style="color:#4758ab;"> fig-cap: </span> genera una leyenda para una figura generada por el código.</li>
 </ul></li>
 <li class="fragment">Ésta es una diferencia importante con R Markdown, donde el comportamiento del código es definido en la primera línea, por ejemplo usando <span style="color:#4758ab;"> ```{r, echo = false}. </span>
 <ul>
@@ -1213,10 +1214,10 @@ definición
 <div class="small-par">
 <div class="custom-code-1">
 <div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb33-2"><a href=""></a><span class="in">#| fig-cap: "Temperatura y nivel de ozono."</span></span>
-<span id="cb33-3"><a href=""></a><span class="in">#| echo: true</span></span>
-<span id="cb33-4"><a href=""></a><span class="in">#| eval: true</span></span>
-<span id="cb33-5"><a href=""></a><span class="in">#| warning: false</span></span>
+<span id="cb33-2"><a href=""></a><span class="in">#| echo: true</span></span>
+<span id="cb33-3"><a href=""></a><span class="in">#| eval: true</span></span>
+<span id="cb33-4"><a href=""></a><span class="in">#| warning: false</span></span>
+<span id="cb33-5"><a href=""></a><span class="in">#| fig-cap: "Nivel de ozono versus Temperatura."</span></span>
 <span id="cb33-6"><a href=""></a></span>
 <span id="cb33-7"><a href=""></a><span class="in">library(tidyverse)</span></span>
 <span id="cb33-8"><a href=""></a><span class="in">library(ggplot2)</span></span>
@@ -1247,7 +1248,7 @@ definición
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
-<figcaption>Temperatura y nivel de ozono.</figcaption>
+<figcaption>Nivel de ozono versus Temperatura.</figcaption>
 </figure>
 </div>
 </div>
@@ -1276,10 +1277,10 @@ definición
 <div class="small-par">
 <div class="custom-code-1">
 <div class="sourceCode" id="cb35"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb35-2"><a href=""></a><span class="in">#| fig-cap: "Temperatura y nivel de ozono."</span></span>
-<span id="cb35-3"><a href=""></a><span class="in">#| echo: true</span></span>
-<span id="cb35-4"><a href=""></a><span class="in">#| eval: false</span></span>
-<span id="cb35-5"><a href=""></a><span class="in">#| warning: false</span></span>
+<span id="cb35-2"><a href=""></a><span class="in">#| echo: true</span></span>
+<span id="cb35-3"><a href=""></a><span class="in">#| eval: false</span></span>
+<span id="cb35-4"><a href=""></a><span class="in">#| warning: false</span></span>
+<span id="cb35-5"><a href=""></a><span class="in">#| fig-cap: "Nivel de ozono versus Temperatura."</span></span>
 <span id="cb35-6"><a href=""></a></span>
 <span id="cb35-7"><a href=""></a><span class="in">library(tidyverse) # &lt;1&gt;</span></span>
 <span id="cb35-8"><a href=""></a><span class="in">library(ggplot2)</span></span>
@@ -1367,23 +1368,23 @@ definición
 <ul>
 <li class="fragment">Podemos incluir el output de otro documento Quarto (<span style="color:#4758ab;">.qmd</span> or <span style="color:#4758ab;">.ipynb</span>) en nuestro documento, usando el comando <span style="color:#4758ab;">embed</span>.</li>
 <li class="fragment">Para embeber el output de un bloque de código (o una celda de notebook), usamos la ruta al documento y la etiqueta del bloque en el documento.</li>
-<li class="fragment">Por ejemplo, el documento <span style="color:#4758ab;">airquality.qmd</span> tiene un bloque de código con etiqueta <span style="color:#4758ab;">fig-ozono-viento</span> y podemos embeber el output de ese bloque usando:</li>
+<li class="fragment">Por ejemplo, el documento <span style="color:#4758ab;">airquality.qmd</span> tiene un bloque de código con etiqueta <span style="color:#4758ab;">fig-ozono-temp</span> y podemos embeber el output de ese bloque usando:</li>
 </ul>
 </div>
 <div class="fragment">
 <div class="big-par">
-<div class="sourceCode" id="cb36" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href=""></a>{{&lt; embed example_embed/airquality.qmd#fig-ozono-temp &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href=""></a>{{&lt; embed airquality.qmd#fig-ozono-temp &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="quarto-embed-nb-cell" data-notebook="/home/hugosoto/Work/git/clases-r-intermedio-quarto/example_embed/airquality.qmd" data-notebook-title="Airquality (.qmd)" data-notebook-cellid="cell-fig-ozono-temp">
+<div class="quarto-embed-nb-cell" data-notebook="/home/hugosoto/Work/git/clases-r-intermedio-quarto/airquality.qmd" data-notebook-title="Airquality (.qmd)" data-notebook-cellid="cell-fig-ozono-temp">
 <div id="cell-fig-ozono-temp" class="cell">
 <div class="cell-output cell-output-display">
 <div id="fig-ozono-temp" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-ozono-temp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="index_files/figure-revealjs/example_embed-airquality-fig-ozono-temp-output-1.png">
+<img data-src="index_files/figure-revealjs/airquality-fig-ozono-temp-output-1.png">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ozono-temp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Temperatura y nivel de ozono.
+Figure&nbsp;1: Nivel de ozono versus Temperatura.
 </figcaption>
 </figure>
 </div>
@@ -1402,7 +1403,7 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 <li>Cree un archivo llamado <span style="color:#4758ab;"> code_embed.qmd</span>, que contenga un bloque de código que haga uso del dataset <span style="color:#4758ab;"> airquality </span> para generar un gráfico de Temperatura [°C] versus Viento [km/hr], teniendo en cuenta lo siguiente:
 <ul>
 <li>Al renderizar el documento, el código debe mostrarse y evaluarse, además cualquier posible <em>warning</em> debe omitirse.</li>
-<li>El gráfico generado debe tener el caption “Gráfico de Temperatura versus Viento”.</li>
+<li>El gráfico generado debe tener la leyenda “Gráfico de Temperatura versus Viento”.</li>
 </ul></li>
 <li>Agregue un nuevo <strong>Capítulo</strong> al documento <span style="color:#4758ab;"> ejercicio_code_embed.qmd</span>, con una <strong>Sección</strong> que contenga el código y gráfico generados por el archivo <span style="color:#4758ab;"> code_embed.qmd</span>.</li>
 </ol>
@@ -1419,7 +1420,10 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 <li class="fragment">Los componentes son redimensionados de forma inteligente para adaptar la visualización al navegador en dispositivos móviles.</li>
 </ul></li>
 <li class="fragment">Los dashboards pueden crearse usando cualquier editor de notebook usando Jupyter notebooks (<span style="color:#4758ab;">.ipynb</span>) o documentos markdown (<span style="color:#4758ab;">.qmd</span>).</li>
-<li class="fragment">Y pueden ser desplegados como páginas web estáticas (sin requerir un servidor) o integrando un backend <a href="./docs/dashboards/interactivity/shiny-python/index.qmd">Shiny Server</a> para aumentar la interactividad.</li>
+<li class="fragment">Y pueden ser desplegados como páginas web estáticas (sin requerir un servidor) o integrando un backend <a href="./docs/dashboards/interactivity/shiny-python/index.qmd">Shiny Server</a> para aumentar la interactividad.
+<ul>
+<li class="fragment">En esta clase sólo nos concentraremos en entender cómo generar un dashboard estático, ya que integrar un backend es un tema más avanzado.</li>
+</ul></li>
 </ul>
 </div>
 </section>
@@ -1570,7 +1574,7 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-42" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="2,3,4,5,7" data-code-annotation="1">La barra de navegación se pobla con el título (<span style="color:#4758ab;">title</span>) y el autor (<span style="color:#4758ab;">author</span>), tal como en otros formatos de documentos (html, pdf, etc). También puede incluirse un <span style="color:#4758ab;">logo</span>.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="2,3,4,5,7" data-code-annotation="1">La barra de navegación se pobla con el título (<span style="color:#4758ab;">title</span>) y el autor (<span style="color:#4758ab;">author</span>), definidos tal como en otros formatos de documentos (html, pdf, etc). También puede incluirse un <span style="color:#4758ab;">logo</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="2">2</dt>
 <dd>
@@ -1582,7 +1586,7 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="24" data-code-annotation="4">Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción <span style="color:#4758ab;">height</span>.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="24" data-code-annotation="4">Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción <span style="color:#4758ab;">height</span>. En cambio, al definir columnas podemos especificar su tamaño relativo con la opción <span style="color:#4758ab;">width</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="5">5</dt>
 <dd>
@@ -1590,15 +1594,15 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="33,36" data-code-annotation="6">Los Bloques de Código también se presentan como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción <span style="color:#4758ab;">title</span>.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="33,36" data-code-annotation="6">Los Bloques de Código también pueden definirse como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción <span style="color:#4758ab;">title</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="38" data-code-annotation="7">La tercera fila de la primera página incluye <span style="color:#4758ab;">tabsets</span>, que permiten tener múltiples vistas de contenido.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="38,59" data-code-annotation="7">La tercera fila de la primera página incluye tres <span style="color:#4758ab;">tabsets</span>, que permiten tener múltiples vistas de contenido.</span>
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="71" data-code-annotation="8">La segunda fila de la segunda página incluye dos bloques de código, que son automáticamente separados en dos tarjetas adyacentes.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="71,89" data-code-annotation="8">La segunda fila de la segunda página incluye dos bloques de código, que son automáticamente separados en dos tarjetas adyacentes.</span>
 </dd>
 </dl>
 </div>
@@ -2180,7 +2184,7 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});
+    <script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
     (function() {
       let previousOnload = window.onload;
       window.onload = () => {
