@@ -3,6 +3,7 @@ title: "Ejemplo de Dashboard"
 author: "Capacitación R Intermedio"
 format:
   dashboard:
+    output-file: "dashboard_example.html"
     logo: images/logo_portada2.png
     orientation: rows
 --- 

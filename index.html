@@ -1483,121 +1483,122 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
 <span id="annotated-cell-42-3"><a href="#annotated-cell-42-3"></a>author<span class="sc">:</span> <span class="st">"Capacitación R Intermedio"</span></span>
 <span id="annotated-cell-42-4"><a href="#annotated-cell-42-4"></a>format<span class="sc">:</span></span>
 <span id="annotated-cell-42-5"><a href="#annotated-cell-42-5"></a>  dashboard<span class="sc">:</span></span>
-<span id="annotated-cell-42-6"><a href="#annotated-cell-42-6"></a>    logo<span class="sc">:</span> images<span class="sc">/</span>logo_portada2.png</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-42-7" class="code-annotation-target"><a href="#annotated-cell-42-7"></a>    orientation<span class="sc">:</span> rows</span>
-<span id="annotated-cell-42-8"><a href="#annotated-cell-42-8"></a><span class="sc">---</span> </span>
-<span id="annotated-cell-42-9"><a href="#annotated-cell-42-9"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-42-10" class="code-annotation-target"><a href="#annotated-cell-42-10"></a><span class="co"># Page 1 {orientation="rows" scrolling="false"}</span></span>
-<span id="annotated-cell-42-11"><a href="#annotated-cell-42-11"></a></span>
-<span id="annotated-cell-42-12"><a href="#annotated-cell-42-12"></a><span class="st">```</span><span class="at">{r}</span></span>
-<span id="annotated-cell-42-13"><a href="#annotated-cell-42-13"></a><span class="at">library(tidyverse)</span></span>
-<span id="annotated-cell-42-14"><a href="#annotated-cell-42-14"></a><span class="at">library(ggplot2)</span></span>
-<span id="annotated-cell-42-15"><a href="#annotated-cell-42-15"></a></span>
-<span id="annotated-cell-42-16"><a href="#annotated-cell-42-16"></a><span class="at">airquality &lt;- airquality %&gt;% </span></span>
-<span id="annotated-cell-42-17"><a href="#annotated-cell-42-17"></a><span class="at">  mutate(</span></span>
-<span id="annotated-cell-42-18"><a href="#annotated-cell-42-18"></a><span class="at">    wind_kmhr = Wind / 0.6213711922,</span></span>
-<span id="annotated-cell-42-19"><a href="#annotated-cell-42-19"></a><span class="at">    temp_celsius = (Temp - 32)*5/9</span></span>
-<span id="annotated-cell-42-20"><a href="#annotated-cell-42-20"></a><span class="at">  )</span></span>
-<span id="annotated-cell-42-21"><a href="#annotated-cell-42-21"></a><span class="st">```</span></span>
-<span id="annotated-cell-42-22"><a href="#annotated-cell-42-22"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="4" onclick="event.preventDefault();" href="">4</a><span id="annotated-cell-42-23" class="code-annotation-target"><a href="#annotated-cell-42-23"></a><span class="do">## Row {height=5%}</span></span>
-<span id="annotated-cell-42-24"><a href="#annotated-cell-42-24"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="5" onclick="event.preventDefault();" href="">5</a><span id="annotated-cell-42-25" class="code-annotation-target"><a href="#annotated-cell-42-25"></a><span class="sc">:::</span> {.card}</span>
-<span id="annotated-cell-42-26"><a href="#annotated-cell-42-26"></a>Análisis de Calidad de Aire en la ciudad de Nueva York. Mayo a Septiembre, <span class="fl">1973.</span></span>
-<span id="annotated-cell-42-27"><a href="#annotated-cell-42-27"></a>Referencia<span class="sc">:</span> <span class="er">&lt;</span>https<span class="sc">:</span><span class="er">//</span>www.rdocumentation.org<span class="sc">/</span>packages<span class="sc">/</span>datasets<span class="sc">/</span>versions<span class="sc">/</span><span class="dv">3</span>.<span class="fl">6.2</span><span class="sc">/</span>topics<span class="sc">/</span>airquality<span class="sc">&gt;</span>.</span>
-<span id="annotated-cell-42-28"><a href="#annotated-cell-42-28"></a><span class="sc">:::</span></span>
-<span id="annotated-cell-42-29"><a href="#annotated-cell-42-29"></a></span>
-<span id="annotated-cell-42-30"><a href="#annotated-cell-42-30"></a><span class="do">## Row {height=35%}</span></span>
-<span id="annotated-cell-42-31"><a href="#annotated-cell-42-31"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="6" onclick="event.preventDefault();" href="">6</a><span id="annotated-cell-42-32" class="code-annotation-target"><a href="#annotated-cell-42-32"></a><span class="st">```</span><span class="at">{r}</span></span>
-<span id="annotated-cell-42-33"><a href="#annotated-cell-42-33"></a><span class="at">library(DT)</span></span>
-<span id="annotated-cell-42-34"><a href="#annotated-cell-42-34"></a><span class="at">DT::datatable(airquality)</span></span>
-<span id="annotated-cell-42-35"><a href="#annotated-cell-42-35"></a><span class="st">```</span></span>
-<span id="annotated-cell-42-36"><a href="#annotated-cell-42-36"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="7" onclick="event.preventDefault();" href="">7</a><span id="annotated-cell-42-37" class="code-annotation-target"><a href="#annotated-cell-42-37"></a><span class="do">## Row {height=60% .tabset}</span></span>
-<span id="annotated-cell-42-38"><a href="#annotated-cell-42-38"></a></span>
-<span id="annotated-cell-42-39"><a href="#annotated-cell-42-39"></a><span class="st">```</span><span class="at">{r}</span></span>
-<span id="annotated-cell-42-40"><a href="#annotated-cell-42-40"></a><span class="at">#| title: Ozono versus Temperatura [°C]</span></span>
-<span id="annotated-cell-42-41"><a href="#annotated-cell-42-41"></a><span class="at">ggplot(airquality, aes(temp_celsius, Ozone)) +</span></span>
-<span id="annotated-cell-42-42"><a href="#annotated-cell-42-42"></a><span class="at">  geom_point() + </span></span>
-<span id="annotated-cell-42-43"><a href="#annotated-cell-42-43"></a><span class="at">  geom_smooth(method = "loess")</span></span>
-<span id="annotated-cell-42-44"><a href="#annotated-cell-42-44"></a><span class="st">```</span></span>
-<span id="annotated-cell-42-45"><a href="#annotated-cell-42-45"></a></span>
-<span id="annotated-cell-42-46"><a href="#annotated-cell-42-46"></a><span class="st">```</span><span class="at">{r} </span></span>
-<span id="annotated-cell-42-47"><a href="#annotated-cell-42-47"></a><span class="at">#| title: Ozono versus Viento [km/hr]</span></span>
-<span id="annotated-cell-42-48"><a href="#annotated-cell-42-48"></a><span class="at">ggplot(airquality, aes(wind_kmhr, Ozone)) +</span></span>
-<span id="annotated-cell-42-49"><a href="#annotated-cell-42-49"></a><span class="at">  geom_point() + </span></span>
-<span id="annotated-cell-42-50"><a href="#annotated-cell-42-50"></a><span class="at">  geom_smooth(method = "loess")</span></span>
-<span id="annotated-cell-42-51"><a href="#annotated-cell-42-51"></a><span class="st">```</span></span>
-<span id="annotated-cell-42-52"><a href="#annotated-cell-42-52"></a></span>
-<span id="annotated-cell-42-53"><a href="#annotated-cell-42-53"></a><span class="st">```</span><span class="at">{r} </span></span>
-<span id="annotated-cell-42-54"><a href="#annotated-cell-42-54"></a><span class="at">#| title: Temperatura [°C] versus Viento [km/hr]</span></span>
-<span id="annotated-cell-42-55"><a href="#annotated-cell-42-55"></a><span class="at">ggplot(airquality, aes(wind_kmhr, temp_celsius)) +</span></span>
-<span id="annotated-cell-42-56"><a href="#annotated-cell-42-56"></a><span class="at">  geom_point() + </span></span>
-<span id="annotated-cell-42-57"><a href="#annotated-cell-42-57"></a><span class="at">  geom_smooth(method = "loess")</span></span>
-<span id="annotated-cell-42-58"><a href="#annotated-cell-42-58"></a><span class="st">```</span></span>
-<span id="annotated-cell-42-59"><a href="#annotated-cell-42-59"></a></span>
-<span id="annotated-cell-42-60"><a href="#annotated-cell-42-60"></a><span class="co"># Page 2 {orientation="rows" scrolling="true"}</span></span>
-<span id="annotated-cell-42-61"><a href="#annotated-cell-42-61"></a></span>
-<span id="annotated-cell-42-62"><a href="#annotated-cell-42-62"></a><span class="do">## Row {height=10%}</span></span>
-<span id="annotated-cell-42-63"><a href="#annotated-cell-42-63"></a></span>
-<span id="annotated-cell-42-64"><a href="#annotated-cell-42-64"></a><span class="sc">:::</span> {.card}</span>
-<span id="annotated-cell-42-65"><a href="#annotated-cell-42-65"></a>Gapminder identifies systematic misconceptions about important global trends and proportions and uses reliable data to develop easy to understand teaching materials to rid people of their misconceptions.</span>
-<span id="annotated-cell-42-66"><a href="#annotated-cell-42-66"></a>Gapminder is an independent Swedish foundation with no political, religious, or economic affiliations.</span>
-<span id="annotated-cell-42-67"><a href="#annotated-cell-42-67"></a>Learn more about the Gampminder dataset at <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>www.gapminder.org<span class="sc">/</span>data<span class="sc">/</span><span class="er">&gt;</span>.</span>
-<span id="annotated-cell-42-68"><a href="#annotated-cell-42-68"></a><span class="sc">:::</span></span>
-<span id="annotated-cell-42-69"><a href="#annotated-cell-42-69"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="8" onclick="event.preventDefault();" href="">8</a><span id="annotated-cell-42-70" class="code-annotation-target"><a href="#annotated-cell-42-70"></a><span class="do">## Row {height=90%}</span></span>
-<span id="annotated-cell-42-71"><a href="#annotated-cell-42-71"></a></span>
-<span id="annotated-cell-42-72"><a href="#annotated-cell-42-72"></a><span class="st">```</span><span class="at">{r} </span></span>
-<span id="annotated-cell-42-73"><a href="#annotated-cell-42-73"></a><span class="at">library(gapminder)</span></span>
-<span id="annotated-cell-42-74"><a href="#annotated-cell-42-74"></a><span class="at">library(DT)</span></span>
-<span id="annotated-cell-42-75"><a href="#annotated-cell-42-75"></a><span class="at">DT::datatable(gapminder)</span></span>
-<span id="annotated-cell-42-76"><a href="#annotated-cell-42-76"></a><span class="st">```</span></span>
-<span id="annotated-cell-42-77"><a href="#annotated-cell-42-77"></a></span>
-<span id="annotated-cell-42-78"><a href="#annotated-cell-42-78"></a><span class="st">```</span><span class="at">{r}</span></span>
-<span id="annotated-cell-42-79"><a href="#annotated-cell-42-79"></a><span class="at">#| fig-width: 10</span></span>
-<span id="annotated-cell-42-80"><a href="#annotated-cell-42-80"></a><span class="at">#| fig-height: 8</span></span>
-<span id="annotated-cell-42-81"><a href="#annotated-cell-42-81"></a><span class="at">paises &lt;- c("Peru", "Bolivia", "Chile")</span></span>
-<span id="annotated-cell-42-82"><a href="#annotated-cell-42-82"></a><span class="at"># etiquetas &lt;- data.frame(nombre_paises = paises, x = c(1975, 1965, 1962), y = c(6, 7, 4))</span></span>
-<span id="annotated-cell-42-83"><a href="#annotated-cell-42-83"></a><span class="at">gapminder %&gt;% </span></span>
-<span id="annotated-cell-42-84"><a href="#annotated-cell-42-84"></a><span class="at">  filter(country %in% paises) %&gt;% </span></span>
-<span id="annotated-cell-42-85"><a href="#annotated-cell-42-85"></a><span class="at">  ggplot() +</span></span>
-<span id="annotated-cell-42-86"><a href="#annotated-cell-42-86"></a><span class="at">  aes(x = year, y = lifeExp, color = country) +</span></span>
-<span id="annotated-cell-42-87"><a href="#annotated-cell-42-87"></a><span class="at">  geom_line()</span></span>
-<span id="annotated-cell-42-88"><a href="#annotated-cell-42-88"></a><span class="st">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-42-6"><a href="#annotated-cell-42-6"></a>    output<span class="sc">-</span>file<span class="sc">:</span> <span class="st">"dashboard_example.html"</span></span>
+<span id="annotated-cell-42-7"><a href="#annotated-cell-42-7"></a>    logo<span class="sc">:</span> images<span class="sc">/</span>logo_portada2.png</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-42-8" class="code-annotation-target"><a href="#annotated-cell-42-8"></a>    orientation<span class="sc">:</span> rows</span>
+<span id="annotated-cell-42-9"><a href="#annotated-cell-42-9"></a><span class="sc">---</span> </span>
+<span id="annotated-cell-42-10"><a href="#annotated-cell-42-10"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-42-11" class="code-annotation-target"><a href="#annotated-cell-42-11"></a><span class="co"># Page 1 {orientation="rows" scrolling="false"}</span></span>
+<span id="annotated-cell-42-12"><a href="#annotated-cell-42-12"></a></span>
+<span id="annotated-cell-42-13"><a href="#annotated-cell-42-13"></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="annotated-cell-42-14"><a href="#annotated-cell-42-14"></a><span class="at">library(tidyverse)</span></span>
+<span id="annotated-cell-42-15"><a href="#annotated-cell-42-15"></a><span class="at">library(ggplot2)</span></span>
+<span id="annotated-cell-42-16"><a href="#annotated-cell-42-16"></a></span>
+<span id="annotated-cell-42-17"><a href="#annotated-cell-42-17"></a><span class="at">airquality &lt;- airquality %&gt;% </span></span>
+<span id="annotated-cell-42-18"><a href="#annotated-cell-42-18"></a><span class="at">  mutate(</span></span>
+<span id="annotated-cell-42-19"><a href="#annotated-cell-42-19"></a><span class="at">    wind_kmhr = Wind / 0.6213711922,</span></span>
+<span id="annotated-cell-42-20"><a href="#annotated-cell-42-20"></a><span class="at">    temp_celsius = (Temp - 32)*5/9</span></span>
+<span id="annotated-cell-42-21"><a href="#annotated-cell-42-21"></a><span class="at">  )</span></span>
+<span id="annotated-cell-42-22"><a href="#annotated-cell-42-22"></a><span class="st">```</span></span>
+<span id="annotated-cell-42-23"><a href="#annotated-cell-42-23"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="4" onclick="event.preventDefault();" href="">4</a><span id="annotated-cell-42-24" class="code-annotation-target"><a href="#annotated-cell-42-24"></a><span class="do">## Row {height=5%}</span></span>
+<span id="annotated-cell-42-25"><a href="#annotated-cell-42-25"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="5" onclick="event.preventDefault();" href="">5</a><span id="annotated-cell-42-26" class="code-annotation-target"><a href="#annotated-cell-42-26"></a><span class="sc">:::</span> {.card}</span>
+<span id="annotated-cell-42-27"><a href="#annotated-cell-42-27"></a>Análisis de Calidad de Aire en la ciudad de Nueva York. Mayo a Septiembre, <span class="fl">1973.</span></span>
+<span id="annotated-cell-42-28"><a href="#annotated-cell-42-28"></a>Referencia<span class="sc">:</span> <span class="er">&lt;</span>https<span class="sc">:</span><span class="er">//</span>www.rdocumentation.org<span class="sc">/</span>packages<span class="sc">/</span>datasets<span class="sc">/</span>versions<span class="sc">/</span><span class="dv">3</span>.<span class="fl">6.2</span><span class="sc">/</span>topics<span class="sc">/</span>airquality<span class="sc">&gt;</span>.</span>
+<span id="annotated-cell-42-29"><a href="#annotated-cell-42-29"></a><span class="sc">:::</span></span>
+<span id="annotated-cell-42-30"><a href="#annotated-cell-42-30"></a></span>
+<span id="annotated-cell-42-31"><a href="#annotated-cell-42-31"></a><span class="do">## Row {height=35%}</span></span>
+<span id="annotated-cell-42-32"><a href="#annotated-cell-42-32"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="6" onclick="event.preventDefault();" href="">6</a><span id="annotated-cell-42-33" class="code-annotation-target"><a href="#annotated-cell-42-33"></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="annotated-cell-42-34"><a href="#annotated-cell-42-34"></a><span class="at">library(DT)</span></span>
+<span id="annotated-cell-42-35"><a href="#annotated-cell-42-35"></a><span class="at">DT::datatable(airquality)</span></span>
+<span id="annotated-cell-42-36"><a href="#annotated-cell-42-36"></a><span class="st">```</span></span>
+<span id="annotated-cell-42-37"><a href="#annotated-cell-42-37"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="7" onclick="event.preventDefault();" href="">7</a><span id="annotated-cell-42-38" class="code-annotation-target"><a href="#annotated-cell-42-38"></a><span class="do">## Row {height=60% .tabset}</span></span>
+<span id="annotated-cell-42-39"><a href="#annotated-cell-42-39"></a></span>
+<span id="annotated-cell-42-40"><a href="#annotated-cell-42-40"></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="annotated-cell-42-41"><a href="#annotated-cell-42-41"></a><span class="at">#| title: Ozono versus Temperatura [°C]</span></span>
+<span id="annotated-cell-42-42"><a href="#annotated-cell-42-42"></a><span class="at">ggplot(airquality, aes(temp_celsius, Ozone)) +</span></span>
+<span id="annotated-cell-42-43"><a href="#annotated-cell-42-43"></a><span class="at">  geom_point() + </span></span>
+<span id="annotated-cell-42-44"><a href="#annotated-cell-42-44"></a><span class="at">  geom_smooth(method = "loess")</span></span>
+<span id="annotated-cell-42-45"><a href="#annotated-cell-42-45"></a><span class="st">```</span></span>
+<span id="annotated-cell-42-46"><a href="#annotated-cell-42-46"></a></span>
+<span id="annotated-cell-42-47"><a href="#annotated-cell-42-47"></a><span class="st">```</span><span class="at">{r} </span></span>
+<span id="annotated-cell-42-48"><a href="#annotated-cell-42-48"></a><span class="at">#| title: Ozono versus Viento [km/hr]</span></span>
+<span id="annotated-cell-42-49"><a href="#annotated-cell-42-49"></a><span class="at">ggplot(airquality, aes(wind_kmhr, Ozone)) +</span></span>
+<span id="annotated-cell-42-50"><a href="#annotated-cell-42-50"></a><span class="at">  geom_point() + </span></span>
+<span id="annotated-cell-42-51"><a href="#annotated-cell-42-51"></a><span class="at">  geom_smooth(method = "loess")</span></span>
+<span id="annotated-cell-42-52"><a href="#annotated-cell-42-52"></a><span class="st">```</span></span>
+<span id="annotated-cell-42-53"><a href="#annotated-cell-42-53"></a></span>
+<span id="annotated-cell-42-54"><a href="#annotated-cell-42-54"></a><span class="st">```</span><span class="at">{r} </span></span>
+<span id="annotated-cell-42-55"><a href="#annotated-cell-42-55"></a><span class="at">#| title: Temperatura [°C] versus Viento [km/hr]</span></span>
+<span id="annotated-cell-42-56"><a href="#annotated-cell-42-56"></a><span class="at">ggplot(airquality, aes(wind_kmhr, temp_celsius)) +</span></span>
+<span id="annotated-cell-42-57"><a href="#annotated-cell-42-57"></a><span class="at">  geom_point() + </span></span>
+<span id="annotated-cell-42-58"><a href="#annotated-cell-42-58"></a><span class="at">  geom_smooth(method = "loess")</span></span>
+<span id="annotated-cell-42-59"><a href="#annotated-cell-42-59"></a><span class="st">```</span></span>
+<span id="annotated-cell-42-60"><a href="#annotated-cell-42-60"></a></span>
+<span id="annotated-cell-42-61"><a href="#annotated-cell-42-61"></a><span class="co"># Page 2 {orientation="rows" scrolling="true"}</span></span>
+<span id="annotated-cell-42-62"><a href="#annotated-cell-42-62"></a></span>
+<span id="annotated-cell-42-63"><a href="#annotated-cell-42-63"></a><span class="do">## Row {height=10%}</span></span>
+<span id="annotated-cell-42-64"><a href="#annotated-cell-42-64"></a></span>
+<span id="annotated-cell-42-65"><a href="#annotated-cell-42-65"></a><span class="sc">:::</span> {.card}</span>
+<span id="annotated-cell-42-66"><a href="#annotated-cell-42-66"></a>Gapminder identifies systematic misconceptions about important global trends and proportions and uses reliable data to develop easy to understand teaching materials to rid people of their misconceptions.</span>
+<span id="annotated-cell-42-67"><a href="#annotated-cell-42-67"></a>Gapminder is an independent Swedish foundation with no political, religious, or economic affiliations.</span>
+<span id="annotated-cell-42-68"><a href="#annotated-cell-42-68"></a>Learn more about the Gampminder dataset at <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>www.gapminder.org<span class="sc">/</span>data<span class="sc">/</span><span class="er">&gt;</span>.</span>
+<span id="annotated-cell-42-69"><a href="#annotated-cell-42-69"></a><span class="sc">:::</span></span>
+<span id="annotated-cell-42-70"><a href="#annotated-cell-42-70"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-42" data-target-annotation="8" onclick="event.preventDefault();" href="">8</a><span id="annotated-cell-42-71" class="code-annotation-target"><a href="#annotated-cell-42-71"></a><span class="do">## Row {height=90%}</span></span>
+<span id="annotated-cell-42-72"><a href="#annotated-cell-42-72"></a></span>
+<span id="annotated-cell-42-73"><a href="#annotated-cell-42-73"></a><span class="st">```</span><span class="at">{r} </span></span>
+<span id="annotated-cell-42-74"><a href="#annotated-cell-42-74"></a><span class="at">library(gapminder)</span></span>
+<span id="annotated-cell-42-75"><a href="#annotated-cell-42-75"></a><span class="at">library(DT)</span></span>
+<span id="annotated-cell-42-76"><a href="#annotated-cell-42-76"></a><span class="at">DT::datatable(gapminder)</span></span>
+<span id="annotated-cell-42-77"><a href="#annotated-cell-42-77"></a><span class="st">```</span></span>
+<span id="annotated-cell-42-78"><a href="#annotated-cell-42-78"></a></span>
+<span id="annotated-cell-42-79"><a href="#annotated-cell-42-79"></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="annotated-cell-42-80"><a href="#annotated-cell-42-80"></a><span class="at">#| fig-width: 10</span></span>
+<span id="annotated-cell-42-81"><a href="#annotated-cell-42-81"></a><span class="at">#| fig-height: 8</span></span>
+<span id="annotated-cell-42-82"><a href="#annotated-cell-42-82"></a><span class="at">paises &lt;- c("Peru", "Bolivia", "Chile")</span></span>
+<span id="annotated-cell-42-83"><a href="#annotated-cell-42-83"></a><span class="at"># etiquetas &lt;- data.frame(nombre_paises = paises, x = c(1975, 1965, 1962), y = c(6, 7, 4))</span></span>
+<span id="annotated-cell-42-84"><a href="#annotated-cell-42-84"></a><span class="at">gapminder %&gt;% </span></span>
+<span id="annotated-cell-42-85"><a href="#annotated-cell-42-85"></a><span class="at">  filter(country %in% paises) %&gt;% </span></span>
+<span id="annotated-cell-42-86"><a href="#annotated-cell-42-86"></a><span class="at">  ggplot() +</span></span>
+<span id="annotated-cell-42-87"><a href="#annotated-cell-42-87"></a><span class="at">  aes(x = year, y = lifeExp, color = country) +</span></span>
+<span id="annotated-cell-42-88"><a href="#annotated-cell-42-88"></a><span class="at">  geom_line()</span></span>
+<span id="annotated-cell-42-89"><a href="#annotated-cell-42-89"></a><span class="st">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-42" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="2,3,4,5,6" data-code-annotation="1">La barra de navegación se pobla con el título (<span style="color:#4758ab;">title</span>) y el autor (<span style="color:#4758ab;">author</span>), tal como en otros formatos de documentos (html, pdf, etc). También puede incluirse un <span style="color:#4758ab;">logo</span>.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="2,3,4,5,7" data-code-annotation="1">La barra de navegación se pobla con el título (<span style="color:#4758ab;">title</span>) y el autor (<span style="color:#4758ab;">author</span>), tal como en otros formatos de documentos (html, pdf, etc). También puede incluirse un <span style="color:#4758ab;">logo</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="7" data-code-annotation="2">Por defecto, las páginas de un dashboard se ordenan primero por filas y luego por columns. Pero esto puede invertirse específicando la opción <span style="color:#4758ab;">orientation: columns</span>.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="8" data-code-annotation="2">Por defecto, las páginas de un dashboard se ordenan primero por filas y luego por columns. Pero esto puede invertirse específicando la opción <span style="color:#4758ab;">orientation: columns</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="10" data-code-annotation="3">Páginas son creadas usando headings de nivel 1 antes de definir Filas y Columnas. El texto del heading se usará para vincular la página a la barra de navegación.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="11" data-code-annotation="3">Páginas son creadas usando headings de nivel 1 antes de definir Filas y Columnas. El texto del heading se usará para vincular la página a la barra de navegación.</span>
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="23" data-code-annotation="4">Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción <span style="color:#4758ab;">height</span>.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="24" data-code-annotation="4">Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción <span style="color:#4758ab;">height</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="25,28" data-code-annotation="5">Las Tarjetas (Cards) pueden tener contenido markdown arbitrario usando la opción <span style="color:#4758ab;">.card</span>.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="26,29" data-code-annotation="5">Las Tarjetas (Cards) pueden tener contenido markdown arbitrario usando la opción <span style="color:#4758ab;">.card</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="32,35" data-code-annotation="6">Los Bloques de Código también se presentan como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción <span style="color:#4758ab;">title</span>.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="33,36" data-code-annotation="6">Los Bloques de Código también se presentan como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción <span style="color:#4758ab;">title</span>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="37" data-code-annotation="7">La tercera fila de la primera página incluye <span style="color:#4758ab;">tabsets</span>, que permiten tener múltiples vistas de contenido.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="38" data-code-annotation="7">La tercera fila de la primera página incluye <span style="color:#4758ab;">tabsets</span>, que permiten tener múltiples vistas de contenido.</span>
 </dd>
 <dt data-target-cell="annotated-cell-42" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-42" data-code-lines="70" data-code-annotation="8">La segunda fila de la segunda página incluye dos bloques de código, que son automáticamente separados en dos tarjetas adyacentes.</span>
+<span data-code-cell="annotated-cell-42" data-code-lines="71" data-code-annotation="8">La segunda fila de la segunda página incluye dos bloques de código, que son automáticamente separados en dos tarjetas adyacentes.</span>
 </dd>
 </dl>
 </div>
@@ -2179,7 +2180,7 @@ Figure&nbsp;1: Temperatura y nivel de ozono.
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false});
+    <script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});
     (function() {
       let previousOnload = window.onload;
       window.onload = () => {
