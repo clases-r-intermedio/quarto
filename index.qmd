@@ -51,11 +51,15 @@ code-annotations: below
 - Quarto vs R Markdown
 - Documentos Quarto
 - Documentos Quarto en RStudio
+- Ejercicio 1
 - Markdown Quarto básico
 - Figuras, Tablas y Diagramas
 - Bloques de código: R
+- Tabsets
 - Embeds
+- Ejercicio 2
 - Dashboards
+- Ejercicio 3
 :::
 
 
@@ -64,7 +68,7 @@ code-annotations: below
 
 ::: {.incremental .small-par}
 - Quarto es una herramienta de código abierto que usa una variación específica de markdown ([Pandoc](https://pandoc.org)) para la publicación de documentos.
-- El objetivo de Quarto es mejorar dramáticamente el proceso de creación y colaboración en documentos científicos y técnicos.
+- El objetivo de Quarto es mejorar el proceso de creación y colaboración en documentos científicos y técnicos.
   - Para ello, Quarto combina en un único sistema consistente la funcionalidad de R Markdown, bookdown, distill, xaringian, etc.
 - Por otra parte, R Markdown está fundamentalmente atado a R. En cambio, Quarto no requiere R y fue desarrollado para ser multi-lenguaje, comenzando con R, Python, Javascript y Julia, con la idea de que funcionara incluso con lenguajes que aún no existen.
 - Aún así, Quarto es altamente compatible con R Markdown, lo que permite que podamos renderizar la mayoría de documentos escritos usando R Markdown. 
@@ -87,8 +91,7 @@ code-annotations: below
 
 . . .
 
-::: {.small-par}
-<div class=custom-code-1>
+::: {.custom-code-1}
 ``` yaml
 ---
 title: "My Document"
@@ -97,17 +100,14 @@ format:
     output-file: "document_html.html"
 ---
 ```
-</div>
 :::
 
 []{.small-par}
 
-::: {.small-par}
-<div class=custom-code-1>
+::: {.custom-code-1}
 ``` {.bash filename="terminal"}
 quarto render document_html.qmd -t html -o document_html.html
 ```
-</div>
 :::
 
 
@@ -431,6 +431,19 @@ Visualice que el nuevo contenido aparezca en el documento de Quarto.
 
 
 
+## Ejercicio 1 | Solución
+
+
+::: {.r-stack fragment-index=0 .center}
+
+![](images/ejercicio_1_solucion_01.png){.fragment .fade-in-then-out width="80%"}
+
+![](images/ejercicio_1_solucion_02.png){.fragment .fade-in-then-out width="90%"}
+
+:::
+
+
+
 ## Markdown Quarto básico
 
 ::: {.incremental .small-par}
@@ -571,7 +584,7 @@ Visualice que el nuevo contenido aparezca en el documento de Quarto.
 :::
 
 
-### Contenido raw
+<!-- ### Contenido raw
 
 ::: {.small-par}
 - Contenido raw puede ser incluido directamente sin parseo de Quarto usando el [atributo raw de Pandoc](https://pandoc.org/MANUAL.html#extension-raw_attribute).
@@ -587,7 +600,7 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 
 ```{=html}
 <p align="center"><iframe src="https://quarto.org/" width="500" height="400"></iframe></p>
-```
+``` -->
 
 
 ### Ecuaciones
@@ -647,8 +660,8 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 | [![Elefante](elephant.png "Un elefante")](https://quarto.org)                |                                                                                               |
 | ```                                                                          |                                                                                               |
 +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
-| ``` markdown                                                                 | [![](images/elephant.png){fig-alt="Un elefante."}](https://quarto.org)                        |
-| [![](elephant.png){fig-alt="Texto si imagen no carga"}](https://quarto.org)  |                                                                                               |
+| ``` markdown                                                                 | [![](images/cat.png){fig-alt="Texto si imagen no carga."}](https://quarto.org)                |
+| [![](cat.png){fig-alt="Texto si imagen no carga"}](https://quarto.org)       |                                                                                               |
 | ```                                                                          |                                                                                               |
 +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
@@ -711,9 +724,10 @@ flowchart LR
 - En particular, para renderizar y ejecutar código R, Quarto usa [Knitr](https://yihui.org/knitr/), al igual que R Markdown.
 - Bloques de código serán ejecutados al renderizar si comienzan con <span style="color:#4758ab;">```` ```{r} ```` </span> y terminan con <span style="color:#4758ab;">```` ``` ```` </span>.
 - El comportamiento del bloque de código puede ser configurado usando comentarios especiales al comienzo del bloque, identificados por <span style="color:#4758ab;">```` #| ```` </span>. Por ejemplo:
-  - <span style="color:#4758ab;"> echo: true </span> hace que se muestre el código al renderizar, mientras que no se muestra con <span style="color:#4758ab;"> echo: FALSE </span>.
-  - <span style="color:#4758ab;"> eval: true </span> hace que el código se evalúe al renderizar, mientras que no se evalúa con <span style="color:#4758ab;"> eval: FALSE </span>.
+  - <span style="color:#4758ab;"> echo: true </span> hace que se muestre el código al renderizar, mientras que con <span style="color:#4758ab;"> echo: false </span> no se muestra.
+  - <span style="color:#4758ab;"> eval: true </span> hace que el código se evalúe al renderizar, mientras que con <span style="color:#4758ab;"> eval: false </span> no se evalúa.
   - <span style="color:#4758ab;"> warning: false </span> omite warnings encontrados al evaluar el bloque de código.
+  - <span style="color:#4758ab;"> code-fold: true </span> colapsa el bloque de código, para que el usuario pueda desplegarlo si lo necesita.
   - <span style="color:#4758ab;"> fig-cap: </span> genera una leyenda para una figura generada por el código. 
 - Ésta es una diferencia importante con R Markdown, donde el comportamiento del código es definido en la primera línea, por ejemplo usando <span style="color:#4758ab;"> ```{r, echo = false}. </span>
   - Quarto en cambio usa la sintaxis basada en <span style="color:#4758ab;">```` #| ```` </span> para acomodar mejor opciones más largas como <span style="color:#4758ab;"> fig-cap </span>, <span style="color:#4758ab;"> fig-subcap </span> o <span style="color:#4758ab;"> fig-alt </span> y crear documentos de forma más portables y consistente. 
@@ -721,13 +735,17 @@ flowchart LR
 
 . . .
 
-::: {.small-par}
-<div class=custom-code-1>
+::: {.panel-tabset .small-par}
+
+### Quarto markdown
+
+::: {.custom-code-1}
 ```` markdown
 ```{{r}}
 #| echo: true
 #| eval: true
 #| warning: false
+#| code-fold: true
 #| fig-cap: "Nivel de ozono versus Temperatura."
 
 library(tidyverse)
@@ -749,19 +767,20 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 
 ```
 ````
-</div>
 :::
 
-. . .
+
+### Resultado
 
 ::: {.small-par}
 
 <!-- @fig-airquality further explores the impact of temperature on ozone level. -->
 
 ```{r}
-#| echo: false
+#| echo: true
 #| eval: true
 #| warning: false
+#| code-fold: true
 #| fig-cap: "Nivel de ozono versus Temperatura."
 
 library(tidyverse)
@@ -781,13 +800,10 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
   geom_point() + 
   geom_smooth(method = "loess")
 
-# ggplot(airquality, aes(wind_kmhr, Ozone)) + 
-#   geom_point() + 
-#   geom_smooth(method = "loess")
-
 ```
 :::
 
+:::
 
 
 ## Bloques de código: R
@@ -801,8 +817,7 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +
 
 . . .
 
-::: {.small-par}
-<div class=custom-code-1>
+::: {.custom-code-1}
 ```` markdown
 ```{{r}}
 #| echo: true
@@ -819,7 +834,7 @@ airquality <- airquality %>%  # <2>
   mutate(
     wind_kmhr = Wind / 0.6213711922,
     temp_celsius = (Temp - 32)*5/9
-  )
+  )  # <2>
 
 print(names(airquality))  # <3>
 
@@ -833,7 +848,6 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 3. Explorar nombres de columnas en dataset.
 4. Generar plot de Ozono versus Temperatura (celsius).
 ````
-</div>
 :::
 
 
@@ -845,14 +859,11 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
   - Haciendo click en el número de anotación en la lista se destacan las líneas relevantes del código. 
 :::
 
-::: {.small-par}
+::: {.custom-code-1}
 
-<!-- @fig-airquality further explores the impact of temperature on ozone level. -->
-
-<div class=custom-code-1>
 ```{r}
-#| echo: TRUE
-#| eval: FALSE
+#| echo: true
+#| eval: false
 #| warning: false
 #| fig-cap: "Nivel de ozono versus Temperatura."
 
@@ -865,7 +876,7 @@ airquality <- airquality %>%  # <2>
   mutate(
     wind_kmhr = Wind / 0.6213711922,
     temp_celsius = (Temp - 32)*5/9
-  )
+  )  # <2>
 
 print(names(airquality))  # <3>
 
@@ -878,7 +889,126 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 2. Convertir variables a unidades de medidas conocidas.
 3. Explorar nombres de columnas en dataset.
 4. Generar plot de Ozono versus Temperatura (celsius).
-</div>
+:::
+
+
+
+## Tabsets
+
+::: {.incremental .small-par}   
+- *Tabsets* o pestañas son usados para mostrar contenido que puede ser presentado en diferentes formas. 
+Por ejemplo, en este ejemplo un bloque de código es presentado sin y con el gráfico que genera. 
+:::
+
+. . .
+
+::: {.panel-tabset .small-par}
+
+### Código
+
+```{r}
+#| echo: true
+#| eval: false
+#| warning: false
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+ggplot(airquality, aes(temp_celsius, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+### Código + gráfico
+
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+#| fig-cap: "Nivel de ozono versus Temperatura."
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+ggplot(airquality, aes(temp_celsius, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+:::
+
+
+## Tabsets | Sintaxis Markdown
+
+::: {.incremental .small-par}   
+- Un *tabset* es creado encerrando su contenido entre los elementos <span style="color:#4758ab;">::: {.panel-tabset}</span> y <span style="color:#4758ab;">:::</span>
+  - Luego, cada pestaña se crea agregando un heading de nivel 2 (en HTML) o de nivel 3 (en Revealjs).
+  - Por ejemplo, ésta es la sintaxis markdown que generarían las dos pestañas presentadas en la lámina anterior (en HTML).
+:::
+
+. . .
+
+::: {.small-par}
+```` markdown
+::: {.panel-tabset}
+
+## Código
+
+```{{r}}
+#| echo: true
+#| eval: false
+#| warning: false
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+ggplot(airquality, aes(temp_celsius, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+## Código + gráfico
+
+```{{r}}
+#| echo: true
+#| eval: true
+#| warning: false
+#| fig-cap: "Nivel de ozono versus Temperatura."
+
+library(tidyverse)
+library(ggplot2)
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+ggplot(airquality, aes(temp_celsius, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+:::
+````
 :::
 
 
@@ -886,9 +1016,59 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 ## Embeds
 
 ::: {.incremental .small-par}
-- Podemos incluir el output de otro documento Quarto (<span style="color:#4758ab;">.qmd</span> or <span style="color:#4758ab;">.ipynb</span>) en nuestro documento, usando el comando <span style="color:#4758ab;">embed</span>.
-- Para embeber el output de un bloque de código (o una celda de notebook), usamos la ruta al documento y la etiqueta del bloque en el documento.
-- Por ejemplo, el documento  <span style="color:#4758ab;">example_embed/airquality.qmd</span> tiene un bloque de código con etiqueta <span style="color:#4758ab;">fig-ozono-temp</span> y podemos embeber el output de ese bloque usando:
+- Usando el comando <span style="color:#4758ab;">embed</span>, podemos incluir o embeber el output de un documento Quarto (<span style="color:#4758ab;">.qmd</span> or <span style="color:#4758ab;">.ipynb</span>) en otro documento Quarto.
+- Para embeber el output de un bloque de código (o una celda de notebook), usamos la ruta al documento y la etiqueta (<span style="color:#4758ab;">label</span>) del bloque en el documento.
+  - Por ejemplo, el documento  <span style="color:#4758ab;">example_embed/airquality.qmd</span> tiene un bloque de código con etiqueta <br> <span style="color:#4758ab;">fig-ozono-temp</span>.
+  - En este caso, es preferible no incluir las opciones <span style="color:#4758ab;"> echo: ... </span>, <span style="color:#4758ab;"> eval: ... </span> en el bloque de código, ya que el código es evaluado por defecto al ser embebido. En la siguiente lámina veremos cómo podemos controlar si mostrarlo o no. 
+  - Otras opciones (<span style="color:#4758ab;"> code-fold: true</span>, etc.) sí pueden incluirse en el bloque de código.
+:::
+
+. . .
+
+::: {.small-par}
+```` {.markdown shortcodes=false}
+
+---
+title: "Airquality (.qmd)"
+format: 
+  html:
+    output-file: "airquality.html"
+---
+
+```{{r}}
+#| label: fig-ozono-temp
+#| warning: false
+#| code-fold: true
+#| fig-cap: Nivel de ozono versus Temperatura.
+
+library(tidyverse)
+library(ggplot2)
+
+# print(dim(airquality))
+
+airquality <- airquality %>% 
+  mutate(
+    wind_kmhr = Wind / 0.6213711922,
+    temp_celsius = (Temp - 32)*5/9
+  )
+
+# print(names(airquality))
+
+ggplot(airquality, aes(temp_celsius, Ozone)) +
+  geom_point() + 
+  geom_smooth(method = "loess")
+
+```
+
+````
+:::
+
+
+
+## Embeds
+
+::: {.incremental .small-par}
+- Podemos embeber el output del bloque de código anterior usando el comando:
 :::
 
 . . .
@@ -899,7 +1079,30 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 ```
 :::
 
+::: {.small-par}
 {{< embed example_embed/airquality.qmd#fig-ozono-temp >}}
+:::
+
+
+
+## Embeds
+
+::: {.incremental .small-par}
+- Para además mostrar el bloque de código, podemos incluir la opción <span style="color:#4758ab;"> echo=true </span> en el comando.
+  - Al embeber, opciones como <span style="color:#4758ab;"> code-fold: true</span> son propagadas desde el bloque de código.
+:::
+
+. . .
+
+::: {.big-par}
+```{.markdown shortcodes=false}
+{{< embed example_embed/airquality.qmd#fig-ozono-temp echo=true >}}
+```
+:::
+
+::: {.small-par}
+{{< embed example_embed/airquality.qmd#fig-ozono-temp echo=true >}}
+:::
 
 
 
@@ -907,13 +1110,33 @@ ggplot(airquality, aes(temp_celsius, Ozone)) +   # <4>
 
 ::: {.small-par}
 1) Usando RStudio, cree un nuevo documento Quarto llamado <span style="color:#4758ab;"> ejercicio_code_embed.qmd</span>, que tenga formato HTML.
-2) Active la casilla **Render on Save** en RStudio, para que cuda vez que guarde el documento éste sea renderizado y se actualice su previsualización.
-3) Copie el contenido del archivo <span style="color:#4758ab;"> ejercicio_documento_html.qmd </span> en el nuevo archivo creado.
-Visualice que el nuevo contenido aparezca en el documento de Quarto.
-4) Cree un archivo llamado <span style="color:#4758ab;"> code_embed.qmd</span>, que contenga un bloque de código que haga uso del dataset <span style="color:#4758ab;"> airquality </span> para generar un gráfico de Temperatura [°C] versus Viento [km/hr], teniendo en cuenta lo siguiente:
-   - Al renderizar el documento, el código debe mostrarse y evaluarse, además cualquier posible *warning* debe omitirse.
-   - El gráfico generado debe tener la leyenda "Gráfico de Temperatura versus Viento".
-5) Agregue un nuevo **Capítulo** al documento <span style="color:#4758ab;"> ejercicio_code_embed.qmd</span>, con una **Sección** que contenga el código y gráfico generados por el archivo <span style="color:#4758ab;"> code_embed.qmd</span>.
+2) Active la casilla **Render on Save** en RStudio, para que cada vez que guarde el documento éste sea renderizado y se actualice su previsualización.
+3) Cree un archivo llamado <span style="color:#4758ab;"> code_embed.qmd</span>, que contenga dos bloques de código, donde en cada bloque se use el dataset <span style="color:#4758ab;"> airquality </span> para lo siguiente: 
+   - a) El **primer bloque** debe generar una tabla de Temperatura [°C] versus Viento [km/hr]. Asigne a este bloque la etiqueta <span style="color:#4758ab;"> code-1</span>.
+   - b) El **segundo bloque** debe generar un gráfico de Temperatura [°C] versus Viento [km/hr], con la leyenda "Gráfico de Temperatura versus Viento". Asigne a este bloque la etiqueta <span style="color:#4758ab;"> fig-1</span>.
+4) Agregue un **Capítulo** al documento <span style="color:#4758ab;"> ejercicio_code_embed.qmd</span>, con tres **Secciones** en que se muestren los siguientes resultados, en base al output resultante de los bloques de código creados en el archivo <span style="color:#4758ab;"> code_embed.qmd</span>.
+   - **Sección 1:** debe mostrar los 10 primeros registros de la tabla generada por el **primer bloque** de código, mientras que el código y cualquier posible *warning* deben  omitirse.
+   - **Sección 2:** debe mostrar el gráfico generado por el **segundo bloque** de código, mientras que el código y cualquier posible *warning* deben omitirse. 
+   - **Sección 3:** un *tabset* con dos pestañas, en que: 
+     - La **primera pestaña** muestre el código y tabla generada por el **primer bloque** de código. El código debe aparecer colapsado, de manera que pueda ser desplegado interactivamente. 
+     - **La segunda pestaña** muestre el código y el gráfico generado por el **segundo bloque** de código. El código debe aparecer colapsado, de manera que pueda ser desplegado interactivamente.
+
+   Visualice que el nuevo contenido aparezca en el documento de Quarto después de renderizar.
+:::
+
+
+
+## Ejercicio 2 | Solución
+
+
+::: {.r-stack fragment-index=0 .center}
+
+![](images/ejercicio_2_solucion_01.png){.fragment .fade-in-then-out width="80%"}
+
+![](images/ejercicio_2_solucion_02.png){.fragment .fade-in-then-out width="90%"}
+
+![](images/ejercicio_2_solucion_03.png){.fragment .fade-in-then-out width="90%"}
+
 :::
 
 
@@ -959,7 +1182,7 @@ Visualice que el nuevo contenido aparezca en el documento de Quarto.
 
 ::: {.small-par}
 - Un dashboard consiste de varios componentes:
-2)  **Páginas, Filas, Columnas, Tabsets**: Páginas, filas y columnas se definen usando headings de markdown (con atributos opcionales que controlan la altura, el ancho, etc). Tabsets permiten divisiones adicionales dentro de una fila o columna. <br>
+2)  **Páginas, Filas, Columnas, Tabsets**: Páginas, filas y columnas se definen usando headings de markdown (con atributos opcionales que controlan la altura, el ancho, etc). Tabsets permiten divisiones adicionales (*tabs* o pestañas) dentro de una fila o columna. <br>
   []{.small-par}
   ![](images/dashboard_example_components_pres_02.png){width="100%"}
 :::
@@ -970,7 +1193,7 @@ Visualice que el nuevo contenido aparezca en el documento de Quarto.
 
 ::: {.small-par}
 - Un dashboard consiste de varios componentes:
-2)  **Páginas, Filas, Columnas, Tabsets**: Páginas, filas y columnas se definen usando headings de markdown (con atributos opcionales que controlan la altura, el ancho, etc). Tabsets permiten divisiones adicionales dentro de una fila o columna. <br>
+2)  **Páginas, Filas, Columnas, Tabsets**: Páginas, filas y columnas se definen usando headings de markdown (con atributos opcionales que controlan la altura, el ancho, etc). Tabsets permiten divisiones adicionales (*tabs* o pestañas) dentro de una fila o columna. <br>
   []{.small-par}
   ![](images/dashboard_example_components_pres_03.png){width="100%"}
 :::
@@ -990,8 +1213,7 @@ Visualice que el nuevo contenido aparezca en el documento de Quarto.
 
 ## Dashboards
 
-::: {.small-par}
-<div class=custom-code-2>
+::: {.small-par .custom-code-2}
 ```` r
 ---
 title: "Ejemplo de Dashboard" # <1>
@@ -1090,9 +1312,8 @@ gapminder %>%
 4.  Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción <span style="color:#4758ab;">height</span>. En cambio, al definir columnas podemos especificar su tamaño relativo con la opción <span style="color:#4758ab;">width</span>.
 5.  Las Tarjetas (Cards) pueden tener contenido markdown arbitrario usando la opción <span style="color:#4758ab;">.card</span>.
 6.  Los Bloques de Código también pueden definirse como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción <span style="color:#4758ab;">title</span>.
-7.  La tercera fila de la primera página incluye tres <span style="color:#4758ab;">tabsets</span>, que permiten tener múltiples vistas de contenido.
+7.  La tercera fila de la primera página incluye un <span style="color:#4758ab;">tabset</span> con tres pestañas, que permiten tener múltiples vistas de contenido.
 8.  La segunda fila de la segunda página incluye dos bloques de código, que son automáticamente separados en dos tarjetas adyacentes.
-</div>
 :::
 
 
@@ -1105,7 +1326,19 @@ gapminder %>%
 2)  Agregue al dashboard una tercera página llamada **Ejercicio**, que tenga dos columnas.
     - Recuerda especificar la orientación adecuada en la página.
 3)  En la primera columna (izquierda), muestre una tabla que contenga la expectativa de vida (columna **lifeExp**), el GDP per cápita (columna **gdpPercap**) y el tiempo (columna **year**) para los países (columna **country**) de Chile, Argentina y Brasil, en todo el rango de tiempo disponible.
-4)  En la segunda columna (derecha), cree dos tabsets.
-    - El primer tabset debería mostrar un gráfico de **expectativa de vida versus tiempo**, para los tres países. El título del tabset debe ser **Expectativa de vida en el tiempo**. 
-    - El segundo tabset debería mostrar un gráfico de la **evolución en el tiempo del GDP per cápita** en cada país. El título del tabset debe ser **GDP per cápita en el tiempo**.  
+4)  En la segunda columna (derecha), cree un tabset con dos pestañas (*tabs*).
+    - La primera pestaña debería mostrar un gráfico de **expectativa de vida versus tiempo**, para los tres países. El título de la pestaña debe ser **Expectativa de vida en el tiempo**. 
+    - La segunda pestaña debería mostrar un gráfico de la **evolución en el tiempo del GDP per cápita** en cada país. El título de la pestaña debe ser **GDP per cápita en el tiempo**.  
+:::
+
+
+
+## Ejercicio 3 | Solución
+
+::: {.r-stack fragment-index=0 .center}
+
+![](images/ejercicio_3_solucion_01.png){.fragment .fade-in-then-out width="100%"}
+
+![](images/ejercicio_3_solucion_02.png){.fragment .fade-in-then-out width="100%"}
+
 :::
