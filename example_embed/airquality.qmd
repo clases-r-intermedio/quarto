@@ -1,11 +1,14 @@
 ---
 title: "Airquality (.qmd)"
-format: html
+format: 
+  html:
+    output-file: "airquality.html"
 ---
 
 ```{r}
 #| label: fig-ozono-temp
 #| warning: false
+#| code-fold: true
 #| fig-cap: Nivel de ozono versus Temperatura.
 
 library(tidyverse)
