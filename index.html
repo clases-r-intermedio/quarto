@@ -742,9 +742,17 @@
 </div>
 <div class="fragment">
 <div class="panel-tabset small-par">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Crear documentos</a></li><li><a href="#tabset-3-2">Renderizar y previsualizar</a></li><li><a href="#tabset-3-3">Modos: visual y source</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Instalación</a></li><li><a href="#tabset-3-2">Crear documentos</a></li><li><a href="#tabset-3-3">Renderizar y previsualizar</a></li><li><a href="#tabset-3-4">Modos: visual y source</a></li></ul>
 <div class="tab-content small-par">
 <div id="tabset-3-1">
+<div class="small-par">
+<ul>
+<li>Quarto puede ser instalado desde una consola R como cualquier otro paquete, con el siguiente comando: <br></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"quarto"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-2">
 <div class="small-par">
 <ul>
 <li>Usando el comando <strong>File : New File : Quarto Document…</strong> podemos crear un nuevo documento Quarto.</li>
@@ -754,7 +762,7 @@
 <p><img data-src="images/rstudio_create_document.png" style="width:60.0%"></p>
 </div>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-3-3">
 <div class="small-par">
 <div class="small-par">
 <ul>
@@ -768,15 +776,12 @@
 </div>
 <div class="small-par">
 <ul>
-<li class="fragment">Alternativamente, un documento también puede ser renderizado directamente usando el paquete quarto en una consola R. <br> <span class="small-par"></span> <img data-src="images/rstudio_render_terminal.png" style="width:60.0%"> <!-- ``` r
-install.packages("quarto")
-quarto::quarto_render("hello.qmd")
-``` --></li>
+<li class="fragment">Alternativamente, un documento también puede ser renderizado directamente usando el paquete quarto en una consola R. <br> <span class="small-par"></span> <img data-src="images/rstudio_render_terminal.png" style="width:60.0%"></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="tabset-3-3">
+<div id="tabset-3-4">
 <div class="small-par">
 <ul>
 <li class="fragment">En RStudio podemos ser el mismo documento en dos modos: <strong>visual</strong> y <strong>source</strong>.
@@ -802,25 +807,25 @@ quarto::quarto_render("hello.qmd")
 <ul>
 <li>Agregue una clase <span style="color:#4758ab;"> .custom-code-1 </span> y use esta clase para cambiar la apariencia del bloque de código que aparece en la <strong>Sección 2</strong>.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href=""></a>.custom-code-1{</span>
-<span id="cb3-2"><a href=""></a>  font-size: 1.5rem</span>
-<span id="cb3-3"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href=""></a>.custom-code-1{</span>
+<span id="cb4-2"><a href=""></a>  font-size: 1.5rem</span>
+<span id="cb4-3"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Agregue una segunda clase <span style="color:#4758ab;"> .custom-text-1 </span> y úsela para cambiar la apariencia de la tabla que aparece en la <strong>Sección 2</strong>.</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href=""></a>.custom-text-1{</span>
-<span id="cb4-2"><a href=""></a>  font-size: 1.5rem;</span>
-<span id="cb4-3"><a href=""></a>  font-style: italic;</span>
-<span id="cb4-4"><a href=""></a>  background-color: rgb(243, 234, 137);</span>
-<span id="cb4-5"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href=""></a>.custom-text-1{</span>
+<span id="cb5-2"><a href=""></a>  font-size: 1.5rem;</span>
+<span id="cb5-3"><a href=""></a>  font-style: italic;</span>
+<span id="cb5-4"><a href=""></a>  background-color: rgb(243, 234, 137);</span>
+<span id="cb5-5"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Para aplicar una clase a un elemento del documento, debemos encerrarlo entre elementos html <span style="color:#4758ab;"> div </span>, por ejemplo para un bloque de código:</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href=""></a>&lt;div class=custom-code-1&gt;</span>
-<span id="cb5-2"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb5-3"><a href=""></a><span class="in">library(ggplot2)</span></span>
-<span id="cb5-4"><a href=""></a><span class="in">```</span></span>
-<span id="cb5-5"><a href=""></a>&lt;/div&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href=""></a>&lt;div class=custom-code-1&gt;</span>
+<span id="cb6-2"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb6-3"><a href=""></a><span class="in">library(ggplot2)</span></span>
+<span id="cb6-4"><a href=""></a><span class="in">```</span></span>
+<span id="cb6-5"><a href=""></a>&lt;/div&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </div>
 </section>
@@ -858,19 +863,19 @@ quarto::quarto_render("hello.qmd")
 </thead>
 <tbody>
 <tr>
-<td><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href=""></a>*italics*, **bold**, ***bold italics***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href=""></a>*italics*, **bold**, ***bold italics***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><em>italics</em>, <strong>bold</strong>, <strong><em>bold italics</em></strong></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href=""></a>superscript^2^ / subscript~2~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href=""></a>superscript^2^ / subscript~2~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td>superscript<sup>2</sup> / subscript<sub>2</sub></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href=""></a>~~strikethrough~~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href=""></a>~~strikethrough~~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><del>strikethrough</del></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href=""></a><span class="in">`verbatim code`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href=""></a><span class="in">`verbatim code`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><code>verbatim code</code></td>
 </tr>
 </tbody>
@@ -892,27 +897,27 @@ quarto::quarto_render("hello.qmd")
 </thead>
 <tbody>
 <tr>
-<td><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href=""></a><span class="fu"># Header 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href=""></a><span class="fu"># Header 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><h1 id="header-1" class="heading-output">Header 1</h1></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href=""></a><span class="fu">## Header 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href=""></a><span class="fu">## Header 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><h2 id="header-2" class="heading-output">Header 2</h2></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href=""></a><span class="fu">### Header 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href=""></a><span class="fu">### Header 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><h3 id="header-3" class="heading-output">Header 3</h3></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href=""></a><span class="fu">#### Header 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href=""></a><span class="fu">#### Header 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><h4 id="header-4" class="heading-output">Header 4</h4></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href=""></a><span class="fu">##### Header 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href=""></a><span class="fu">##### Header 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><h5 id="header-5" class="heading-output">Header 5</h5></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href=""></a><span class="fu">###### Header 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href=""></a><span class="fu">###### Header 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><h6 id="header-6" class="heading-output">Header 6</h6></td>
 </tr>
 </tbody>
@@ -943,10 +948,10 @@ quarto::quarto_render("hello.qmd")
 </thead>
 <tbody>
 <tr>
-<td><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href=""></a><span class="ss">* </span>lista no numerada</span>
-<span id="cb16-2"><a href=""></a><span class="ss">    + </span>sub-item 1</span>
-<span id="cb16-3"><a href=""></a><span class="ss">    + </span>sub-item 2</span>
-<span id="cb16-4"><a href=""></a><span class="ss">        - </span>sub-sub-item 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href=""></a><span class="ss">* </span>lista no numerada</span>
+<span id="cb17-2"><a href=""></a><span class="ss">    + </span>sub-item 1</span>
+<span id="cb17-3"><a href=""></a><span class="ss">    + </span>sub-item 2</span>
+<span id="cb17-4"><a href=""></a><span class="ss">        - </span>sub-sub-item 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><div class="small-par">
 <ul>
 <li>lista no numerada
@@ -961,19 +966,19 @@ quarto::quarto_render("hello.qmd")
 </div></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href=""></a><span class="ss">*   </span>item 2</span>
-<span id="cb17-2"><a href=""></a></span>
-<span id="cb17-3"><a href=""></a>    Continuación (indentación de 4 espacios)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href=""></a><span class="ss">*   </span>item 2</span>
+<span id="cb18-2"><a href=""></a></span>
+<span id="cb18-3"><a href=""></a>    Continuación (indentación de 4 espacios)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><ul>
 <li><p><span style="font-size:16.0pt">item 2</span></p>
 <p><span style="font-size:16.0pt">Continuación (indentación de 4 espacios)</span></p></li>
 </ul></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href=""></a><span class="ss">1. </span>lista numerada</span>
-<span id="cb18-2"><a href=""></a><span class="ss">2. </span>item 2</span>
-<span id="cb18-3"><a href=""></a>    i) sub-item 1</span>
-<span id="cb18-4"><a href=""></a>         A.  sub-sub-item 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href=""></a><span class="ss">1. </span>lista numerada</span>
+<span id="cb19-2"><a href=""></a><span class="ss">2. </span>item 2</span>
+<span id="cb19-3"><a href=""></a>    i) sub-item 1</span>
+<span id="cb19-4"><a href=""></a>         A.  sub-sub-item 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><ol type="1">
 <li>lista numerada</li>
 <li>item 2
@@ -986,19 +991,19 @@ quarto::quarto_render("hello.qmd")
 </ol></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href=""></a><span class="ss">- </span><span class="va">[ ]</span> Tarea 1</span>
-<span id="cb19-2"><a href=""></a><span class="ss">- </span><span class="va">[x]</span> Tarea 2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href=""></a><span class="ss">- </span><span class="va">[ ]</span> Tarea 1</span>
+<span id="cb20-2"><a href=""></a><span class="ss">- </span><span class="va">[x]</span> Tarea 2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><ul class="task-list">
 <li><label><input type="checkbox">Tarea 1</label></li>
 <li><label><input type="checkbox" checked="">Tarea 2</label></li>
 </ul></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href=""></a>(@)  Lista cuya numeración</span>
-<span id="cb20-2"><a href=""></a></span>
-<span id="cb20-3"><a href=""></a>continúa después</span>
-<span id="cb20-4"><a href=""></a></span>
-<span id="cb20-5"><a href=""></a>(@)  de una interrupción</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href=""></a>(@)  Lista cuya numeración</span>
+<span id="cb21-2"><a href=""></a></span>
+<span id="cb21-3"><a href=""></a>continúa después</span>
+<span id="cb21-4"><a href=""></a></span>
+<span id="cb21-5"><a href=""></a>(@)  de una interrupción</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><ol type="1">
 <li>Lista cuya numeración</li>
 </ol>
@@ -1008,13 +1013,13 @@ quarto::quarto_render("hello.qmd")
 </ol></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href=""></a>::: {}</span>
-<span id="cb21-2"><a href=""></a><span class="ss">1. </span>Lista</span>
-<span id="cb21-3"><a href=""></a>:::</span>
-<span id="cb21-4"><a href=""></a></span>
-<span id="cb21-5"><a href=""></a>::: {}</span>
-<span id="cb21-6"><a href=""></a><span class="ss">1. </span>Seguida de otra lista</span>
-<span id="cb21-7"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href=""></a>::: {}</span>
+<span id="cb22-2"><a href=""></a><span class="ss">1. </span>Lista</span>
+<span id="cb22-3"><a href=""></a>:::</span>
+<span id="cb22-4"><a href=""></a></span>
+<span id="cb22-5"><a href=""></a>::: {}</span>
+<span id="cb22-6"><a href=""></a><span class="ss">1. </span>Seguida de otra lista</span>
+<span id="cb22-7"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><div>
 <ol type="1">
 <li>Lista</li>
@@ -1027,8 +1032,8 @@ quarto::quarto_render("hello.qmd")
 </div></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href=""></a>término</span>
-<span id="cb22-2"><a href=""></a>: definición</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href=""></a>término</span>
+<span id="cb23-2"><a href=""></a>: definición</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><dl>
 <dt>término</dt>
 <dd>
@@ -1076,13 +1081,13 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 </thead>
 <tbody>
 <tr>
-<td><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href=""></a>método <span class="in">`inline`</span>: $E = mc^{2}$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href=""></a>método <span class="in">`inline`</span>: $E = mc^{2}$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td>método <span style="color:#4758ab;">inline</span>: <span class="math inline">\(E=mc^{2}\)</span></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href=""></a>método <span class="in">`display`</span>:</span>
-<span id="cb24-2"><a href=""></a></span>
-<span id="cb24-3"><a href=""></a>$$E = mc^{2}$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href=""></a>método <span class="in">`display`</span>:</span>
+<span id="cb25-2"><a href=""></a></span>
+<span id="cb25-3"><a href=""></a>$$E = mc^{2}$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td>método <span style="color:#4758ab;">display</span>: <span class="math display">\[E = mc^{2}\]</span></td>
 </tr>
 </tbody>
@@ -1114,15 +1119,15 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 </thead>
 <tbody>
 <tr>
-<td><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href=""></a><span class="ot">&lt;https://quarto.org&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href=""></a><span class="ot">&lt;https://quarto.org&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><a href="https://quarto.org" class="uri">https://quarto.org</a></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href=""></a><span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href=""></a><span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><a href="https://quarto.org">Quarto</a></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href=""></a><span class="al">![Elefante](elephant.png)</span>{.lightbox}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href=""></a><span class="al">![Elefante](elephant.png)</span>{.lightbox}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><div class="quarto-figure quarto-figure-center">
 <figure>
 <p><a href="images/elephant.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Elefante"><img data-src="images/elephant.png" alt="Elefante"></a></p>
@@ -1131,11 +1136,11 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 </div></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href=""></a><span class="co">[</span><span class="al">![Elefante](elephant.png "Un elefante")</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href=""></a><span class="co">[</span><span class="al">![Elefante](elephant.png "Un elefante")</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><a href="https://quarto.org"><img data-src="images/elephant.png" title="Un elefante" alt="Un elefante."></a></td>
 </tr>
 <tr>
-<td><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href=""></a><span class="co">[</span><span class="al">![](cat.png)</span><span class="ot">{fig-alt="Texto si imagen no carga"}</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href=""></a><span class="co">[</span><span class="al">![](cat.png)</span><span class="ot">{fig-alt="Texto si imagen no carga"}</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><a href="https://quarto.org"><img data-src="images/cat.png" alt="Texto si imagen no carga."></a></td>
 </tr>
 </tbody>
@@ -1145,11 +1150,11 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 <div id="tabset-5-2">
 <div class="small-par">
 <h4 id="sintaxis-markdown">Sintaxis Markdown</h4>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href=""></a>| Right | Left | Default | Center |</span>
-<span id="cb30-2"><a href=""></a>|------:|:-----|---------|:------:|</span>
-<span id="cb30-3"><a href=""></a>|   12  |  12  |    12   |    12  |</span>
-<span id="cb30-4"><a href=""></a>|  123  |  123 |   123   |   123  |</span>
-<span id="cb30-5"><a href=""></a>|    1  |    1 |     1   |     1  |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href=""></a>| Right | Left | Default | Center |</span>
+<span id="cb31-2"><a href=""></a>|------:|:-----|---------|:------:|</span>
+<span id="cb31-3"><a href=""></a>|   12  |  12  |    12   |    12  |</span>
+<span id="cb31-4"><a href=""></a>|  123  |  123 |   123   |   123  |</span>
+<span id="cb31-5"><a href=""></a>|    1  |    1 |     1   |     1  |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h4 id="output">Output</h4>
 <table class="caption-top">
 <thead>
@@ -1189,12 +1194,12 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 <li>Quarto tiene soporte nativo para renderizar diagramas <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> y <a href="https://graphviz.org/">Graphviz</a>. Esto nos permite incluir diagramas de flujo, de secuencia, de estado, cartas Gantt, etc. en nuestros documentos. Por ejemplo, veamos el código para construir un diagrama Mermaid simple y cómo se ve después de renderizar.</li>
 </ul>
 </div>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource {mermaid} number-lines code-with-copy"><code class="sourceCode"><span id="cb31-1"><a href=""></a>%%| mermaid-format: js</span>
-<span id="cb31-2"><a href=""></a>flowchart LR</span>
-<span id="cb31-3"><a href=""></a>  A[Borde rectangular] --&gt; B(Borde redondeado)</span>
-<span id="cb31-4"><a href=""></a>  B --&gt; C{Decisión}</span>
-<span id="cb31-5"><a href=""></a>  C --&gt; D[Resultado uno]</span>
-<span id="cb31-6"><a href=""></a>  C --&gt; E[Resultado dos]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource {mermaid} number-lines code-with-copy"><code class="sourceCode"><span id="cb32-1"><a href=""></a>%%| mermaid-format: js</span>
+<span id="cb32-2"><a href=""></a>flowchart LR</span>
+<span id="cb32-3"><a href=""></a>  A[Borde rectangular] --&gt; B(Borde redondeado)</span>
+<span id="cb32-4"><a href=""></a>  B --&gt; C{Decisión}</span>
+<span id="cb32-5"><a href=""></a>  C --&gt; D[Resultado uno]</span>
+<span id="cb32-6"><a href=""></a>  C --&gt; E[Resultado dos]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="center">
 <p><img data-src="images/diagram_mermaid.png" style="width:60.0%"></p>
 </div>
@@ -1230,31 +1235,31 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 <div class="tab-content small-par">
 <div id="tabset-6-1">
 <div class="custom-code-1">
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb32-2"><a href=""></a><span class="in">#| echo: true</span></span>
-<span id="cb32-3"><a href=""></a><span class="in">#| eval: true</span></span>
-<span id="cb32-4"><a href=""></a><span class="in">#| warning: false</span></span>
-<span id="cb32-5"><a href=""></a><span class="in">#| code-fold: true</span></span>
-<span id="cb32-6"><a href=""></a><span class="in">#| fig-cap: "Nivel de ozono versus Temperatura."</span></span>
-<span id="cb32-7"><a href=""></a></span>
-<span id="cb32-8"><a href=""></a><span class="in">library(tidyverse)</span></span>
-<span id="cb32-9"><a href=""></a><span class="in">library(ggplot2)</span></span>
-<span id="cb32-10"><a href=""></a></span>
-<span id="cb32-11"><a href=""></a><span class="in">print(dim(airquality))</span></span>
-<span id="cb32-12"><a href=""></a></span>
-<span id="cb32-13"><a href=""></a><span class="in">airquality &lt;- airquality %&gt;% </span></span>
-<span id="cb32-14"><a href=""></a><span class="in">  mutate(</span></span>
-<span id="cb32-15"><a href=""></a><span class="in">    wind_kmhr = Wind / 0.6213711922,</span></span>
-<span id="cb32-16"><a href=""></a><span class="in">    temp_celsius = (Temp - 32)*5/9</span></span>
-<span id="cb32-17"><a href=""></a><span class="in">  )</span></span>
-<span id="cb32-18"><a href=""></a></span>
-<span id="cb32-19"><a href=""></a><span class="in">print(names(airquality))</span></span>
-<span id="cb32-20"><a href=""></a></span>
-<span id="cb32-21"><a href=""></a><span class="in">ggplot(airquality, aes(temp_celsius, Ozone)) + </span></span>
-<span id="cb32-22"><a href=""></a><span class="in">  geom_point() + </span></span>
-<span id="cb32-23"><a href=""></a><span class="in">  geom_smooth(method = "loess")</span></span>
-<span id="cb32-24"><a href=""></a></span>
-<span id="cb32-25"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb33-2"><a href=""></a><span class="in">#| echo: true</span></span>
+<span id="cb33-3"><a href=""></a><span class="in">#| eval: true</span></span>
+<span id="cb33-4"><a href=""></a><span class="in">#| warning: false</span></span>
+<span id="cb33-5"><a href=""></a><span class="in">#| code-fold: true</span></span>
+<span id="cb33-6"><a href=""></a><span class="in">#| fig-cap: "Nivel de ozono versus Temperatura."</span></span>
+<span id="cb33-7"><a href=""></a></span>
+<span id="cb33-8"><a href=""></a><span class="in">library(tidyverse)</span></span>
+<span id="cb33-9"><a href=""></a><span class="in">library(ggplot2)</span></span>
+<span id="cb33-10"><a href=""></a></span>
+<span id="cb33-11"><a href=""></a><span class="in">print(dim(airquality))</span></span>
+<span id="cb33-12"><a href=""></a></span>
+<span id="cb33-13"><a href=""></a><span class="in">airquality &lt;- airquality %&gt;% </span></span>
+<span id="cb33-14"><a href=""></a><span class="in">  mutate(</span></span>
+<span id="cb33-15"><a href=""></a><span class="in">    wind_kmhr = Wind / 0.6213711922,</span></span>
+<span id="cb33-16"><a href=""></a><span class="in">    temp_celsius = (Temp - 32)*5/9</span></span>
+<span id="cb33-17"><a href=""></a><span class="in">  )</span></span>
+<span id="cb33-18"><a href=""></a></span>
+<span id="cb33-19"><a href=""></a><span class="in">print(names(airquality))</span></span>
+<span id="cb33-20"><a href=""></a></span>
+<span id="cb33-21"><a href=""></a><span class="in">ggplot(airquality, aes(temp_celsius, Ozone)) + </span></span>
+<span id="cb33-22"><a href=""></a><span class="in">  geom_point() + </span></span>
+<span id="cb33-23"><a href=""></a><span class="in">  geom_smooth(method = "loess")</span></span>
+<span id="cb33-24"><a href=""></a></span>
+<span id="cb33-25"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-6-2">
@@ -1263,22 +1268,22 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="annotated-cell-37"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy"><code class="sourceCode r"><span id="annotated-cell-37-1"><a href="#annotated-cell-37-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="annotated-cell-37-2"><a href="#annotated-cell-37-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="annotated-cell-37-3"><a href="#annotated-cell-37-3"></a></span>
-<span id="annotated-cell-37-4"><a href="#annotated-cell-37-4"></a><span class="fu">print</span>(<span class="fu">dim</span>(airquality))</span>
-<span id="annotated-cell-37-5"><a href="#annotated-cell-37-5"></a></span>
-<span id="annotated-cell-37-6"><a href="#annotated-cell-37-6"></a>airquality <span class="ot">&lt;-</span> airquality <span class="sc">%&gt;%</span> </span>
-<span id="annotated-cell-37-7"><a href="#annotated-cell-37-7"></a>  <span class="fu">mutate</span>(</span>
-<span id="annotated-cell-37-8"><a href="#annotated-cell-37-8"></a>    <span class="at">wind_kmhr =</span> Wind <span class="sc">/</span> <span class="fl">0.6213711922</span>,</span>
-<span id="annotated-cell-37-9"><a href="#annotated-cell-37-9"></a>    <span class="at">temp_celsius =</span> (Temp <span class="sc">-</span> <span class="dv">32</span>)<span class="sc">*</span><span class="dv">5</span><span class="sc">/</span><span class="dv">9</span></span>
-<span id="annotated-cell-37-10"><a href="#annotated-cell-37-10"></a>  )</span>
-<span id="annotated-cell-37-11"><a href="#annotated-cell-37-11"></a></span>
-<span id="annotated-cell-37-12"><a href="#annotated-cell-37-12"></a><span class="fu">print</span>(<span class="fu">names</span>(airquality))</span>
-<span id="annotated-cell-37-13"><a href="#annotated-cell-37-13"></a></span>
-<span id="annotated-cell-37-14"><a href="#annotated-cell-37-14"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(temp_celsius, Ozone)) <span class="sc">+</span> </span>
-<span id="annotated-cell-37-15"><a href="#annotated-cell-37-15"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="annotated-cell-37-16"><a href="#annotated-cell-37-16"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-38"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy"><code class="sourceCode r"><span id="annotated-cell-38-1"><a href="#annotated-cell-38-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="annotated-cell-38-2"><a href="#annotated-cell-38-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="annotated-cell-38-3"><a href="#annotated-cell-38-3"></a></span>
+<span id="annotated-cell-38-4"><a href="#annotated-cell-38-4"></a><span class="fu">print</span>(<span class="fu">dim</span>(airquality))</span>
+<span id="annotated-cell-38-5"><a href="#annotated-cell-38-5"></a></span>
+<span id="annotated-cell-38-6"><a href="#annotated-cell-38-6"></a>airquality <span class="ot">&lt;-</span> airquality <span class="sc">%&gt;%</span> </span>
+<span id="annotated-cell-38-7"><a href="#annotated-cell-38-7"></a>  <span class="fu">mutate</span>(</span>
+<span id="annotated-cell-38-8"><a href="#annotated-cell-38-8"></a>    <span class="at">wind_kmhr =</span> Wind <span class="sc">/</span> <span class="fl">0.6213711922</span>,</span>
+<span id="annotated-cell-38-9"><a href="#annotated-cell-38-9"></a>    <span class="at">temp_celsius =</span> (Temp <span class="sc">-</span> <span class="dv">32</span>)<span class="sc">*</span><span class="dv">5</span><span class="sc">/</span><span class="dv">9</span></span>
+<span id="annotated-cell-38-10"><a href="#annotated-cell-38-10"></a>  )</span>
+<span id="annotated-cell-38-11"><a href="#annotated-cell-38-11"></a></span>
+<span id="annotated-cell-38-12"><a href="#annotated-cell-38-12"></a><span class="fu">print</span>(<span class="fu">names</span>(airquality))</span>
+<span id="annotated-cell-38-13"><a href="#annotated-cell-38-13"></a></span>
+<span id="annotated-cell-38-14"><a href="#annotated-cell-38-14"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(temp_celsius, Ozone)) <span class="sc">+</span> </span>
+<span id="annotated-cell-38-15"><a href="#annotated-cell-38-15"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="annotated-cell-38-16"><a href="#annotated-cell-38-16"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1314,34 +1319,34 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 </div>
 <div class="fragment">
 <div class="custom-code-1">
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb34-2"><a href=""></a><span class="in">#| echo: true</span></span>
-<span id="cb34-3"><a href=""></a><span class="in">#| eval: false</span></span>
-<span id="cb34-4"><a href=""></a><span class="in">#| warning: false</span></span>
-<span id="cb34-5"><a href=""></a><span class="in">#| fig-cap: "Nivel de ozono versus Temperatura."</span></span>
-<span id="cb34-6"><a href=""></a></span>
-<span id="cb34-7"><a href=""></a><span class="in">library(tidyverse) # &lt;1&gt;</span></span>
-<span id="cb34-8"><a href=""></a><span class="in">library(ggplot2)</span></span>
-<span id="cb34-9"><a href=""></a></span>
-<span id="cb34-10"><a href=""></a><span class="in">print(dim(airquality))</span></span>
-<span id="cb34-11"><a href=""></a></span>
-<span id="cb34-12"><a href=""></a><span class="in">airquality &lt;- airquality %&gt;%  # &lt;2&gt;</span></span>
-<span id="cb34-13"><a href=""></a><span class="in">  mutate(</span></span>
-<span id="cb34-14"><a href=""></a><span class="in">    wind_kmhr = Wind / 0.6213711922,</span></span>
-<span id="cb34-15"><a href=""></a><span class="in">    temp_celsius = (Temp - 32)*5/9</span></span>
-<span id="cb34-16"><a href=""></a><span class="in">  )  # &lt;2&gt;</span></span>
-<span id="cb34-17"><a href=""></a></span>
-<span id="cb34-18"><a href=""></a><span class="in">print(names(airquality))  # &lt;3&gt;</span></span>
-<span id="cb34-19"><a href=""></a></span>
-<span id="cb34-20"><a href=""></a><span class="in">ggplot(airquality, aes(temp_celsius, Ozone)) +   # &lt;4&gt;</span></span>
-<span id="cb34-21"><a href=""></a><span class="in">  geom_point() + </span></span>
-<span id="cb34-22"><a href=""></a><span class="in">  geom_smooth(method = "loess")  # &lt;4&gt;</span></span>
-<span id="cb34-23"><a href=""></a></span>
-<span id="cb34-24"><a href=""></a><span class="in">```</span></span>
-<span id="cb34-25"><a href=""></a><span class="ss">1. </span>Importar paquetes necesarios.</span>
-<span id="cb34-26"><a href=""></a><span class="ss">2. </span>Convertir variables a unidades de medidas conocidas.</span>
-<span id="cb34-27"><a href=""></a><span class="ss">3. </span>Explorar nombres de columnas en dataset.</span>
-<span id="cb34-28"><a href=""></a><span class="ss">4. </span>Generar plot de Ozono versus Temperatura (celsius).</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb35-2"><a href=""></a><span class="in">#| echo: true</span></span>
+<span id="cb35-3"><a href=""></a><span class="in">#| eval: false</span></span>
+<span id="cb35-4"><a href=""></a><span class="in">#| warning: false</span></span>
+<span id="cb35-5"><a href=""></a><span class="in">#| fig-cap: "Nivel de ozono versus Temperatura."</span></span>
+<span id="cb35-6"><a href=""></a></span>
+<span id="cb35-7"><a href=""></a><span class="in">library(tidyverse) # &lt;1&gt;</span></span>
+<span id="cb35-8"><a href=""></a><span class="in">library(ggplot2)</span></span>
+<span id="cb35-9"><a href=""></a></span>
+<span id="cb35-10"><a href=""></a><span class="in">print(dim(airquality))</span></span>
+<span id="cb35-11"><a href=""></a></span>
+<span id="cb35-12"><a href=""></a><span class="in">airquality &lt;- airquality %&gt;%  # &lt;2&gt;</span></span>
+<span id="cb35-13"><a href=""></a><span class="in">  mutate(</span></span>
+<span id="cb35-14"><a href=""></a><span class="in">    wind_kmhr = Wind / 0.6213711922,</span></span>
+<span id="cb35-15"><a href=""></a><span class="in">    temp_celsius = (Temp - 32)*5/9</span></span>
+<span id="cb35-16"><a href=""></a><span class="in">  )  # &lt;2&gt;</span></span>
+<span id="cb35-17"><a href=""></a></span>
+<span id="cb35-18"><a href=""></a><span class="in">print(names(airquality))  # &lt;3&gt;</span></span>
+<span id="cb35-19"><a href=""></a></span>
+<span id="cb35-20"><a href=""></a><span class="in">ggplot(airquality, aes(temp_celsius, Ozone)) +   # &lt;4&gt;</span></span>
+<span id="cb35-21"><a href=""></a><span class="in">  geom_point() + </span></span>
+<span id="cb35-22"><a href=""></a><span class="in">  geom_smooth(method = "loess")  # &lt;4&gt;</span></span>
+<span id="cb35-23"><a href=""></a></span>
+<span id="cb35-24"><a href=""></a><span class="in">```</span></span>
+<span id="cb35-25"><a href=""></a><span class="ss">1. </span>Importar paquetes necesarios.</span>
+<span id="cb35-26"><a href=""></a><span class="ss">2. </span>Convertir variables a unidades de medidas conocidas.</span>
+<span id="cb35-27"><a href=""></a><span class="ss">3. </span>Explorar nombres de columnas en dataset.</span>
+<span id="cb35-28"><a href=""></a><span class="ss">4. </span>Generar plot de Ozono versus Temperatura (celsius).</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1357,39 +1362,39 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 </div>
 <div class="custom-code-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-40"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-40" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-40-1" class="code-annotation-target"><a href="#annotated-cell-40-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="annotated-cell-40-2"><a href="#annotated-cell-40-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="annotated-cell-40-3"><a href="#annotated-cell-40-3"></a></span>
-<span id="annotated-cell-40-4"><a href="#annotated-cell-40-4"></a><span class="fu">print</span>(<span class="fu">dim</span>(airquality))</span>
-<span id="annotated-cell-40-5"><a href="#annotated-cell-40-5"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-40" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-40-6" class="code-annotation-target"><a href="#annotated-cell-40-6"></a>airquality <span class="ot">&lt;-</span> airquality <span class="sc">%&gt;%</span></span>
-<span id="annotated-cell-40-7"><a href="#annotated-cell-40-7"></a>  <span class="fu">mutate</span>(</span>
-<span id="annotated-cell-40-8"><a href="#annotated-cell-40-8"></a>    <span class="at">wind_kmhr =</span> Wind <span class="sc">/</span> <span class="fl">0.6213711922</span>,</span>
-<span id="annotated-cell-40-9"><a href="#annotated-cell-40-9"></a>    <span class="at">temp_celsius =</span> (Temp <span class="sc">-</span> <span class="dv">32</span>)<span class="sc">*</span><span class="dv">5</span><span class="sc">/</span><span class="dv">9</span></span>
-<span id="annotated-cell-40-10"><a href="#annotated-cell-40-10"></a>  )</span>
-<span id="annotated-cell-40-11"><a href="#annotated-cell-40-11"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-40" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-40-12" class="code-annotation-target"><a href="#annotated-cell-40-12"></a><span class="fu">print</span>(<span class="fu">names</span>(airquality))</span>
-<span id="annotated-cell-40-13"><a href="#annotated-cell-40-13"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-40" data-target-annotation="4" onclick="event.preventDefault();" href="">4</a><span id="annotated-cell-40-14" class="code-annotation-target"><a href="#annotated-cell-40-14"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(temp_celsius, Ozone)) <span class="sc">+</span></span>
-<span id="annotated-cell-40-15"><a href="#annotated-cell-40-15"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="annotated-cell-40-16"><a href="#annotated-cell-40-16"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-41"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-41" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-41-1" class="code-annotation-target"><a href="#annotated-cell-41-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="annotated-cell-41-2"><a href="#annotated-cell-41-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="annotated-cell-41-3"><a href="#annotated-cell-41-3"></a></span>
+<span id="annotated-cell-41-4"><a href="#annotated-cell-41-4"></a><span class="fu">print</span>(<span class="fu">dim</span>(airquality))</span>
+<span id="annotated-cell-41-5"><a href="#annotated-cell-41-5"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-41" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-41-6" class="code-annotation-target"><a href="#annotated-cell-41-6"></a>airquality <span class="ot">&lt;-</span> airquality <span class="sc">%&gt;%</span></span>
+<span id="annotated-cell-41-7"><a href="#annotated-cell-41-7"></a>  <span class="fu">mutate</span>(</span>
+<span id="annotated-cell-41-8"><a href="#annotated-cell-41-8"></a>    <span class="at">wind_kmhr =</span> Wind <span class="sc">/</span> <span class="fl">0.6213711922</span>,</span>
+<span id="annotated-cell-41-9"><a href="#annotated-cell-41-9"></a>    <span class="at">temp_celsius =</span> (Temp <span class="sc">-</span> <span class="dv">32</span>)<span class="sc">*</span><span class="dv">5</span><span class="sc">/</span><span class="dv">9</span></span>
+<span id="annotated-cell-41-10"><a href="#annotated-cell-41-10"></a>  )</span>
+<span id="annotated-cell-41-11"><a href="#annotated-cell-41-11"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-41" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-41-12" class="code-annotation-target"><a href="#annotated-cell-41-12"></a><span class="fu">print</span>(<span class="fu">names</span>(airquality))</span>
+<span id="annotated-cell-41-13"><a href="#annotated-cell-41-13"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-41" data-target-annotation="4" onclick="event.preventDefault();" href="">4</a><span id="annotated-cell-41-14" class="code-annotation-target"><a href="#annotated-cell-41-14"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(temp_celsius, Ozone)) <span class="sc">+</span></span>
+<span id="annotated-cell-41-15"><a href="#annotated-cell-41-15"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="annotated-cell-41-16"><a href="#annotated-cell-41-16"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-40" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-41" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-40" data-code-lines="1" data-code-annotation="1">Importar paquetes necesarios.</span>
+<span data-code-cell="annotated-cell-41" data-code-lines="1" data-code-annotation="1">Importar paquetes necesarios.</span>
 </dd>
-<dt data-target-cell="annotated-cell-40" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-41" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-40" data-code-lines="6,10" data-code-annotation="2">Convertir variables a unidades de medidas conocidas.</span>
+<span data-code-cell="annotated-cell-41" data-code-lines="6,10" data-code-annotation="2">Convertir variables a unidades de medidas conocidas.</span>
 </dd>
-<dt data-target-cell="annotated-cell-40" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-41" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-40" data-code-lines="12" data-code-annotation="3">Explorar nombres de columnas en dataset.</span>
+<span data-code-cell="annotated-cell-41" data-code-lines="12" data-code-annotation="3">Explorar nombres de columnas en dataset.</span>
 </dd>
-<dt data-target-cell="annotated-cell-40" data-target-annotation="4">4</dt>
+<dt data-target-cell="annotated-cell-41" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-40" data-code-lines="14,16" data-code-annotation="4">Generar plot de Ozono versus Temperatura (celsius).</span>
+<span data-code-cell="annotated-cell-41" data-code-lines="14,16" data-code-annotation="4">Generar plot de Ozono versus Temperatura (celsius).</span>
 </dd>
 </dl>
 </div>
@@ -1409,22 +1414,6 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 <div class="tab-content small-par">
 <div id="tabset-7-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb35-2"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb35-3"><a href=""></a></span>
-<span id="cb35-4"><a href=""></a>airquality <span class="ot">&lt;-</span> airquality <span class="sc">%&gt;%</span> </span>
-<span id="cb35-5"><a href=""></a>  <span class="fu">mutate</span>(</span>
-<span id="cb35-6"><a href=""></a>    <span class="at">wind_kmhr =</span> Wind <span class="sc">/</span> <span class="fl">0.6213711922</span>,</span>
-<span id="cb35-7"><a href=""></a>    <span class="at">temp_celsius =</span> (Temp <span class="sc">-</span> <span class="dv">32</span>)<span class="sc">*</span><span class="dv">5</span><span class="sc">/</span><span class="dv">9</span></span>
-<span id="cb35-8"><a href=""></a>  )</span>
-<span id="cb35-9"><a href=""></a></span>
-<span id="cb35-10"><a href=""></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(temp_celsius, Ozone)) <span class="sc">+</span> </span>
-<span id="cb35-11"><a href=""></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb35-12"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div id="tabset-7-2">
-<div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb36-2"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb36-3"><a href=""></a></span>
@@ -1437,6 +1426,22 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 <span id="cb36-10"><a href=""></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(temp_celsius, Ozone)) <span class="sc">+</span> </span>
 <span id="cb36-11"><a href=""></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb36-12"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-7-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb37-2"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb37-3"><a href=""></a></span>
+<span id="cb37-4"><a href=""></a>airquality <span class="ot">&lt;-</span> airquality <span class="sc">%&gt;%</span> </span>
+<span id="cb37-5"><a href=""></a>  <span class="fu">mutate</span>(</span>
+<span id="cb37-6"><a href=""></a>    <span class="at">wind_kmhr =</span> Wind <span class="sc">/</span> <span class="fl">0.6213711922</span>,</span>
+<span id="cb37-7"><a href=""></a>    <span class="at">temp_celsius =</span> (Temp <span class="sc">-</span> <span class="dv">32</span>)<span class="sc">*</span><span class="dv">5</span><span class="sc">/</span><span class="dv">9</span></span>
+<span id="cb37-8"><a href=""></a>  )</span>
+<span id="cb37-9"><a href=""></a></span>
+<span id="cb37-10"><a href=""></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(temp_celsius, Ozone)) <span class="sc">+</span> </span>
+<span id="cb37-11"><a href=""></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb37-12"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1464,52 +1469,52 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 </div>
 <div class="fragment">
 <div class="small-par">
-<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href=""></a>::: {.panel-tabset}</span>
-<span id="cb37-2"><a href=""></a></span>
-<span id="cb37-3"><a href=""></a><span class="fu">## Código</span></span>
-<span id="cb37-4"><a href=""></a></span>
-<span id="cb37-5"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb37-6"><a href=""></a><span class="in">#| echo: true</span></span>
-<span id="cb37-7"><a href=""></a><span class="in">#| eval: false</span></span>
-<span id="cb37-8"><a href=""></a><span class="in">#| warning: false</span></span>
-<span id="cb37-9"><a href=""></a></span>
-<span id="cb37-10"><a href=""></a><span class="in">library(tidyverse)</span></span>
-<span id="cb37-11"><a href=""></a><span class="in">library(ggplot2)</span></span>
-<span id="cb37-12"><a href=""></a></span>
-<span id="cb37-13"><a href=""></a><span class="in">airquality &lt;- airquality %&gt;% </span></span>
-<span id="cb37-14"><a href=""></a><span class="in">  mutate(</span></span>
-<span id="cb37-15"><a href=""></a><span class="in">    wind_kmhr = Wind / 0.6213711922,</span></span>
-<span id="cb37-16"><a href=""></a><span class="in">    temp_celsius = (Temp - 32)*5/9</span></span>
-<span id="cb37-17"><a href=""></a><span class="in">  )</span></span>
-<span id="cb37-18"><a href=""></a></span>
-<span id="cb37-19"><a href=""></a><span class="in">ggplot(airquality, aes(temp_celsius, Ozone)) + </span></span>
-<span id="cb37-20"><a href=""></a><span class="in">  geom_point() + </span></span>
-<span id="cb37-21"><a href=""></a><span class="in">  geom_smooth(method = "loess")</span></span>
-<span id="cb37-22"><a href=""></a><span class="in">```</span></span>
-<span id="cb37-23"><a href=""></a></span>
-<span id="cb37-24"><a href=""></a><span class="fu">## Código + gráfico</span></span>
-<span id="cb37-25"><a href=""></a></span>
-<span id="cb37-26"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb37-27"><a href=""></a><span class="in">#| echo: true</span></span>
-<span id="cb37-28"><a href=""></a><span class="in">#| eval: true</span></span>
-<span id="cb37-29"><a href=""></a><span class="in">#| warning: false</span></span>
-<span id="cb37-30"><a href=""></a><span class="in">#| fig-cap: "Nivel de ozono versus Temperatura."</span></span>
-<span id="cb37-31"><a href=""></a></span>
-<span id="cb37-32"><a href=""></a><span class="in">library(tidyverse)</span></span>
-<span id="cb37-33"><a href=""></a><span class="in">library(ggplot2)</span></span>
-<span id="cb37-34"><a href=""></a></span>
-<span id="cb37-35"><a href=""></a><span class="in">airquality &lt;- airquality %&gt;% </span></span>
-<span id="cb37-36"><a href=""></a><span class="in">  mutate(</span></span>
-<span id="cb37-37"><a href=""></a><span class="in">    wind_kmhr = Wind / 0.6213711922,</span></span>
-<span id="cb37-38"><a href=""></a><span class="in">    temp_celsius = (Temp - 32)*5/9</span></span>
-<span id="cb37-39"><a href=""></a><span class="in">  )</span></span>
-<span id="cb37-40"><a href=""></a></span>
-<span id="cb37-41"><a href=""></a><span class="in">ggplot(airquality, aes(temp_celsius, Ozone)) + </span></span>
-<span id="cb37-42"><a href=""></a><span class="in">  geom_point() + </span></span>
-<span id="cb37-43"><a href=""></a><span class="in">  geom_smooth(method = "loess")</span></span>
-<span id="cb37-44"><a href=""></a><span class="in">```</span></span>
-<span id="cb37-45"><a href=""></a></span>
-<span id="cb37-46"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href=""></a>::: {.panel-tabset}</span>
+<span id="cb38-2"><a href=""></a></span>
+<span id="cb38-3"><a href=""></a><span class="fu">## Código</span></span>
+<span id="cb38-4"><a href=""></a></span>
+<span id="cb38-5"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb38-6"><a href=""></a><span class="in">#| echo: true</span></span>
+<span id="cb38-7"><a href=""></a><span class="in">#| eval: false</span></span>
+<span id="cb38-8"><a href=""></a><span class="in">#| warning: false</span></span>
+<span id="cb38-9"><a href=""></a></span>
+<span id="cb38-10"><a href=""></a><span class="in">library(tidyverse)</span></span>
+<span id="cb38-11"><a href=""></a><span class="in">library(ggplot2)</span></span>
+<span id="cb38-12"><a href=""></a></span>
+<span id="cb38-13"><a href=""></a><span class="in">airquality &lt;- airquality %&gt;% </span></span>
+<span id="cb38-14"><a href=""></a><span class="in">  mutate(</span></span>
+<span id="cb38-15"><a href=""></a><span class="in">    wind_kmhr = Wind / 0.6213711922,</span></span>
+<span id="cb38-16"><a href=""></a><span class="in">    temp_celsius = (Temp - 32)*5/9</span></span>
+<span id="cb38-17"><a href=""></a><span class="in">  )</span></span>
+<span id="cb38-18"><a href=""></a></span>
+<span id="cb38-19"><a href=""></a><span class="in">ggplot(airquality, aes(temp_celsius, Ozone)) + </span></span>
+<span id="cb38-20"><a href=""></a><span class="in">  geom_point() + </span></span>
+<span id="cb38-21"><a href=""></a><span class="in">  geom_smooth(method = "loess")</span></span>
+<span id="cb38-22"><a href=""></a><span class="in">```</span></span>
+<span id="cb38-23"><a href=""></a></span>
+<span id="cb38-24"><a href=""></a><span class="fu">## Código + gráfico</span></span>
+<span id="cb38-25"><a href=""></a></span>
+<span id="cb38-26"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb38-27"><a href=""></a><span class="in">#| echo: true</span></span>
+<span id="cb38-28"><a href=""></a><span class="in">#| eval: true</span></span>
+<span id="cb38-29"><a href=""></a><span class="in">#| warning: false</span></span>
+<span id="cb38-30"><a href=""></a><span class="in">#| fig-cap: "Nivel de ozono versus Temperatura."</span></span>
+<span id="cb38-31"><a href=""></a></span>
+<span id="cb38-32"><a href=""></a><span class="in">library(tidyverse)</span></span>
+<span id="cb38-33"><a href=""></a><span class="in">library(ggplot2)</span></span>
+<span id="cb38-34"><a href=""></a></span>
+<span id="cb38-35"><a href=""></a><span class="in">airquality &lt;- airquality %&gt;% </span></span>
+<span id="cb38-36"><a href=""></a><span class="in">  mutate(</span></span>
+<span id="cb38-37"><a href=""></a><span class="in">    wind_kmhr = Wind / 0.6213711922,</span></span>
+<span id="cb38-38"><a href=""></a><span class="in">    temp_celsius = (Temp - 32)*5/9</span></span>
+<span id="cb38-39"><a href=""></a><span class="in">  )</span></span>
+<span id="cb38-40"><a href=""></a></span>
+<span id="cb38-41"><a href=""></a><span class="in">ggplot(airquality, aes(temp_celsius, Ozone)) + </span></span>
+<span id="cb38-42"><a href=""></a><span class="in">  geom_point() + </span></span>
+<span id="cb38-43"><a href=""></a><span class="in">  geom_smooth(method = "loess")</span></span>
+<span id="cb38-44"><a href=""></a><span class="in">```</span></span>
+<span id="cb38-45"><a href=""></a></span>
+<span id="cb38-46"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1528,38 +1533,38 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 </div>
 <div class="fragment">
 <div class="small-par">
-<div class="sourceCode" id="cb38" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href=""></a></span>
-<span id="cb38-2"><a href=""></a>---</span>
-<span id="cb38-3"><a href=""></a>title: "Airquality (.qmd)"</span>
-<span id="cb38-4"><a href=""></a>format: </span>
-<span id="cb38-5"><a href=""></a>  html:</span>
-<span id="cb38-6"><a href=""></a>    output-file: "airquality.html"</span>
-<span id="cb38-7"><a href=""></a>---</span>
-<span id="cb38-8"><a href=""></a></span>
-<span id="cb38-9"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb38-10"><a href=""></a><span class="in">#| label: fig-ozono-temp</span></span>
-<span id="cb38-11"><a href=""></a><span class="in">#| warning: false</span></span>
-<span id="cb38-12"><a href=""></a><span class="in">#| code-fold: true</span></span>
-<span id="cb38-13"><a href=""></a><span class="in">#| fig-cap: Nivel de ozono versus Temperatura.</span></span>
-<span id="cb38-14"><a href=""></a></span>
-<span id="cb38-15"><a href=""></a><span class="in">library(tidyverse)</span></span>
-<span id="cb38-16"><a href=""></a><span class="in">library(ggplot2)</span></span>
-<span id="cb38-17"><a href=""></a></span>
-<span id="cb38-18"><a href=""></a><span class="in"># print(dim(airquality))</span></span>
-<span id="cb38-19"><a href=""></a></span>
-<span id="cb38-20"><a href=""></a><span class="in">airquality &lt;- airquality %&gt;% </span></span>
-<span id="cb38-21"><a href=""></a><span class="in">  mutate(</span></span>
-<span id="cb38-22"><a href=""></a><span class="in">    wind_kmhr = Wind / 0.6213711922,</span></span>
-<span id="cb38-23"><a href=""></a><span class="in">    temp_celsius = (Temp - 32)*5/9</span></span>
-<span id="cb38-24"><a href=""></a><span class="in">  )</span></span>
-<span id="cb38-25"><a href=""></a></span>
-<span id="cb38-26"><a href=""></a><span class="in"># print(names(airquality))</span></span>
-<span id="cb38-27"><a href=""></a></span>
-<span id="cb38-28"><a href=""></a><span class="in">ggplot(airquality, aes(temp_celsius, Ozone)) +</span></span>
-<span id="cb38-29"><a href=""></a><span class="in">  geom_point() + </span></span>
-<span id="cb38-30"><a href=""></a><span class="in">  geom_smooth(method = "loess")</span></span>
-<span id="cb38-31"><a href=""></a></span>
-<span id="cb38-32"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href=""></a></span>
+<span id="cb39-2"><a href=""></a>---</span>
+<span id="cb39-3"><a href=""></a>title: "Airquality (.qmd)"</span>
+<span id="cb39-4"><a href=""></a>format: </span>
+<span id="cb39-5"><a href=""></a>  html:</span>
+<span id="cb39-6"><a href=""></a>    output-file: "airquality.html"</span>
+<span id="cb39-7"><a href=""></a>---</span>
+<span id="cb39-8"><a href=""></a></span>
+<span id="cb39-9"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb39-10"><a href=""></a><span class="in">#| label: fig-ozono-temp</span></span>
+<span id="cb39-11"><a href=""></a><span class="in">#| warning: false</span></span>
+<span id="cb39-12"><a href=""></a><span class="in">#| code-fold: true</span></span>
+<span id="cb39-13"><a href=""></a><span class="in">#| fig-cap: Nivel de ozono versus Temperatura.</span></span>
+<span id="cb39-14"><a href=""></a></span>
+<span id="cb39-15"><a href=""></a><span class="in">library(tidyverse)</span></span>
+<span id="cb39-16"><a href=""></a><span class="in">library(ggplot2)</span></span>
+<span id="cb39-17"><a href=""></a></span>
+<span id="cb39-18"><a href=""></a><span class="in"># print(dim(airquality))</span></span>
+<span id="cb39-19"><a href=""></a></span>
+<span id="cb39-20"><a href=""></a><span class="in">airquality &lt;- airquality %&gt;% </span></span>
+<span id="cb39-21"><a href=""></a><span class="in">  mutate(</span></span>
+<span id="cb39-22"><a href=""></a><span class="in">    wind_kmhr = Wind / 0.6213711922,</span></span>
+<span id="cb39-23"><a href=""></a><span class="in">    temp_celsius = (Temp - 32)*5/9</span></span>
+<span id="cb39-24"><a href=""></a><span class="in">  )</span></span>
+<span id="cb39-25"><a href=""></a></span>
+<span id="cb39-26"><a href=""></a><span class="in"># print(names(airquality))</span></span>
+<span id="cb39-27"><a href=""></a></span>
+<span id="cb39-28"><a href=""></a><span class="in">ggplot(airquality, aes(temp_celsius, Ozone)) +</span></span>
+<span id="cb39-29"><a href=""></a><span class="in">  geom_point() + </span></span>
+<span id="cb39-30"><a href=""></a><span class="in">  geom_smooth(method = "loess")</span></span>
+<span id="cb39-31"><a href=""></a></span>
+<span id="cb39-32"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1572,7 +1577,7 @@ Por ejemplo, aquí vemos un bloque raw HTML:
 </div>
 <div class="fragment">
 <div class="big-par">
-<div class="sourceCode" id="cb39" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href=""></a>{{&lt; embed example_embed/airquality.qmd#fig-ozono-temp &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href=""></a>{{&lt; embed example_embed/airquality.qmd#fig-ozono-temp &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="small-par">
 <div class="quarto-embed-nb-cell" data-notebook="/home/hugosoto/Work/git/clases-r-intermedio-quarto/example_embed/airquality.qmd" data-notebook-title="Airquality (.qmd)" data-notebook-cellid="cell-fig-ozono-temp">
@@ -1606,29 +1611,29 @@ Figure&nbsp;1: Nivel de ozono versus Temperatura.
 </div>
 <div class="fragment">
 <div class="big-par">
-<div class="sourceCode" id="cb40" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href=""></a>{{&lt; embed example_embed/airquality.qmd#fig-ozono-temp echo=true &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href=""></a>{{&lt; embed example_embed/airquality.qmd#fig-ozono-temp echo=true &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="small-par">
 <div class="quarto-embed-nb-cell" data-notebook="/home/hugosoto/Work/git/clases-r-intermedio-quarto/example_embed/airquality.qmd" data-notebook-title="Airquality (.qmd)" data-notebook-cellid="cell-fig-ozono-temp">
 <div id="cell-fig-ozono-temp" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href=""></a>library(tidyverse)</span>
-<span id="cb41-2"><a href=""></a>library(ggplot2)</span>
-<span id="cb41-3"><a href=""></a></span>
-<span id="cb41-4"><a href=""></a><span class="co"># print(dim(airquality))</span></span>
-<span id="cb41-5"><a href=""></a></span>
-<span id="cb41-6"><a href=""></a>airquality <span class="op">&lt;-</span> airquality <span class="op">%&gt;%</span> </span>
-<span id="cb41-7"><a href=""></a>  mutate(</span>
-<span id="cb41-8"><a href=""></a>    wind_kmhr <span class="op">=</span> Wind <span class="op">/</span> <span class="fl">0.6213711922</span>,</span>
-<span id="cb41-9"><a href=""></a>    temp_celsius <span class="op">=</span> (Temp <span class="op">-</span> <span class="dv">32</span>)<span class="op">*</span><span class="dv">5</span><span class="op">/</span><span class="dv">9</span></span>
-<span id="cb41-10"><a href=""></a>  )</span>
-<span id="cb41-11"><a href=""></a></span>
-<span id="cb41-12"><a href=""></a><span class="co"># print(names(airquality))</span></span>
-<span id="cb41-13"><a href=""></a></span>
-<span id="cb41-14"><a href=""></a>ggplot(airquality, aes(temp_celsius, Ozone)) <span class="op">+</span></span>
-<span id="cb41-15"><a href=""></a>  geom_point() <span class="op">+</span> </span>
-<span id="cb41-16"><a href=""></a>  geom_smooth(method <span class="op">=</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href=""></a>library(tidyverse)</span>
+<span id="cb42-2"><a href=""></a>library(ggplot2)</span>
+<span id="cb42-3"><a href=""></a></span>
+<span id="cb42-4"><a href=""></a><span class="co"># print(dim(airquality))</span></span>
+<span id="cb42-5"><a href=""></a></span>
+<span id="cb42-6"><a href=""></a>airquality <span class="op">&lt;-</span> airquality <span class="op">%&gt;%</span> </span>
+<span id="cb42-7"><a href=""></a>  mutate(</span>
+<span id="cb42-8"><a href=""></a>    wind_kmhr <span class="op">=</span> Wind <span class="op">/</span> <span class="fl">0.6213711922</span>,</span>
+<span id="cb42-9"><a href=""></a>    temp_celsius <span class="op">=</span> (Temp <span class="op">-</span> <span class="dv">32</span>)<span class="op">*</span><span class="dv">5</span><span class="op">/</span><span class="dv">9</span></span>
+<span id="cb42-10"><a href=""></a>  )</span>
+<span id="cb42-11"><a href=""></a></span>
+<span id="cb42-12"><a href=""></a><span class="co"># print(names(airquality))</span></span>
+<span id="cb42-13"><a href=""></a></span>
+<span id="cb42-14"><a href=""></a>ggplot(airquality, aes(temp_celsius, Ozone)) <span class="op">+</span></span>
+<span id="cb42-15"><a href=""></a>  geom_point() <span class="op">+</span> </span>
+<span id="cb42-16"><a href=""></a>  geom_smooth(method <span class="op">=</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-ozono-temp" class="quarto-float quarto-figure quarto-figure-center">
@@ -1756,127 +1761,127 @@ Visualice que el nuevo contenido aparezca en el documento de Quarto después de 
 <section id="dashboards-6" class="slide level2">
 <h2>Dashboards</h2>
 <div class="small-par custom-code-2">
-<div class="sourceCode" id="annotated-cell-48"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-48-1"><a href="#annotated-cell-48-1"></a><span class="sc">---</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-48" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-48-2" class="code-annotation-target"><a href="#annotated-cell-48-2"></a>title<span class="sc">:</span> <span class="st">"Ejemplo de Dashboard"</span></span>
-<span id="annotated-cell-48-3"><a href="#annotated-cell-48-3"></a>author<span class="sc">:</span> <span class="st">"Capacitación R Intermedio"</span></span>
-<span id="annotated-cell-48-4"><a href="#annotated-cell-48-4"></a>format<span class="sc">:</span></span>
-<span id="annotated-cell-48-5"><a href="#annotated-cell-48-5"></a>  dashboard<span class="sc">:</span></span>
-<span id="annotated-cell-48-6"><a href="#annotated-cell-48-6"></a>    output<span class="sc">-</span>file<span class="sc">:</span> <span class="st">"dashboard_example.html"</span></span>
-<span id="annotated-cell-48-7"><a href="#annotated-cell-48-7"></a>    logo<span class="sc">:</span> images<span class="sc">/</span>logo_portada2.png</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-48" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-48-8" class="code-annotation-target"><a href="#annotated-cell-48-8"></a>    orientation<span class="sc">:</span> rows</span>
-<span id="annotated-cell-48-9"><a href="#annotated-cell-48-9"></a><span class="sc">---</span> </span>
-<span id="annotated-cell-48-10"><a href="#annotated-cell-48-10"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-48" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-48-11" class="code-annotation-target"><a href="#annotated-cell-48-11"></a><span class="co"># Page 1 {orientation="rows" scrolling="false"}</span></span>
-<span id="annotated-cell-48-12"><a href="#annotated-cell-48-12"></a></span>
-<span id="annotated-cell-48-13"><a href="#annotated-cell-48-13"></a><span class="st">```</span><span class="at">{r}</span></span>
-<span id="annotated-cell-48-14"><a href="#annotated-cell-48-14"></a><span class="at">library(tidyverse)</span></span>
-<span id="annotated-cell-48-15"><a href="#annotated-cell-48-15"></a><span class="at">library(ggplot2)</span></span>
-<span id="annotated-cell-48-16"><a href="#annotated-cell-48-16"></a></span>
-<span id="annotated-cell-48-17"><a href="#annotated-cell-48-17"></a><span class="at">airquality &lt;- airquality %&gt;% </span></span>
-<span id="annotated-cell-48-18"><a href="#annotated-cell-48-18"></a><span class="at">  mutate(</span></span>
-<span id="annotated-cell-48-19"><a href="#annotated-cell-48-19"></a><span class="at">    wind_kmhr = Wind / 0.6213711922,</span></span>
-<span id="annotated-cell-48-20"><a href="#annotated-cell-48-20"></a><span class="at">    temp_celsius = (Temp - 32)*5/9</span></span>
-<span id="annotated-cell-48-21"><a href="#annotated-cell-48-21"></a><span class="at">  )</span></span>
-<span id="annotated-cell-48-22"><a href="#annotated-cell-48-22"></a><span class="st">```</span></span>
-<span id="annotated-cell-48-23"><a href="#annotated-cell-48-23"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-48" data-target-annotation="4" onclick="event.preventDefault();" href="">4</a><span id="annotated-cell-48-24" class="code-annotation-target"><a href="#annotated-cell-48-24"></a><span class="do">## Row {height=5%}</span></span>
-<span id="annotated-cell-48-25"><a href="#annotated-cell-48-25"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-48" data-target-annotation="5" onclick="event.preventDefault();" href="">5</a><span id="annotated-cell-48-26" class="code-annotation-target"><a href="#annotated-cell-48-26"></a><span class="sc">:::</span> {.card}</span>
-<span id="annotated-cell-48-27"><a href="#annotated-cell-48-27"></a>Análisis de Calidad de Aire en la ciudad de Nueva York. Mayo a Septiembre, <span class="fl">1973.</span></span>
-<span id="annotated-cell-48-28"><a href="#annotated-cell-48-28"></a>Referencia<span class="sc">:</span> <span class="er">&lt;</span>https<span class="sc">:</span><span class="er">//</span>www.rdocumentation.org<span class="sc">/</span>packages<span class="sc">/</span>datasets<span class="sc">/</span>versions<span class="sc">/</span><span class="dv">3</span>.<span class="fl">6.2</span><span class="sc">/</span>topics<span class="sc">/</span>airquality<span class="sc">&gt;</span>.</span>
-<span id="annotated-cell-48-29"><a href="#annotated-cell-48-29"></a><span class="sc">:::</span></span>
-<span id="annotated-cell-48-30"><a href="#annotated-cell-48-30"></a></span>
-<span id="annotated-cell-48-31"><a href="#annotated-cell-48-31"></a><span class="do">## Row {height=35%}</span></span>
-<span id="annotated-cell-48-32"><a href="#annotated-cell-48-32"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-48" data-target-annotation="6" onclick="event.preventDefault();" href="">6</a><span id="annotated-cell-48-33" class="code-annotation-target"><a href="#annotated-cell-48-33"></a><span class="st">```</span><span class="at">{r}</span></span>
-<span id="annotated-cell-48-34"><a href="#annotated-cell-48-34"></a><span class="at">library(DT)</span></span>
-<span id="annotated-cell-48-35"><a href="#annotated-cell-48-35"></a><span class="at">DT::datatable(airquality)</span></span>
-<span id="annotated-cell-48-36"><a href="#annotated-cell-48-36"></a><span class="st">```</span></span>
-<span id="annotated-cell-48-37"><a href="#annotated-cell-48-37"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-48" data-target-annotation="7" onclick="event.preventDefault();" href="">7</a><span id="annotated-cell-48-38" class="code-annotation-target"><a href="#annotated-cell-48-38"></a><span class="do">## Row {height=60% .tabset}</span></span>
-<span id="annotated-cell-48-39"><a href="#annotated-cell-48-39"></a></span>
-<span id="annotated-cell-48-40"><a href="#annotated-cell-48-40"></a><span class="st">```</span><span class="at">{r}</span></span>
-<span id="annotated-cell-48-41"><a href="#annotated-cell-48-41"></a><span class="at">#| title: Ozono versus Temperatura [°C]</span></span>
-<span id="annotated-cell-48-42"><a href="#annotated-cell-48-42"></a><span class="at">ggplot(airquality, aes(temp_celsius, Ozone)) +</span></span>
-<span id="annotated-cell-48-43"><a href="#annotated-cell-48-43"></a><span class="at">  geom_point() + </span></span>
-<span id="annotated-cell-48-44"><a href="#annotated-cell-48-44"></a><span class="at">  geom_smooth(method = "loess")</span></span>
-<span id="annotated-cell-48-45"><a href="#annotated-cell-48-45"></a><span class="st">```</span></span>
-<span id="annotated-cell-48-46"><a href="#annotated-cell-48-46"></a></span>
-<span id="annotated-cell-48-47"><a href="#annotated-cell-48-47"></a><span class="st">```</span><span class="at">{r} </span></span>
-<span id="annotated-cell-48-48"><a href="#annotated-cell-48-48"></a><span class="at">#| title: Ozono versus Viento [km/hr]</span></span>
-<span id="annotated-cell-48-49"><a href="#annotated-cell-48-49"></a><span class="at">ggplot(airquality, aes(wind_kmhr, Ozone)) +</span></span>
-<span id="annotated-cell-48-50"><a href="#annotated-cell-48-50"></a><span class="at">  geom_point() + </span></span>
-<span id="annotated-cell-48-51"><a href="#annotated-cell-48-51"></a><span class="at">  geom_smooth(method = "loess")</span></span>
-<span id="annotated-cell-48-52"><a href="#annotated-cell-48-52"></a><span class="st">```</span></span>
-<span id="annotated-cell-48-53"><a href="#annotated-cell-48-53"></a></span>
-<span id="annotated-cell-48-54"><a href="#annotated-cell-48-54"></a><span class="st">```</span><span class="at">{r} </span></span>
-<span id="annotated-cell-48-55"><a href="#annotated-cell-48-55"></a><span class="at">#| title: Temperatura [°C] versus Viento [km/hr]</span></span>
-<span id="annotated-cell-48-56"><a href="#annotated-cell-48-56"></a><span class="at">ggplot(airquality, aes(wind_kmhr, temp_celsius)) +</span></span>
-<span id="annotated-cell-48-57"><a href="#annotated-cell-48-57"></a><span class="at">  geom_point() + </span></span>
-<span id="annotated-cell-48-58"><a href="#annotated-cell-48-58"></a><span class="at">  geom_smooth(method = "loess")</span></span>
-<span id="annotated-cell-48-59"><a href="#annotated-cell-48-59"></a><span class="st">```</span></span>
-<span id="annotated-cell-48-60"><a href="#annotated-cell-48-60"></a></span>
-<span id="annotated-cell-48-61"><a href="#annotated-cell-48-61"></a><span class="co"># Page 2 {orientation="rows" scrolling="true"}</span></span>
-<span id="annotated-cell-48-62"><a href="#annotated-cell-48-62"></a></span>
-<span id="annotated-cell-48-63"><a href="#annotated-cell-48-63"></a><span class="do">## Row {height=10%}</span></span>
-<span id="annotated-cell-48-64"><a href="#annotated-cell-48-64"></a></span>
-<span id="annotated-cell-48-65"><a href="#annotated-cell-48-65"></a><span class="sc">:::</span> {.card}</span>
-<span id="annotated-cell-48-66"><a href="#annotated-cell-48-66"></a>Gapminder identifies systematic misconceptions about important global trends and proportions and uses reliable data to develop easy to understand teaching materials to rid people of their misconceptions.</span>
-<span id="annotated-cell-48-67"><a href="#annotated-cell-48-67"></a>Gapminder is an independent Swedish foundation with no political, religious, or economic affiliations.</span>
-<span id="annotated-cell-48-68"><a href="#annotated-cell-48-68"></a>Learn more about the Gampminder dataset at <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>www.gapminder.org<span class="sc">/</span>data<span class="sc">/</span><span class="er">&gt;</span>.</span>
-<span id="annotated-cell-48-69"><a href="#annotated-cell-48-69"></a><span class="sc">:::</span></span>
-<span id="annotated-cell-48-70"><a href="#annotated-cell-48-70"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-48" data-target-annotation="8" onclick="event.preventDefault();" href="">8</a><span id="annotated-cell-48-71" class="code-annotation-target"><a href="#annotated-cell-48-71"></a><span class="do">## Row {height=90%}</span></span>
-<span id="annotated-cell-48-72"><a href="#annotated-cell-48-72"></a></span>
-<span id="annotated-cell-48-73"><a href="#annotated-cell-48-73"></a><span class="st">```</span><span class="at">{r} </span></span>
-<span id="annotated-cell-48-74"><a href="#annotated-cell-48-74"></a><span class="at">library(gapminder)</span></span>
-<span id="annotated-cell-48-75"><a href="#annotated-cell-48-75"></a><span class="at">library(DT)</span></span>
-<span id="annotated-cell-48-76"><a href="#annotated-cell-48-76"></a><span class="at">DT::datatable(gapminder)</span></span>
-<span id="annotated-cell-48-77"><a href="#annotated-cell-48-77"></a><span class="st">```</span></span>
-<span id="annotated-cell-48-78"><a href="#annotated-cell-48-78"></a></span>
-<span id="annotated-cell-48-79"><a href="#annotated-cell-48-79"></a><span class="st">```</span><span class="at">{r}</span></span>
-<span id="annotated-cell-48-80"><a href="#annotated-cell-48-80"></a><span class="at">#| fig-width: 10</span></span>
-<span id="annotated-cell-48-81"><a href="#annotated-cell-48-81"></a><span class="at">#| fig-height: 8</span></span>
-<span id="annotated-cell-48-82"><a href="#annotated-cell-48-82"></a><span class="at">paises &lt;- c("Peru", "Bolivia", "Chile")</span></span>
-<span id="annotated-cell-48-83"><a href="#annotated-cell-48-83"></a><span class="at"># etiquetas &lt;- data.frame(nombre_paises = paises, x = c(1975, 1965, 1962), y = c(6, 7, 4))</span></span>
-<span id="annotated-cell-48-84"><a href="#annotated-cell-48-84"></a><span class="at">gapminder %&gt;% </span></span>
-<span id="annotated-cell-48-85"><a href="#annotated-cell-48-85"></a><span class="at">  filter(country %in% paises) %&gt;% </span></span>
-<span id="annotated-cell-48-86"><a href="#annotated-cell-48-86"></a><span class="at">  ggplot() +</span></span>
-<span id="annotated-cell-48-87"><a href="#annotated-cell-48-87"></a><span class="at">  aes(x = year, y = lifeExp, color = country) +</span></span>
-<span id="annotated-cell-48-88"><a href="#annotated-cell-48-88"></a><span class="at">  geom_line()</span></span>
-<span id="annotated-cell-48-89"><a href="#annotated-cell-48-89"></a><span class="st">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-49"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-49-1"><a href="#annotated-cell-49-1"></a><span class="sc">---</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-49" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-49-2" class="code-annotation-target"><a href="#annotated-cell-49-2"></a>title<span class="sc">:</span> <span class="st">"Ejemplo de Dashboard"</span></span>
+<span id="annotated-cell-49-3"><a href="#annotated-cell-49-3"></a>author<span class="sc">:</span> <span class="st">"Capacitación R Intermedio"</span></span>
+<span id="annotated-cell-49-4"><a href="#annotated-cell-49-4"></a>format<span class="sc">:</span></span>
+<span id="annotated-cell-49-5"><a href="#annotated-cell-49-5"></a>  dashboard<span class="sc">:</span></span>
+<span id="annotated-cell-49-6"><a href="#annotated-cell-49-6"></a>    output<span class="sc">-</span>file<span class="sc">:</span> <span class="st">"dashboard_example.html"</span></span>
+<span id="annotated-cell-49-7"><a href="#annotated-cell-49-7"></a>    logo<span class="sc">:</span> images<span class="sc">/</span>logo_portada2.png</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-49" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-49-8" class="code-annotation-target"><a href="#annotated-cell-49-8"></a>    orientation<span class="sc">:</span> rows</span>
+<span id="annotated-cell-49-9"><a href="#annotated-cell-49-9"></a><span class="sc">---</span> </span>
+<span id="annotated-cell-49-10"><a href="#annotated-cell-49-10"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-49" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-49-11" class="code-annotation-target"><a href="#annotated-cell-49-11"></a><span class="co"># Page 1 {orientation="rows" scrolling="false"}</span></span>
+<span id="annotated-cell-49-12"><a href="#annotated-cell-49-12"></a></span>
+<span id="annotated-cell-49-13"><a href="#annotated-cell-49-13"></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="annotated-cell-49-14"><a href="#annotated-cell-49-14"></a><span class="at">library(tidyverse)</span></span>
+<span id="annotated-cell-49-15"><a href="#annotated-cell-49-15"></a><span class="at">library(ggplot2)</span></span>
+<span id="annotated-cell-49-16"><a href="#annotated-cell-49-16"></a></span>
+<span id="annotated-cell-49-17"><a href="#annotated-cell-49-17"></a><span class="at">airquality &lt;- airquality %&gt;% </span></span>
+<span id="annotated-cell-49-18"><a href="#annotated-cell-49-18"></a><span class="at">  mutate(</span></span>
+<span id="annotated-cell-49-19"><a href="#annotated-cell-49-19"></a><span class="at">    wind_kmhr = Wind / 0.6213711922,</span></span>
+<span id="annotated-cell-49-20"><a href="#annotated-cell-49-20"></a><span class="at">    temp_celsius = (Temp - 32)*5/9</span></span>
+<span id="annotated-cell-49-21"><a href="#annotated-cell-49-21"></a><span class="at">  )</span></span>
+<span id="annotated-cell-49-22"><a href="#annotated-cell-49-22"></a><span class="st">```</span></span>
+<span id="annotated-cell-49-23"><a href="#annotated-cell-49-23"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-49" data-target-annotation="4" onclick="event.preventDefault();" href="">4</a><span id="annotated-cell-49-24" class="code-annotation-target"><a href="#annotated-cell-49-24"></a><span class="do">## Row {height=5%}</span></span>
+<span id="annotated-cell-49-25"><a href="#annotated-cell-49-25"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-49" data-target-annotation="5" onclick="event.preventDefault();" href="">5</a><span id="annotated-cell-49-26" class="code-annotation-target"><a href="#annotated-cell-49-26"></a><span class="sc">:::</span> {.card}</span>
+<span id="annotated-cell-49-27"><a href="#annotated-cell-49-27"></a>Análisis de Calidad de Aire en la ciudad de Nueva York. Mayo a Septiembre, <span class="fl">1973.</span></span>
+<span id="annotated-cell-49-28"><a href="#annotated-cell-49-28"></a>Referencia<span class="sc">:</span> <span class="er">&lt;</span>https<span class="sc">:</span><span class="er">//</span>www.rdocumentation.org<span class="sc">/</span>packages<span class="sc">/</span>datasets<span class="sc">/</span>versions<span class="sc">/</span><span class="dv">3</span>.<span class="fl">6.2</span><span class="sc">/</span>topics<span class="sc">/</span>airquality<span class="sc">&gt;</span>.</span>
+<span id="annotated-cell-49-29"><a href="#annotated-cell-49-29"></a><span class="sc">:::</span></span>
+<span id="annotated-cell-49-30"><a href="#annotated-cell-49-30"></a></span>
+<span id="annotated-cell-49-31"><a href="#annotated-cell-49-31"></a><span class="do">## Row {height=35%}</span></span>
+<span id="annotated-cell-49-32"><a href="#annotated-cell-49-32"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-49" data-target-annotation="6" onclick="event.preventDefault();" href="">6</a><span id="annotated-cell-49-33" class="code-annotation-target"><a href="#annotated-cell-49-33"></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="annotated-cell-49-34"><a href="#annotated-cell-49-34"></a><span class="at">library(DT)</span></span>
+<span id="annotated-cell-49-35"><a href="#annotated-cell-49-35"></a><span class="at">DT::datatable(airquality)</span></span>
+<span id="annotated-cell-49-36"><a href="#annotated-cell-49-36"></a><span class="st">```</span></span>
+<span id="annotated-cell-49-37"><a href="#annotated-cell-49-37"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-49" data-target-annotation="7" onclick="event.preventDefault();" href="">7</a><span id="annotated-cell-49-38" class="code-annotation-target"><a href="#annotated-cell-49-38"></a><span class="do">## Row {height=60% .tabset}</span></span>
+<span id="annotated-cell-49-39"><a href="#annotated-cell-49-39"></a></span>
+<span id="annotated-cell-49-40"><a href="#annotated-cell-49-40"></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="annotated-cell-49-41"><a href="#annotated-cell-49-41"></a><span class="at">#| title: Ozono versus Temperatura [°C]</span></span>
+<span id="annotated-cell-49-42"><a href="#annotated-cell-49-42"></a><span class="at">ggplot(airquality, aes(temp_celsius, Ozone)) +</span></span>
+<span id="annotated-cell-49-43"><a href="#annotated-cell-49-43"></a><span class="at">  geom_point() + </span></span>
+<span id="annotated-cell-49-44"><a href="#annotated-cell-49-44"></a><span class="at">  geom_smooth(method = "loess")</span></span>
+<span id="annotated-cell-49-45"><a href="#annotated-cell-49-45"></a><span class="st">```</span></span>
+<span id="annotated-cell-49-46"><a href="#annotated-cell-49-46"></a></span>
+<span id="annotated-cell-49-47"><a href="#annotated-cell-49-47"></a><span class="st">```</span><span class="at">{r} </span></span>
+<span id="annotated-cell-49-48"><a href="#annotated-cell-49-48"></a><span class="at">#| title: Ozono versus Viento [km/hr]</span></span>
+<span id="annotated-cell-49-49"><a href="#annotated-cell-49-49"></a><span class="at">ggplot(airquality, aes(wind_kmhr, Ozone)) +</span></span>
+<span id="annotated-cell-49-50"><a href="#annotated-cell-49-50"></a><span class="at">  geom_point() + </span></span>
+<span id="annotated-cell-49-51"><a href="#annotated-cell-49-51"></a><span class="at">  geom_smooth(method = "loess")</span></span>
+<span id="annotated-cell-49-52"><a href="#annotated-cell-49-52"></a><span class="st">```</span></span>
+<span id="annotated-cell-49-53"><a href="#annotated-cell-49-53"></a></span>
+<span id="annotated-cell-49-54"><a href="#annotated-cell-49-54"></a><span class="st">```</span><span class="at">{r} </span></span>
+<span id="annotated-cell-49-55"><a href="#annotated-cell-49-55"></a><span class="at">#| title: Temperatura [°C] versus Viento [km/hr]</span></span>
+<span id="annotated-cell-49-56"><a href="#annotated-cell-49-56"></a><span class="at">ggplot(airquality, aes(wind_kmhr, temp_celsius)) +</span></span>
+<span id="annotated-cell-49-57"><a href="#annotated-cell-49-57"></a><span class="at">  geom_point() + </span></span>
+<span id="annotated-cell-49-58"><a href="#annotated-cell-49-58"></a><span class="at">  geom_smooth(method = "loess")</span></span>
+<span id="annotated-cell-49-59"><a href="#annotated-cell-49-59"></a><span class="st">```</span></span>
+<span id="annotated-cell-49-60"><a href="#annotated-cell-49-60"></a></span>
+<span id="annotated-cell-49-61"><a href="#annotated-cell-49-61"></a><span class="co"># Page 2 {orientation="rows" scrolling="true"}</span></span>
+<span id="annotated-cell-49-62"><a href="#annotated-cell-49-62"></a></span>
+<span id="annotated-cell-49-63"><a href="#annotated-cell-49-63"></a><span class="do">## Row {height=10%}</span></span>
+<span id="annotated-cell-49-64"><a href="#annotated-cell-49-64"></a></span>
+<span id="annotated-cell-49-65"><a href="#annotated-cell-49-65"></a><span class="sc">:::</span> {.card}</span>
+<span id="annotated-cell-49-66"><a href="#annotated-cell-49-66"></a>Gapminder identifies systematic misconceptions about important global trends and proportions and uses reliable data to develop easy to understand teaching materials to rid people of their misconceptions.</span>
+<span id="annotated-cell-49-67"><a href="#annotated-cell-49-67"></a>Gapminder is an independent Swedish foundation with no political, religious, or economic affiliations.</span>
+<span id="annotated-cell-49-68"><a href="#annotated-cell-49-68"></a>Learn more about the Gampminder dataset at <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>www.gapminder.org<span class="sc">/</span>data<span class="sc">/</span><span class="er">&gt;</span>.</span>
+<span id="annotated-cell-49-69"><a href="#annotated-cell-49-69"></a><span class="sc">:::</span></span>
+<span id="annotated-cell-49-70"><a href="#annotated-cell-49-70"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-49" data-target-annotation="8" onclick="event.preventDefault();" href="">8</a><span id="annotated-cell-49-71" class="code-annotation-target"><a href="#annotated-cell-49-71"></a><span class="do">## Row {height=90%}</span></span>
+<span id="annotated-cell-49-72"><a href="#annotated-cell-49-72"></a></span>
+<span id="annotated-cell-49-73"><a href="#annotated-cell-49-73"></a><span class="st">```</span><span class="at">{r} </span></span>
+<span id="annotated-cell-49-74"><a href="#annotated-cell-49-74"></a><span class="at">library(gapminder)</span></span>
+<span id="annotated-cell-49-75"><a href="#annotated-cell-49-75"></a><span class="at">library(DT)</span></span>
+<span id="annotated-cell-49-76"><a href="#annotated-cell-49-76"></a><span class="at">DT::datatable(gapminder)</span></span>
+<span id="annotated-cell-49-77"><a href="#annotated-cell-49-77"></a><span class="st">```</span></span>
+<span id="annotated-cell-49-78"><a href="#annotated-cell-49-78"></a></span>
+<span id="annotated-cell-49-79"><a href="#annotated-cell-49-79"></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="annotated-cell-49-80"><a href="#annotated-cell-49-80"></a><span class="at">#| fig-width: 10</span></span>
+<span id="annotated-cell-49-81"><a href="#annotated-cell-49-81"></a><span class="at">#| fig-height: 8</span></span>
+<span id="annotated-cell-49-82"><a href="#annotated-cell-49-82"></a><span class="at">paises &lt;- c("Peru", "Bolivia", "Chile")</span></span>
+<span id="annotated-cell-49-83"><a href="#annotated-cell-49-83"></a><span class="at"># etiquetas &lt;- data.frame(nombre_paises = paises, x = c(1975, 1965, 1962), y = c(6, 7, 4))</span></span>
+<span id="annotated-cell-49-84"><a href="#annotated-cell-49-84"></a><span class="at">gapminder %&gt;% </span></span>
+<span id="annotated-cell-49-85"><a href="#annotated-cell-49-85"></a><span class="at">  filter(country %in% paises) %&gt;% </span></span>
+<span id="annotated-cell-49-86"><a href="#annotated-cell-49-86"></a><span class="at">  ggplot() +</span></span>
+<span id="annotated-cell-49-87"><a href="#annotated-cell-49-87"></a><span class="at">  aes(x = year, y = lifeExp, color = country) +</span></span>
+<span id="annotated-cell-49-88"><a href="#annotated-cell-49-88"></a><span class="at">  geom_line()</span></span>
+<span id="annotated-cell-49-89"><a href="#annotated-cell-49-89"></a><span class="st">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-48" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-49" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-48" data-code-lines="2,3,4,5,7" data-code-annotation="1">La barra de navegación se pobla con el título (<span style="color:#4758ab;">title</span>) y el autor (<span style="color:#4758ab;">author</span>), definidos tal como en otros formatos de documentos (html, pdf, etc). También puede incluirse un <span style="color:#4758ab;">logo</span>.</span>
+<span data-code-cell="annotated-cell-49" data-code-lines="2,3,4,5,7" data-code-annotation="1">La barra de navegación se pobla con el título (<span style="color:#4758ab;">title</span>) y el autor (<span style="color:#4758ab;">author</span>), definidos tal como en otros formatos de documentos (html, pdf, etc). También puede incluirse un <span style="color:#4758ab;">logo</span>.</span>
 </dd>
-<dt data-target-cell="annotated-cell-48" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-49" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-48" data-code-lines="8" data-code-annotation="2">Por defecto, las páginas de un dashboard se ordenan primero por filas y luego por columns. Pero esto puede invertirse específicando la opción <span style="color:#4758ab;">orientation: columns</span>.</span>
+<span data-code-cell="annotated-cell-49" data-code-lines="8" data-code-annotation="2">Por defecto, las páginas de un dashboard se ordenan primero por filas y luego por columns. Pero esto puede invertirse específicando la opción <span style="color:#4758ab;">orientation: columns</span>.</span>
 </dd>
-<dt data-target-cell="annotated-cell-48" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-49" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-48" data-code-lines="11" data-code-annotation="3">Páginas son creadas usando headings de nivel 1 antes de definir Filas y Columnas. El texto del heading se usará para vincular la página a la barra de navegación.</span>
+<span data-code-cell="annotated-cell-49" data-code-lines="11" data-code-annotation="3">Páginas son creadas usando headings de nivel 1 antes de definir Filas y Columnas. El texto del heading se usará para vincular la página a la barra de navegación.</span>
 </dd>
-<dt data-target-cell="annotated-cell-48" data-target-annotation="4">4</dt>
+<dt data-target-cell="annotated-cell-49" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-48" data-code-lines="24" data-code-annotation="4">Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción <span style="color:#4758ab;">height</span>. En cambio, al definir columnas podemos especificar su tamaño relativo con la opción <span style="color:#4758ab;">width</span>.</span>
+<span data-code-cell="annotated-cell-49" data-code-lines="24" data-code-annotation="4">Las Filas y Columnas se definen usando headings de nivel 2. En esta página definimos tres filas y especificamos su tamaño relativo usando la opción <span style="color:#4758ab;">height</span>. En cambio, al definir columnas podemos especificar su tamaño relativo con la opción <span style="color:#4758ab;">width</span>.</span>
 </dd>
-<dt data-target-cell="annotated-cell-48" data-target-annotation="5">5</dt>
+<dt data-target-cell="annotated-cell-49" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-48" data-code-lines="26,29" data-code-annotation="5">Las Tarjetas (Cards) pueden tener contenido markdown arbitrario usando la opción <span style="color:#4758ab;">.card</span>.</span>
+<span data-code-cell="annotated-cell-49" data-code-lines="26,29" data-code-annotation="5">Las Tarjetas (Cards) pueden tener contenido markdown arbitrario usando la opción <span style="color:#4758ab;">.card</span>.</span>
 </dd>
-<dt data-target-cell="annotated-cell-48" data-target-annotation="6">6</dt>
+<dt data-target-cell="annotated-cell-49" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-48" data-code-lines="33,36" data-code-annotation="6">Los Bloques de Código también pueden definirse como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción <span style="color:#4758ab;">title</span>.</span>
+<span data-code-cell="annotated-cell-49" data-code-lines="33,36" data-code-annotation="6">Los Bloques de Código también pueden definirse como Tarjetas que viven dentro de las Filas y Columnas. Las tarjetas tienen un título opcional, que se especifica usando la opción <span style="color:#4758ab;">title</span>.</span>
 </dd>
-<dt data-target-cell="annotated-cell-48" data-target-annotation="7">7</dt>
+<dt data-target-cell="annotated-cell-49" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-48" data-code-lines="38,59" data-code-annotation="7">La tercera fila de la primera página incluye un <span style="color:#4758ab;">tabset</span> con tres pestañas, que permiten tener múltiples vistas de contenido.</span>
+<span data-code-cell="annotated-cell-49" data-code-lines="38,59" data-code-annotation="7">La tercera fila de la primera página incluye un <span style="color:#4758ab;">tabset</span> con tres pestañas, que permiten tener múltiples vistas de contenido.</span>
 </dd>
-<dt data-target-cell="annotated-cell-48" data-target-annotation="8">8</dt>
+<dt data-target-cell="annotated-cell-49" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-48" data-code-lines="71,89" data-code-annotation="8">La segunda fila de la segunda página incluye dos bloques de código, que son automáticamente separados en dos tarjetas adyacentes.</span>
+<span data-code-cell="annotated-cell-49" data-code-lines="71,89" data-code-annotation="8">La segunda fila de la segunda página incluye dos bloques de código, que son automáticamente separados en dos tarjetas adyacentes.</span>
 </dd>
 </dl>
 </div>
@@ -2464,7 +2469,7 @@ Visualice que el nuevo contenido aparezca en el documento de Quarto después de 
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});
+    <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
     (function() {
       let previousOnload = window.onload;
       window.onload = () => {

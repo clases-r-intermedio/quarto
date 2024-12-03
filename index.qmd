@@ -348,6 +348,15 @@ Por ejemplo el archivo document_revealjs_styles.css contiene tres clases **CSS**
 
 ::: {.panel-tabset .small-par}
 
+### Instalación
+
+::: {.small-par}
+* Quarto puede ser instalado desde una consola R como cualquier otro paquete, con el siguiente comando: <br>
+``` r
+install.packages("quarto")
+```
+:::
+
 ### Crear documentos
 
 ::: {.small-par}
@@ -376,10 +385,6 @@ Esto se consigue activando la casilla **Render on Save**.
 * Alternativamente, un documento también puede ser renderizado directamente usando el paquete quarto en una consola R. <br>
   []{.small-par}
   ![](images/rstudio_render_terminal.png){width="60%"}
-<!-- ``` r
-install.packages("quarto")
-quarto::quarto_render("hello.qmd")
-``` -->
 :::
 :::
 
